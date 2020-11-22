@@ -79,12 +79,12 @@
             this.tablePanel1.SetColumn(this.label1, 1);
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(29, 8);
+            this.label1.Location = new System.Drawing.Point(29, 4);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
             this.label1.Size = new System.Drawing.Size(643, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tiêu Đề";
+            this.label1.Text = "Danh Mục Tiêu Đề";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gridView1
@@ -99,12 +99,12 @@
             this.tablePanel1.SetColumn(this.grd_TieuDe, 1);
             this.grd_TieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_TieuDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_TieuDe.Location = new System.Drawing.Point(29, 110);
+            this.grd_TieuDe.Location = new System.Drawing.Point(29, 104);
             this.grd_TieuDe.MainView = this.gridView1;
             this.grd_TieuDe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd_TieuDe.Name = "grd_TieuDe";
             this.tablePanel1.SetRow(this.grd_TieuDe, 2);
-            this.grd_TieuDe.Size = new System.Drawing.Size(643, 809);
+            this.grd_TieuDe.Size = new System.Drawing.Size(643, 815);
             this.grd_TieuDe.TabIndex = 2;
             this.grd_TieuDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -212,7 +212,7 @@
             this.tablePanel2.Controls.Add(this.tablePanel3);
             this.tablePanel2.Controls.Add(this.pictureBox1);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(678, 110);
+            this.tablePanel2.Location = new System.Drawing.Point(678, 104);
             this.tablePanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel1.SetRow(this.tablePanel2, 2);
@@ -223,7 +223,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F)});
-            this.tablePanel2.Size = new System.Drawing.Size(617, 809);
+            this.tablePanel2.Size = new System.Drawing.Size(617, 815);
             this.tablePanel2.TabIndex = 3;
             // 
             // tablePanel6
@@ -366,8 +366,8 @@
             this.tablePanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 59F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 47F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(1298, 923);
             this.tablePanel1.TabIndex = 1;
@@ -382,12 +382,12 @@
             this.tablePanel1.SetColumn(this.btn_ThemTieuDe, 1);
             this.btn_ThemTieuDe.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_ThemTieuDe.ImageOptions.Image = global::GUI.Properties.Resources.icons8_add_tag_32;
-            this.btn_ThemTieuDe.Location = new System.Drawing.Point(29, 63);
+            this.btn_ThemTieuDe.Location = new System.Drawing.Point(29, 54);
             this.btn_ThemTieuDe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ThemTieuDe.Name = "btn_ThemTieuDe";
             this.btn_ThemTieuDe.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel1.SetRow(this.btn_ThemTieuDe, 1);
-            this.btn_ThemTieuDe.Size = new System.Drawing.Size(206, 39);
+            this.btn_ThemTieuDe.Size = new System.Drawing.Size(206, 42);
             this.btn_ThemTieuDe.TabIndex = 1;
             this.btn_ThemTieuDe.Text = "Thêm Tiêu Đề Mới";
             // 
@@ -396,7 +396,7 @@
             this.tablePanel1.SetColumn(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(678, 8);
+            this.label2.Location = new System.Drawing.Point(678, 4);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 0);
             this.label2.Size = new System.Drawing.Size(617, 42);

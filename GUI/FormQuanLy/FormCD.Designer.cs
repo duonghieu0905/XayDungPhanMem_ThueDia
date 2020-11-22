@@ -115,7 +115,7 @@
             this.txt_DiaTrenKe.Name = "txt_DiaTrenKe";
             this.txt_DiaTrenKe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiaTrenKe.Properties.Appearance.Options.UseFont = true;
-            this.txt_DiaTrenKe.Properties.NullValuePrompt = "Số lượng trên kệ";
+            this.txt_DiaTrenKe.Properties.NullValuePrompt = "Số Lượng Trên Kệ";
             this.txt_DiaTrenKe.Properties.ReadOnly = true;
             this.tablePanel6.SetRow(this.txt_DiaTrenKe, 0);
             this.txt_DiaTrenKe.Size = new System.Drawing.Size(186, 30);
@@ -137,12 +137,12 @@
             this.tablePanel1.SetColumn(this.grd_TieuDe, 1);
             this.grd_TieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_TieuDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_TieuDe.Location = new System.Drawing.Point(30, 110);
+            this.grd_TieuDe.Location = new System.Drawing.Point(30, 104);
             this.grd_TieuDe.MainView = this.gridView1;
             this.grd_TieuDe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd_TieuDe.Name = "grd_TieuDe";
             this.tablePanel1.SetRow(this.grd_TieuDe, 2);
-            this.grd_TieuDe.Size = new System.Drawing.Size(678, 802);
+            this.grd_TieuDe.Size = new System.Drawing.Size(678, 808);
             this.grd_TieuDe.TabIndex = 2;
             this.grd_TieuDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -231,7 +231,7 @@
             this.tablePanel2.Controls.Add(this.tablePanel3);
             this.tablePanel2.Controls.Add(this.pictureBox1);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(714, 110);
+            this.tablePanel2.Location = new System.Drawing.Point(714, 104);
             this.tablePanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel1.SetRow(this.tablePanel2, 2);
@@ -244,7 +244,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F)});
-            this.tablePanel2.Size = new System.Drawing.Size(651, 802);
+            this.tablePanel2.Size = new System.Drawing.Size(651, 808);
             this.tablePanel2.TabIndex = 3;
             // 
             // tablePanel7
@@ -432,12 +432,12 @@
             this.tablePanel1.SetColumn(this.btn_ThemCD, 1);
             this.btn_ThemCD.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_ThemCD.ImageOptions.Image = global::GUI.Properties.Resources.icons8_data_recovery_32;
-            this.btn_ThemCD.Location = new System.Drawing.Point(30, 63);
+            this.btn_ThemCD.Location = new System.Drawing.Point(30, 54);
             this.btn_ThemCD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ThemCD.Name = "btn_ThemCD";
             this.btn_ThemCD.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel1.SetRow(this.btn_ThemCD, 1);
-            this.btn_ThemCD.Size = new System.Drawing.Size(210, 39);
+            this.btn_ThemCD.Size = new System.Drawing.Size(210, 42);
             this.btn_ThemCD.TabIndex = 1;
             this.btn_ThemCD.Text = "Thêm CD/DVD Mới";
             // 
@@ -446,7 +446,7 @@
             this.tablePanel1.SetColumn(this.label1, 1);
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(30, 8);
+            this.label1.Location = new System.Drawing.Point(30, 4);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
             this.label1.Size = new System.Drawing.Size(678, 42);
@@ -459,7 +459,7 @@
             this.tablePanel1.SetColumn(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(714, 8);
+            this.label2.Location = new System.Drawing.Point(714, 4);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 0);
             this.label2.Size = new System.Drawing.Size(651, 42);
@@ -483,8 +483,8 @@
             this.tablePanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 59F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 47F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel1.Size = new System.Drawing.Size(1368, 916);
             this.tablePanel1.TabIndex = 2;
