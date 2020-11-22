@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3243C9D5-E4A3-4E81-A296-58020DD5A2B2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormQuanLy\FormKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLy\FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormQuanLy\FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cd_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cd_641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_tv_show_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_cloud_platform_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_dyndns_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_services_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c35e3c1baa7be93127b11f5e2de8ba8f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_dyndns_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_services_481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_cloud_platform_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_customer_insight_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_customer_insight_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_businessman_filled_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_businessman_filled_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_admin_settings_male_filled_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_admin_settings_male_filled_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key2_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-xanh-duong-cong-nghe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-xanh-duong-cong-nghe1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thiet-ke-poster-001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\31b6e49574a04ef6a345be2eff556f3c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cd_642.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_label_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_cloud_platform_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_software_box_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_software_box_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_label_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_guest_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_services_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_calendar_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_calendar_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ratings_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_money_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_video_playlist_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key_exchange_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_system_task_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cd_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\70391807-two-steps-authentication-on-computer-login-and-password-verification-with-sms-on-smartphone-.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-typing-laptop-computer-with-password-login-screen_7190-2962.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-typing-laptop-computer-with-password-login-screen_7190-29621.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_self_service_kiosk_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ratings_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_tag_window_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_calendar_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_system_task_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_self_service_kiosk_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-meo-chap-tay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\75194016-close-up-of-login-page-against-businessman-using-a-laptop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1339-scaled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1339-scaled1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1339-scaled2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\60230534-stock-vector-access-management-authorize-software-authentication-login-form-system-vector-illustration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KycE8k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\70391807-two-steps-authentication-on-computer-login-and-password-verification-with-sms-on-smartphone-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_connect_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_network_care_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unavailable_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_guest_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FormDichVu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images-removebg-preview.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
