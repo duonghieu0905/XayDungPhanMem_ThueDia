@@ -80,7 +80,7 @@ namespace GUI
 
         private void acdeTieuDe_Click(object sender, EventArgs e)
         {
-
+            AddFormToFluent(fluent_label, new FormQuanLy.FormTieuDe());
         }
 
         private void acdeCD_Click(object sender, EventArgs e)
