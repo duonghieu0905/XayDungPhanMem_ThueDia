@@ -1,14 +1,7 @@
 ﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.FluentDesignSystem;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-
+using GUI.FormQuanLy;
 namespace GUI
 {
     public partial class MainForm : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
@@ -29,33 +22,11 @@ namespace GUI
             Text = "Nhóm 11 - App Thuê Đĩa";
             IconOptions.Image = Properties.Resources.icons8_cd_641;
         }
-        /// <summary>
-        /// Format Form begin add
-        /// </summary>
-        /// <param name="frm"></param>
-        private void ConfigForm(Form frm)
-        {
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-        }
         
-        /// <summary>
-        /// Add Sub Form to the fluent
-        /// </summary>
-        /// <param name="fluent"></param>
-        /// <param name="frm"></param>
-        private void AddFormToFluent(FluentDesignFormContainer fluent,Form frm)
-        {
-            fluent.Controls.Clear();
-            ConfigForm(frm);
-            fluent.Controls.Add(frm);
-            frm.Show();
-        }
-
         private void bar_BtnLog_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddFormToFluent(fluent_label, new LoginForm());
+            LoginForm frm = new LoginForm();
+            ExpressionMethod.AddFormToFluent(fluent_label,frm);
         }
 
         private void acdeThueDia_Click(object sender, EventArgs e)
@@ -75,17 +46,20 @@ namespace GUI
 
         private void adceKhachHang_Click(object sender, EventArgs e)
         {
-            AddFormToFluent(fluent_label, new FormQuanLy.FormKhachHang());
+            FormKhachHang frm = new FormKhachHang();
+            ExpressionMethod.AddFormToFluent(fluent_label,frm);
         }
 
         private void acdeTieuDe_Click(object sender, EventArgs e)
         {
-            AddFormToFluent(fluent_label, new FormQuanLy.FormTieuDe());
+            FormTieuDe frm = new FormTieuDe();
+            ExpressionMethod.AddFormToFluent(fluent_label,frm);
         }
 
         private void acdeCD_Click(object sender, EventArgs e)
         {
-
+            FormCD frm = new FormCD();
+            ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
         private void adceBaoCao_Click(object sender, EventArgs e)

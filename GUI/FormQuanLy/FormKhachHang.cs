@@ -19,9 +19,12 @@ namespace GUI.FormQuanLy
 
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
-
+            AddInfoToSuccessForm();
         }
-
+        private void AddInfoToSuccessForm()
+        {
+            ExpressionMethod.AddToComboBoxGender(cbx_GioiTinh);
+        }
         
     }
 }

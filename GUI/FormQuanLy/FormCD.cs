@@ -12,9 +12,19 @@ namespace GUI.FormQuanLy
 {
     public partial class FormCD : DevExpress.XtraEditors.XtraForm
     {
+        
         public FormCD()
         {
             InitializeComponent();
+        }
+
+        private void FormCD_Load(object sender, EventArgs e)
+        {
+            AddInfoToSuccessForm();
+        }
+        private void AddInfoToSuccessForm() {
+            ExpressionMethod.AddToComboBoxStatusCD(cbx_TrangThaiDia);
+            ExpressionMethod.AddToComboBoxStatusRentCD(cbx_TrangThaiThue);
         }
     }
 }

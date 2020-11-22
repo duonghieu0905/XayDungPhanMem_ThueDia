@@ -16,5 +16,14 @@ namespace GUI.FormQuanLy
         {
             InitializeComponent();
         }
+
+        private void FormTieuDe_Load(object sender, EventArgs e)
+        {
+            AddInfoToSuccessForm();
+        }
+        private void AddInfoToSuccessForm()
+        {
+            ExpressionMethod.AddToComboBoxKindOfTitle(cbx_LoaiDia);
+        }
     }
 }

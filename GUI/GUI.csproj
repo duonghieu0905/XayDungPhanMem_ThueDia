@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpressionMethod.cs" />
     <Compile Include="FormQuanLy\FormBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +369,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_delete_file_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cd_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_data_recovery_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_renew_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_inspection_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\109222l.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\77123921dd5f589b1a8693e5e445ec1f.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
