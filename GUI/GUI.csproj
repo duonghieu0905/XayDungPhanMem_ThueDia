@@ -34,19 +34,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Images.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpellChecker.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,12 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionMethod.cs" />
-    <Compile Include="FormQuanLy\FormBaoCao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQuanLy\FormBaoCao.Designer.cs">
-      <DependentUpon>FormBaoCao.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormQuanLy\FormCD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +85,23 @@
     <Compile Include="FormQuanLy\FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLy\FormLoaiDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLy\FormLoaiDia.Designer.cs">
+      <DependentUpon>FormLoaiDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLy\FormTieuDe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormQuanLy\FormTieuDe.Designer.cs">
       <DependentUpon>FormTieuDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQuanLy\FormBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLy\FormBaoCao.Designer.cs">
+      <DependentUpon>FormBaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -105,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLy\FormLoaiDia.resx">
+      <DependentUpon>FormLoaiDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy\FormTieuDe.resx">
       <DependentUpon>FormTieuDe.cs</DependentUpon>
@@ -387,6 +410,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\77123921dd5f589b1a8693e5e445ec1f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_businessman_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_exit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_exit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_apply_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_report_file_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_investment_portfolio_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_increase_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cd_322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_create_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_clapperboard_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_print_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_access_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_create_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_new_ticket_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eg-qxrvWoAIVt9I.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

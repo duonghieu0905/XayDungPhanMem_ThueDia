@@ -35,11 +35,12 @@
             this.adceDatTruoc = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.adceGroupQuanLy = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.adceKhachHang = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.adceLoaiDia = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acdeTieuDe = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.acdeCD = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.adceBaoCao = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
-            this.bar_Status = new DevExpress.XtraBars.BarSubItem();
+            this.bar_TrangThai = new DevExpress.XtraBars.BarSubItem();
             this.bar_BtnLog = new DevExpress.XtraBars.BarButtonItem();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.fluent_label = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
@@ -56,12 +57,12 @@
             this.sa.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.adceGroupDichVu,
             this.adceGroupQuanLy});
-            this.sa.Location = new System.Drawing.Point(0, 25);
+            this.sa.Location = new System.Drawing.Point(0, 21);
             this.sa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sa.Name = "sa";
             this.sa.OptionsMinimizing.AllowMinimizeMode = DevExpress.Utils.DefaultBoolean.True;
             this.sa.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
-            this.sa.Size = new System.Drawing.Size(357, 578);
+            this.sa.Size = new System.Drawing.Size(229, 753);
             this.sa.TabIndex = 1;
             this.sa.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -144,6 +145,7 @@
             this.adceGroupQuanLy.Appearance.Pressed.Options.UseFont = true;
             this.adceGroupQuanLy.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.adceKhachHang,
+            this.adceLoaiDia,
             this.acdeTieuDe,
             this.acdeCD,
             this.adceBaoCao});
@@ -168,6 +170,22 @@
             this.adceKhachHang.Text = "Khách Hàng";
             this.adceKhachHang.Click += new System.EventHandler(this.adceKhachHang_Click);
             // 
+            // adceLoaiDia
+            // 
+            this.adceLoaiDia.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adceLoaiDia.Appearance.Disabled.Options.UseFont = true;
+            this.adceLoaiDia.Appearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adceLoaiDia.Appearance.Hovered.Options.UseFont = true;
+            this.adceLoaiDia.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adceLoaiDia.Appearance.Normal.Options.UseFont = true;
+            this.adceLoaiDia.Appearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adceLoaiDia.Appearance.Pressed.Options.UseFont = true;
+            this.adceLoaiDia.ImageOptions.Image = global::GUI.Properties.Resources.icons8_clapperboard_32;
+            this.adceLoaiDia.Name = "adceLoaiDia";
+            this.adceLoaiDia.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.adceLoaiDia.Text = "Loại Đĩa";
+            this.adceLoaiDia.Click += new System.EventHandler(this.adceLoaiDia_Click);
+            // 
             // acdeTieuDe
             // 
             this.acdeTieuDe.Appearance.Disabled.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,7 +196,7 @@
             this.acdeTieuDe.Appearance.Normal.Options.UseFont = true;
             this.acdeTieuDe.Appearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acdeTieuDe.Appearance.Pressed.Options.UseFont = true;
-            this.acdeTieuDe.ImageOptions.Image = global::GUI.Properties.Resources.icons8_tag_window_32;
+            this.acdeTieuDe.ImageOptions.Image = global::GUI.Properties.Resources.icons8_create_32;
             this.acdeTieuDe.Name = "acdeTieuDe";
             this.acdeTieuDe.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.acdeTieuDe.Text = "Tiêu Đề";
@@ -220,40 +238,40 @@
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.bar_Status,
+            this.bar_TrangThai,
             this.bar_BtnLog});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1162, 25);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1160, 21);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.bar_Status);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.bar_TrangThai);
             // 
-            // bar_Status
+            // bar_TrangThai
             // 
-            this.bar_Status.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.bar_Status.Caption = "Nhân Viên";
-            this.bar_Status.Id = 2;
-            this.bar_Status.ImageOptions.Image = global::GUI.Properties.Resources.icons8_guest_321;
-            this.bar_Status.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bar_Status.ItemAppearance.Disabled.Options.UseFont = true;
-            this.bar_Status.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bar_Status.ItemAppearance.Hovered.Options.UseFont = true;
-            this.bar_Status.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bar_Status.ItemAppearance.Normal.Options.UseFont = true;
-            this.bar_Status.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bar_Status.ItemAppearance.Pressed.Options.UseFont = true;
-            this.bar_Status.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.bar_TrangThai.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.bar_TrangThai.Caption = "Nhân Viên";
+            this.bar_TrangThai.Id = 2;
+            this.bar_TrangThai.ImageOptions.Image = global::GUI.Properties.Resources.icons8_guest_32;
+            this.bar_TrangThai.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bar_TrangThai.ItemAppearance.Disabled.Options.UseFont = true;
+            this.bar_TrangThai.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bar_TrangThai.ItemAppearance.Hovered.Options.UseFont = true;
+            this.bar_TrangThai.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bar_TrangThai.ItemAppearance.Normal.Options.UseFont = true;
+            this.bar_TrangThai.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bar_TrangThai.ItemAppearance.Pressed.Options.UseFont = true;
+            this.bar_TrangThai.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.bar_BtnLog)});
-            this.bar_Status.Name = "bar_Status";
-            this.bar_Status.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bar_TrangThai.Name = "bar_TrangThai";
+            this.bar_TrangThai.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // bar_BtnLog
             // 
-            this.bar_BtnLog.Caption = "Đăng nhập vào tài khoản quản lý";
+            this.bar_BtnLog.Caption = "Đăng Nhập Vào Tài Khoản Quản Lý";
             this.bar_BtnLog.Id = 0;
-            this.bar_BtnLog.ImageOptions.Image = global::GUI.Properties.Resources.icons8_key_exchange_32;
+            this.bar_BtnLog.ImageOptions.Image = global::GUI.Properties.Resources.icons8_key2_16;
             this.bar_BtnLog.Name = "bar_BtnLog";
             this.bar_BtnLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bar_BtnLog_ItemClick);
             // 
@@ -267,27 +285,29 @@
             // fluent_label
             // 
             this.fluent_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluent_label.Location = new System.Drawing.Point(357, 25);
+            this.fluent_label.Location = new System.Drawing.Point(229, 21);
             this.fluent_label.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluent_label.Name = "fluent_label";
-            this.fluent_label.Size = new System.Drawing.Size(805, 578);
+            this.fluent_label.Size = new System.Drawing.Size(931, 753);
             this.fluent_label.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 603);
+            this.ClientSize = new System.Drawing.Size(1160, 774);
             this.ControlContainer = this.fluent_label;
             this.Controls.Add(this.fluent_label);
             this.Controls.Add(this.sa);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.IconOptions.Image = global::GUI.Properties.Resources.icons8_cd_642;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.NavigationControl = this.sa;
             this.Text = "Nhóm 11 - App Cho Thuê Đĩa";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
             this.ResumeLayout(false);
@@ -309,6 +329,7 @@
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
         private DevExpress.XtraBars.BarButtonItem bar_BtnLog;
         private DevExpress.XtraBars.Navigation.AccordionControlElement adceBaoCao;
-        public DevExpress.XtraBars.BarSubItem bar_Status;
+        public DevExpress.XtraBars.BarSubItem bar_TrangThai;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement adceLoaiDia;
     }
 }

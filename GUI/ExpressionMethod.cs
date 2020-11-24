@@ -95,5 +95,37 @@ namespace GUI
             fluent.Controls.Add(frm);
             frm.Show();
         }
+        public static List<string> ListBegin()
+        {
+            List<string> lst = new List<string>();
+            lst.Add("Nhóm 11 - App Cho Thuê Đĩa");
+            lst.Add("Nhân Viên");
+            lst.Add("Quản Lý");
+            lst.Add("Đăng Nhập Vào Tài Khoản Quản Lý");
+            lst.Add("Đăng Xuất");
+            return lst;
+        }
+        public static void AddOptionToReportCustomer(ComboBox cbx)
+        {
+            ConfigComboBox(cbx);
+            List<dynamic> lst = new List<dynamic>();
+            lst.Add(new { id = 1, value = "Tất Cả Khách Hàng" });
+            lst.Add(new { id = 2, value = "Khách Hàng Có Mặt Hàng Quá Hạn" });
+            lst.Add(new { id = 3, value = "Khách Hàng Nợ Phí Trả Chậm" });
+            cbx.DataSource = lst;
+            cbx.DisplayMember = "value";
+            cbx.ValueMember = "id";
+        }
+        public static void AddOptionToReportTitle(ComboBox cbx)
+        {
+            ConfigComboBox(cbx);
+            List<dynamic> lst = new List<dynamic>();
+            lst.Add(new { id = 1, value = "Số Lượng Bản Sao Đã Được Thuê" });
+            lst.Add(new { id = 2, value = "Số Lượng Bản Sao Đang Được Khách Hàng Đặt Trước" });
+            lst.Add(new { id = 3, value = "Số Lượng Hiện Trong Kho" });
+            cbx.DataSource = lst;
+            cbx.DisplayMember = "value";
+            cbx.ValueMember = "id";
+        }
     }
 }

@@ -206,6 +206,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eg_qxrvWoAIVt9I {
+            get {
+                object obj = ResourceManager.GetObject("Eg-qxrvWoAIVt9I", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flat_750x1000_075_f {
             get {
                 object obj = ResourceManager.GetObject("flat,750x1000,075,f", resourceCulture);
@@ -249,6 +259,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap hinh_meo_chap_tay1 {
             get {
                 object obj = ResourceManager.GetObject("hinh-meo-chap-tay1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_access_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_access_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -306,6 +326,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_apply_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_apply_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_businessman_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_businessman_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_businessman_filled_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_businessman_filled_16", resourceCulture);
@@ -339,6 +379,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap icons8_cd_321 {
             get {
                 object obj = ResourceManager.GetObject("icons8_cd_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cd_322 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_cd_322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -426,9 +476,39 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_clapperboard_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_clapperboard_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_connect_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_connect_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_create_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_create_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_create_321 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_create_321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +606,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_exit_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_exit_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_exit_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_google_calendar_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_google_calendar_32", resourceCulture);
@@ -606,9 +706,29 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_increase_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_increase_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_inspection_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_inspection_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_investment_portfolio_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_investment_portfolio_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -676,6 +796,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_new_ticket_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_new_ticket_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_print_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_print_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ratings_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_ratings_32", resourceCulture);
@@ -699,6 +839,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap icons8_renew_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_renew_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_report_file_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_report_file_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

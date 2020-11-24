@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.FormQuanLy
 {
-    public partial class FormKhachHang : DevExpress.XtraEditors.XtraForm
+    public partial class FormLoaiDia : DevExpress.XtraEditors.XtraForm
     {
-        public FormKhachHang()
+        public FormLoaiDia()
         {
             InitializeComponent();
-        }
-        public FormKhachHang(string auth)
-        {
-            InitializeComponent();
-        }
-
-        private void FormKhachHang_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
