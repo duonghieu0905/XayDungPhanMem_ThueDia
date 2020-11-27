@@ -73,6 +73,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionMethod.cs" />
+    <Compile Include="FormChucNang\FormThemDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormThemDia.Designer.cs">
+      <DependentUpon>FormThemDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChucNang\FormThemTieuDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormThemTieuDe.Designer.cs">
+      <DependentUpon>FormThemTieuDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChucNang\ThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\ThemKhachHang.Designer.cs">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLy\FormCD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +135,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormChucNang\FormThemDia.resx">
+      <DependentUpon>FormThemDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChucNang\ThemKhachHang.resx">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy\FormBaoCao.resx">
       <DependentUpon>FormBaoCao.cs</DependentUpon>
     </EmbeddedResource>
@@ -455,6 +479,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Eg-qxrvWoAIVt9I.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_property_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_pane_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

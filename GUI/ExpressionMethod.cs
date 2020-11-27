@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraBars.FluentDesignSystem;
+using DevExpress.XtraGrid;
+using DevExpress.XtraGrid.Views.Grid;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -95,6 +97,10 @@ namespace GUI
             fluent.Controls.Add(frm);
             frm.Show();
         }
+        /// <summary>
+        /// List bắt đầu cho đăng nhập
+        /// </summary>
+        /// <returns></returns>
         public static List<string> ListBegin()
         {
             List<string> lst = new List<string>();
@@ -105,6 +111,10 @@ namespace GUI
             lst.Add("Đăng Xuất");
             return lst;
         }
+        /// <summary>
+        ///  Thêm các lựa chọn cho bản báo cáo cho khách hàng
+        /// </summary>
+        /// <param name="cbx"></param>
         public static void AddOptionToReportCustomer(ComboBox cbx)
         {
             ConfigComboBox(cbx);
@@ -116,6 +126,10 @@ namespace GUI
             cbx.DisplayMember = "value";
             cbx.ValueMember = "id";
         }
+        /// <summary>
+        /// Thêm lựa chọn cho bản báo cáo tiêu đề
+        /// </summary>
+        /// <param name="cbx"></param>
         public static void AddOptionToReportTitle(ComboBox cbx)
         {
             ConfigComboBox(cbx);
@@ -127,5 +141,39 @@ namespace GUI
             cbx.DisplayMember = "value";
             cbx.ValueMember = "id";
         }
+        /// <summary>
+        /// Sửa grid view của dev  express
+        /// </summary>
+        /// <param name="grd"></param>
+        public static void EditGridView(GridView grd)
+        {
+            grd.OptionsBehavior.Editable = false;
+            grd.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            grd.GroupPanelText = " ";
+            grd.OptionsCustomization.AllowGroup = false;
+            grd.OptionsView.ShowGroupPanel = false;
+
+            grd.OptionsFind.AlwaysVisible = true;
+            grd.OptionsFind.ShowFindButton = false;
+            grd.OptionsFind.FindPanelLocation = GridFindPanelLocation.Panel;
+            grd.OptionsFind.FindNullPrompt = "Thực Hiện Tìm Kiếm";
+
+            grd.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            grd.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        }
+        /// <summary>
+        /// Load data to grid control
+        /// </summary>
+        /// <param name="grdc"></param>
+        /// <param name="grdv"></param>
+        /// <param name="binding"></param>
+        public static void LoadGridControl(GridControl grdc,GridView grdv,BindingSource binding)
+        {
+            grdc.DataSource = null;
+            grdc.DataSource = binding;
+            grdv.BestFitColumns();
+        }
+        
+        
     }
 }

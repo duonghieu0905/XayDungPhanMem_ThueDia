@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.FormChucNang;
 
 namespace GUI.FormQuanLy
 {
@@ -24,6 +25,11 @@ namespace GUI.FormQuanLy
         private void AddInfoToSuccessForm()
         {
             ExpressionMethod.AddToComboBoxKindOfTitle(cbx_LoaiDia);
+        }
+
+        private void btn_ThemDia_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

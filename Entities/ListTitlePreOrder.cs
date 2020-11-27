@@ -16,7 +16,7 @@ namespace Entities
         public virtual Title Title { get; set; }
         public int IdTitle { get; set; }
         public int NumberOfDisk { get; set; }
-        public int StatusProcess { get; set; }
+        public string StatusProcess { get; set; }
         public ICollection<DetailPreOrder> DetailPreOrders { get; set; }
     }
 }

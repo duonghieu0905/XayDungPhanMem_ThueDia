@@ -276,6 +276,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_property_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add_property_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_tag_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_add_tag_32", resourceCulture);
@@ -479,6 +489,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap icons8_clapperboard_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_clapperboard_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_pane_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_close_pane_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
