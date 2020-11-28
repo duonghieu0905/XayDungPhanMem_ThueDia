@@ -16,5 +16,10 @@ namespace GUI.FormChucNang
         {
             InitializeComponent();
         }
+
+        private void btn_Dong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

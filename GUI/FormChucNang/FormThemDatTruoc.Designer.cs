@@ -1,6 +1,6 @@
 ﻿namespace GUI.FormChucNang
 {
-    partial class FormThemKH
+    partial class FormThemDatTruoc
     {
         /// <summary>
         /// Required designer variable.
@@ -30,33 +30,33 @@
         {
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_SoDienThoai = new DevExpress.XtraEditors.TextEdit();
+            this.txt_MaKhachHang = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel5 = new DevExpress.Utils.Layout.TablePanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_DiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.txt_SoLuong = new DevExpress.XtraEditors.TextEdit();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
-            this.btn_ThemKH = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ThemDatTruoc = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_TenKhachHang = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txt_TieuDe = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
             this.tablePanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_SoDienThoai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaKhachHang.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
             this.tablePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TenKhachHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TieuDe.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel3
@@ -66,7 +66,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel3.Controls.Add(this.label2);
-            this.tablePanel3.Controls.Add(this.txt_SoDienThoai);
+            this.tablePanel3.Controls.Add(this.txt_MaKhachHang);
             this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel3.Location = new System.Drawing.Point(181, 163);
             this.tablePanel3.Name = "tablePanel3";
@@ -85,21 +85,35 @@
             this.tablePanel3.SetRow(this.label2, 0);
             this.label2.Size = new System.Drawing.Size(169, 29);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Số Điện Thoại";
+            this.label2.Text = "Mã Khách Hàng";
             // 
-            // txt_SoDienThoai
+            // txt_MaKhachHang
             // 
-            this.tablePanel3.SetColumn(this.txt_SoDienThoai, 1);
-            this.txt_SoDienThoai.Location = new System.Drawing.Point(183, 24);
-            this.txt_SoDienThoai.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
-            this.txt_SoDienThoai.Name = "txt_SoDienThoai";
-            this.txt_SoDienThoai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SoDienThoai.Properties.Appearance.Options.UseFont = true;
-            this.txt_SoDienThoai.Properties.NullValuePrompt = "Số Điện Thoại";
-            this.txt_SoDienThoai.Properties.ReadOnly = true;
-            this.tablePanel3.SetRow(this.txt_SoDienThoai, 0);
-            this.txt_SoDienThoai.Size = new System.Drawing.Size(247, 26);
-            this.txt_SoDienThoai.TabIndex = 4;
+            this.tablePanel3.SetColumn(this.txt_MaKhachHang, 1);
+            this.txt_MaKhachHang.Location = new System.Drawing.Point(183, 24);
+            this.txt_MaKhachHang.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
+            this.txt_MaKhachHang.Name = "txt_MaKhachHang";
+            this.txt_MaKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaKhachHang.Properties.Appearance.Options.UseFont = true;
+            this.txt_MaKhachHang.Properties.NullValuePrompt = "Khách Hàng Đặt Trước";
+            this.txt_MaKhachHang.Properties.ReadOnly = true;
+            this.tablePanel3.SetRow(this.txt_MaKhachHang, 0);
+            this.txt_MaKhachHang.Size = new System.Drawing.Size(247, 26);
+            this.txt_MaKhachHang.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.tablePanel1.SetColumn(this.label1, 1);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(182, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.tablePanel1.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(436, 53);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Đặt Trước";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -108,7 +122,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
             // tablePanel1
             // 
@@ -141,7 +155,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel5.Controls.Add(this.label3);
-            this.tablePanel5.Controls.Add(this.txt_DiaChi);
+            this.tablePanel5.Controls.Add(this.txt_SoLuong);
             this.tablePanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel5.Location = new System.Drawing.Point(181, 243);
             this.tablePanel5.Name = "tablePanel5";
@@ -160,21 +174,21 @@
             this.tablePanel5.SetRow(this.label3, 0);
             this.label3.Size = new System.Drawing.Size(169, 29);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Địa Chỉ";
+            this.label3.Text = "Số Lượng";
             // 
-            // txt_DiaChi
+            // txt_SoLuong
             // 
-            this.tablePanel5.SetColumn(this.txt_DiaChi, 1);
-            this.txt_DiaChi.Location = new System.Drawing.Point(183, 24);
-            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DiaChi.Properties.Appearance.Options.UseFont = true;
-            this.txt_DiaChi.Properties.NullValuePrompt = "Địa Chỉ";
-            this.txt_DiaChi.Properties.ReadOnly = true;
-            this.tablePanel5.SetRow(this.txt_DiaChi, 0);
-            this.txt_DiaChi.Size = new System.Drawing.Size(247, 26);
-            this.txt_DiaChi.TabIndex = 4;
+            this.tablePanel5.SetColumn(this.txt_SoLuong, 1);
+            this.txt_SoLuong.Location = new System.Drawing.Point(183, 24);
+            this.txt_SoLuong.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
+            this.txt_SoLuong.Name = "txt_SoLuong";
+            this.txt_SoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SoLuong.Properties.Appearance.Options.UseFont = true;
+            this.txt_SoLuong.Properties.NullValuePrompt = "Số Lượng";
+            this.txt_SoLuong.Properties.ReadOnly = true;
+            this.tablePanel5.SetRow(this.txt_SoLuong, 0);
+            this.txt_SoLuong.Size = new System.Drawing.Size(247, 26);
+            this.txt_SoLuong.TabIndex = 4;
             // 
             // tablePanel4
             // 
@@ -182,7 +196,7 @@
             this.tablePanel4.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel4.Controls.Add(this.btn_ThemKH);
+            this.tablePanel4.Controls.Add(this.btn_ThemDatTruoc);
             this.tablePanel4.Controls.Add(this.btn_Dong);
             this.tablePanel4.Location = new System.Drawing.Point(181, 354);
             this.tablePanel4.Name = "tablePanel4";
@@ -192,20 +206,20 @@
             this.tablePanel4.Size = new System.Drawing.Size(438, 61);
             this.tablePanel4.TabIndex = 4;
             // 
-            // btn_ThemKH
+            // btn_ThemDatTruoc
             // 
-            this.btn_ThemKH.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemKH.Appearance.Options.UseFont = true;
-            this.tablePanel4.SetColumn(this.btn_ThemKH, 0);
-            this.btn_ThemKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_ThemKH.ImageOptions.Image = global::GUI.Properties.Resources.icons8_add_property_32;
-            this.btn_ThemKH.Location = new System.Drawing.Point(3, 3);
-            this.btn_ThemKH.Name = "btn_ThemKH";
-            this.btn_ThemKH.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.tablePanel4.SetRow(this.btn_ThemKH, 0);
-            this.btn_ThemKH.Size = new System.Drawing.Size(213, 55);
-            this.btn_ThemKH.TabIndex = 1;
-            this.btn_ThemKH.Text = "Thêm Khách Hàng";
+            this.btn_ThemDatTruoc.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemDatTruoc.Appearance.Options.UseFont = true;
+            this.tablePanel4.SetColumn(this.btn_ThemDatTruoc, 0);
+            this.btn_ThemDatTruoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ThemDatTruoc.ImageOptions.Image = global::GUI.Properties.Resources.icons8_add_property_32;
+            this.btn_ThemDatTruoc.Location = new System.Drawing.Point(3, 3);
+            this.btn_ThemDatTruoc.Name = "btn_ThemDatTruoc";
+            this.btn_ThemDatTruoc.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.tablePanel4.SetRow(this.btn_ThemDatTruoc, 0);
+            this.btn_ThemDatTruoc.Size = new System.Drawing.Size(213, 55);
+            this.btn_ThemDatTruoc.TabIndex = 1;
+            this.btn_ThemDatTruoc.Text = "Thêm Đặt Trước";
             // 
             // btn_Dong
             // 
@@ -230,7 +244,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel2.Controls.Add(this.label4);
-            this.tablePanel2.Controls.Add(this.txt_TenKhachHang);
+            this.tablePanel2.Controls.Add(this.txt_TieuDe);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel2.Location = new System.Drawing.Point(181, 83);
             this.tablePanel2.Name = "tablePanel2";
@@ -249,58 +263,44 @@
             this.tablePanel2.SetRow(this.label4, 0);
             this.label4.Size = new System.Drawing.Size(169, 29);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Tên Khách Hàng";
+            this.label4.Text = "Tiêu Đề";
             // 
-            // txt_TenKhachHang
+            // txt_TieuDe
             // 
-            this.tablePanel2.SetColumn(this.txt_TenKhachHang, 1);
-            this.txt_TenKhachHang.Location = new System.Drawing.Point(181, 24);
-            this.txt_TenKhachHang.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txt_TenKhachHang.Name = "txt_TenKhachHang";
-            this.txt_TenKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenKhachHang.Properties.Appearance.Options.UseFont = true;
-            this.txt_TenKhachHang.Properties.NullValuePrompt = "Tên Khách Hàng";
-            this.txt_TenKhachHang.Properties.ReadOnly = true;
-            this.tablePanel2.SetRow(this.txt_TenKhachHang, 0);
-            this.txt_TenKhachHang.Size = new System.Drawing.Size(251, 26);
-            this.txt_TenKhachHang.TabIndex = 4;
+            this.tablePanel2.SetColumn(this.txt_TieuDe, 1);
+            this.txt_TieuDe.Location = new System.Drawing.Point(181, 24);
+            this.txt_TieuDe.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txt_TieuDe.Name = "txt_TieuDe";
+            this.txt_TieuDe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TieuDe.Properties.Appearance.Options.UseFont = true;
+            this.txt_TieuDe.Properties.NullValuePrompt = "Tiêu Đề Đặt Trước";
+            this.txt_TieuDe.Properties.ReadOnly = true;
+            this.tablePanel2.SetRow(this.txt_TieuDe, 0);
+            this.txt_TieuDe.Size = new System.Drawing.Size(251, 26);
+            this.txt_TieuDe.TabIndex = 4;
             // 
-            // label1
-            // 
-            this.tablePanel1.SetColumn(this.label1, 1);
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(182, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(436, 53);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Thêm Khách Hàng";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // FormThemKH
+            // FormThemDatTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Name = "FormThemKH";
-            this.Text = "FormThemKH";
+            this.Name = "FormThemDatTruoc";
+            this.Text = "FormThemDatTruoc";
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
             this.tablePanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_SoDienThoai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaKhachHang.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).EndInit();
             this.tablePanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_DiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
             this.tablePanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TenKhachHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TieuDe.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,18 +309,18 @@
 
         private DevExpress.Utils.Layout.TablePanel tablePanel3;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.Utils.Layout.TablePanel tablePanel5;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.TextEdit txt_SoLuong;
         private DevExpress.Utils.Layout.TablePanel tablePanel4;
-        private DevExpress.XtraEditors.SimpleButton btn_ThemKH;
+        private DevExpress.XtraEditors.SimpleButton btn_ThemDatTruoc;
         private DevExpress.XtraEditors.SimpleButton btn_Dong;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.TextEdit txt_TenKhachHang;
+        private DevExpress.XtraEditors.TextEdit txt_TieuDe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.TextEdit txt_SoDienThoai;
+        private DevExpress.XtraEditors.TextEdit txt_MaKhachHang;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.Utils.Layout.TablePanel tablePanel5;
-        private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.TextEdit txt_DiaChi;
     }
 }

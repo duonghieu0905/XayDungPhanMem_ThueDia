@@ -41,7 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerBUL.cs" />
+    <Compile Include="DetailPreOrderBUL.cs" />
+    <Compile Include="DiskBUL.cs" />
+    <Compile Include="DiskTypeBUL.cs" />
+    <Compile Include="ListRentedBUL.cs" />
+    <Compile Include="ListTitlePreOrderBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TitleBUL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{049a2ba8-e379-4b0f-b8db-379330020772}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{20f06ccf-968e-43a5-b36d-9abb013d3800}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

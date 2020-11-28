@@ -24,12 +24,18 @@ namespace GUI.FormQuanLy
         }
         private void AddInfoToSuccessForm()
         {
-            ExpressionMethod.AddToComboBoxKindOfTitle(cbx_LoaiDia);
+           
         }
 
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
             FormThemDiaBS frm = new FormThemDiaBS();
+            frm.ShowDialog();
+        }
+
+        private void btn_ThemTieuDe_Click(object sender, EventArgs e)
+        {
+            FormThemTieuDe frm = new FormThemTieuDe();
             frm.ShowDialog();
         }
     }

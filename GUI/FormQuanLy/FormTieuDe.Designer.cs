@@ -44,7 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_TenTieuDe = new DevExpress.XtraEditors.TextEdit();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
-            this.cbx_LoaiDia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_ThemTieuDe = new DevExpress.XtraEditors.SimpleButton();
@@ -55,6 +54,10 @@
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
             this.tileNavCategory1 = new DevExpress.XtraBars.Navigation.TileNavCategory();
+            this.tablePanel7 = new DevExpress.Utils.Layout.TablePanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_SoLuongDia = new DevExpress.XtraEditors.TextEdit();
+            this.txt_LoaiDia = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_TieuDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +75,10 @@
             this.tablePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel7)).BeginInit();
+            this.tablePanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SoLuongDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_LoaiDia.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +86,7 @@
             this.tablePanel1.SetColumn(this.label1, 1);
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(29, 0);
+            this.label1.Location = new System.Drawing.Point(29, 4);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
             this.label1.Size = new System.Drawing.Size(642, 42);
@@ -99,12 +106,12 @@
             this.tablePanel1.SetColumn(this.grd_TieuDe, 1);
             this.grd_TieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_TieuDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_TieuDe.Location = new System.Drawing.Point(29, 100);
+            this.grd_TieuDe.Location = new System.Drawing.Point(29, 118);
             this.grd_TieuDe.MainView = this.gridView1;
             this.grd_TieuDe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grd_TieuDe.Name = "grd_TieuDe";
             this.tablePanel1.SetRow(this.grd_TieuDe, 2);
-            this.grd_TieuDe.Size = new System.Drawing.Size(642, 758);
+            this.grd_TieuDe.Size = new System.Drawing.Size(642, 740);
             this.grd_TieuDe.TabIndex = 2;
             this.grd_TieuDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -118,7 +125,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.tablePanel2.SetRow(this.pictureBox1, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(302, 287);
+            this.pictureBox1.Size = new System.Drawing.Size(302, 342);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -138,7 +145,7 @@
             this.btn_DatTruoc.Name = "btn_DatTruoc";
             this.btn_DatTruoc.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel4.SetRow(this.btn_DatTruoc, 0);
-            this.btn_DatTruoc.Size = new System.Drawing.Size(95, 68);
+            this.btn_DatTruoc.Size = new System.Drawing.Size(95, 84);
             this.btn_DatTruoc.TabIndex = 0;
             this.btn_DatTruoc.Text = "Đặt Trước";
             // 
@@ -157,7 +164,7 @@
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel4.SetRow(this.btn_Xoa, 0);
-            this.btn_Xoa.Size = new System.Drawing.Size(95, 68);
+            this.btn_Xoa.Size = new System.Drawing.Size(95, 84);
             this.btn_Xoa.TabIndex = 0;
             this.btn_Xoa.Text = "Xóa";
             // 
@@ -172,13 +179,13 @@
             this.tablePanel4.Controls.Add(this.btn_DatTruoc);
             this.tablePanel4.Controls.Add(this.btn_Xoa);
             this.tablePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel4.Location = new System.Drawing.Point(157, 425);
+            this.tablePanel4.Location = new System.Drawing.Point(157, 554);
             this.tablePanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel4.Name = "tablePanel4";
-            this.tablePanel2.SetRow(this.tablePanel4, 4);
+            this.tablePanel2.SetRow(this.tablePanel4, 5);
             this.tablePanel4.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel4.Size = new System.Drawing.Size(302, 76);
+            this.tablePanel4.Size = new System.Drawing.Size(302, 92);
             this.tablePanel4.TabIndex = 3;
             // 
             // btn_ThemDia
@@ -196,7 +203,7 @@
             this.btn_ThemDia.Name = "btn_ThemDia";
             this.btn_ThemDia.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel4.SetRow(this.btn_ThemDia, 0);
-            this.btn_ThemDia.Size = new System.Drawing.Size(95, 72);
+            this.btn_ThemDia.Size = new System.Drawing.Size(95, 88);
             this.btn_ThemDia.TabIndex = 1;
             this.btn_ThemDia.Text = "Thêm Đĩa";
             this.btn_ThemDia.Click += new System.EventHandler(this.btn_ThemDia_Click);
@@ -208,13 +215,14 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 25F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 25F)});
+            this.tablePanel2.Controls.Add(this.tablePanel7);
             this.tablePanel2.Controls.Add(this.tablePanel6);
             this.tablePanel2.Controls.Add(this.tablePanel5);
             this.tablePanel2.Controls.Add(this.tablePanel4);
             this.tablePanel2.Controls.Add(this.tablePanel3);
             this.tablePanel2.Controls.Add(this.pictureBox1);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(677, 100);
+            this.tablePanel2.Location = new System.Drawing.Point(677, 118);
             this.tablePanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel1.SetRow(this.tablePanel2, 2);
@@ -223,9 +231,10 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F)});
-            this.tablePanel2.Size = new System.Drawing.Size(616, 758);
+            this.tablePanel2.Size = new System.Drawing.Size(616, 740);
             this.tablePanel2.TabIndex = 3;
             // 
             // tablePanel6
@@ -236,10 +245,10 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel6.Controls.Add(this.label4);
             this.tablePanel6.Controls.Add(this.txt_DiaTrenKe);
-            this.tablePanel6.Location = new System.Drawing.Point(157, 341);
+            this.tablePanel6.Location = new System.Drawing.Point(157, 458);
             this.tablePanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel6.Name = "tablePanel6";
-            this.tablePanel2.SetRow(this.tablePanel6, 2);
+            this.tablePanel2.SetRow(this.tablePanel6, 3);
             this.tablePanel6.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel6.Size = new System.Drawing.Size(302, 34);
@@ -278,7 +287,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel5.Controls.Add(this.label3);
             this.tablePanel5.Controls.Add(this.txt_TenTieuDe);
-            this.tablePanel5.Location = new System.Drawing.Point(157, 299);
+            this.tablePanel5.Location = new System.Drawing.Point(157, 358);
             this.tablePanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel5.Name = "tablePanel5";
             this.tablePanel2.SetRow(this.tablePanel5, 1);
@@ -318,35 +327,23 @@
             this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
-            this.tablePanel3.Controls.Add(this.cbx_LoaiDia);
             this.tablePanel3.Controls.Add(this.label5);
+            this.tablePanel3.Controls.Add(this.txt_LoaiDia);
             this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel3.Location = new System.Drawing.Point(157, 383);
+            this.tablePanel3.Location = new System.Drawing.Point(157, 504);
             this.tablePanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel3.Name = "tablePanel3";
-            this.tablePanel2.SetRow(this.tablePanel3, 3);
+            this.tablePanel2.SetRow(this.tablePanel3, 4);
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(302, 34);
+            this.tablePanel3.Size = new System.Drawing.Size(302, 42);
             this.tablePanel3.TabIndex = 2;
-            // 
-            // cbx_LoaiDia
-            // 
-            this.tablePanel3.SetColumn(this.cbx_LoaiDia, 1);
-            this.cbx_LoaiDia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_LoaiDia.FormattingEnabled = true;
-            this.cbx_LoaiDia.Location = new System.Drawing.Point(124, 3);
-            this.cbx_LoaiDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbx_LoaiDia.Name = "cbx_LoaiDia";
-            this.tablePanel3.SetRow(this.cbx_LoaiDia, 0);
-            this.cbx_LoaiDia.Size = new System.Drawing.Size(175, 27);
-            this.cbx_LoaiDia.TabIndex = 4;
             // 
             // label5
             // 
             this.tablePanel3.SetColumn(this.label5, 0);
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 2);
+            this.label5.Location = new System.Drawing.Point(3, 6);
             this.label5.Name = "label5";
             this.tablePanel3.SetRow(this.label5, 0);
             this.label5.Size = new System.Drawing.Size(115, 29);
@@ -385,21 +382,22 @@
             this.tablePanel1.SetColumn(this.btn_ThemTieuDe, 1);
             this.btn_ThemTieuDe.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_ThemTieuDe.ImageOptions.Image = global::GUI.Properties.Resources.icons8_create_321;
-            this.btn_ThemTieuDe.Location = new System.Drawing.Point(30, 47);
+            this.btn_ThemTieuDe.Location = new System.Drawing.Point(30, 55);
             this.btn_ThemTieuDe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_ThemTieuDe.Name = "btn_ThemTieuDe";
             this.btn_ThemTieuDe.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel1.SetRow(this.btn_ThemTieuDe, 1);
-            this.btn_ThemTieuDe.Size = new System.Drawing.Size(173, 44);
+            this.btn_ThemTieuDe.Size = new System.Drawing.Size(173, 54);
             this.btn_ThemTieuDe.TabIndex = 1;
             this.btn_ThemTieuDe.Text = "Thêm Tiêu Đề Mới";
+            this.btn_ThemTieuDe.Click += new System.EventHandler(this.btn_ThemTieuDe_Click);
             // 
             // label2
             // 
             this.tablePanel1.SetColumn(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(677, 0);
+            this.label2.Location = new System.Drawing.Point(677, 4);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 0);
             this.label2.Size = new System.Drawing.Size(616, 42);
@@ -444,13 +442,68 @@
             // 
             this.tileNavCategory1.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             // 
+            // tablePanel7
+            // 
+            this.tablePanel2.SetColumn(this.tablePanel7, 1);
+            this.tablePanel7.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
+            this.tablePanel7.Controls.Add(this.label6);
+            this.tablePanel7.Controls.Add(this.txt_SoLuongDia);
+            this.tablePanel7.Location = new System.Drawing.Point(157, 403);
+            this.tablePanel7.Name = "tablePanel7";
+            this.tablePanel2.SetRow(this.tablePanel7, 2);
+            this.tablePanel7.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel7.Size = new System.Drawing.Size(302, 44);
+            this.tablePanel7.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.tablePanel7.SetColumn(this.label6, 0);
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 7);
+            this.label6.Name = "label6";
+            this.tablePanel7.SetRow(this.label6, 0);
+            this.label6.Size = new System.Drawing.Size(115, 29);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "SL Đĩa";
+            // 
+            // txt_SoLuongDia
+            // 
+            this.tablePanel7.SetColumn(this.txt_SoLuongDia, 1);
+            this.txt_SoLuongDia.Location = new System.Drawing.Point(124, 9);
+            this.txt_SoLuongDia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_SoLuongDia.Name = "txt_SoLuongDia";
+            this.txt_SoLuongDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SoLuongDia.Properties.Appearance.Options.UseFont = true;
+            this.txt_SoLuongDia.Properties.NullValuePrompt = "Số Lượng Đĩa";
+            this.txt_SoLuongDia.Properties.ReadOnly = true;
+            this.tablePanel7.SetRow(this.txt_SoLuongDia, 0);
+            this.txt_SoLuongDia.Size = new System.Drawing.Size(175, 26);
+            this.txt_SoLuongDia.TabIndex = 2;
+            // 
+            // txt_LoaiDia
+            // 
+            this.tablePanel3.SetColumn(this.txt_LoaiDia, 1);
+            this.txt_LoaiDia.Location = new System.Drawing.Point(124, 8);
+            this.txt_LoaiDia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_LoaiDia.Name = "txt_LoaiDia";
+            this.txt_LoaiDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_LoaiDia.Properties.Appearance.Options.UseFont = true;
+            this.txt_LoaiDia.Properties.NullValuePrompt = "Loại Đĩa";
+            this.txt_LoaiDia.Properties.ReadOnly = true;
+            this.tablePanel3.SetRow(this.txt_LoaiDia, 0);
+            this.txt_LoaiDia.Size = new System.Drawing.Size(175, 26);
+            this.txt_LoaiDia.TabIndex = 2;
+            // 
             // FormTieuDe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1296, 862);
             this.Controls.Add(this.tablePanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormTieuDe";
             this.Text = "FormTieuDe";
             this.Load += new System.EventHandler(this.FormTieuDe_Load);
@@ -472,6 +525,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel7)).EndInit();
+            this.tablePanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SoLuongDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_LoaiDia.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -502,8 +559,11 @@
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.TextEdit txt_TenTieuDe;
         private DevExpress.Utils.Layout.TablePanel tablePanel3;
-        private System.Windows.Forms.ComboBox cbx_LoaiDia;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.SimpleButton btn_ThemDia;
+        private DevExpress.Utils.Layout.TablePanel tablePanel7;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.TextEdit txt_SoLuongDia;
+        private DevExpress.XtraEditors.TextEdit txt_LoaiDia;
     }
 }

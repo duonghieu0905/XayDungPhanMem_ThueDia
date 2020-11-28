@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.FormChucNang
 {
-    public partial class FormThemKH : Form
+    public partial class FormThemDatTruoc : Form
     {
-        public FormThemKH()
+        public FormThemDatTruoc()
         {
             InitializeComponent();
         }

@@ -44,6 +44,7 @@
             this.bar_BtnLog = new DevExpress.XtraBars.BarButtonItem();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.fluent_label = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.sa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             this.SuspendLayout();
@@ -239,7 +240,8 @@
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bar_TrangThai,
-            this.bar_BtnLog});
+            this.bar_BtnLog,
+            this.barButtonItem1});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
@@ -247,6 +249,7 @@
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.bar_TrangThai);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem1);
             // 
             // bar_TrangThai
             // 
@@ -291,6 +294,12 @@
             this.fluent_label.Size = new System.Drawing.Size(931, 753);
             this.fluent_label.TabIndex = 0;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -331,5 +340,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement adceBaoCao;
         public DevExpress.XtraBars.BarSubItem bar_TrangThai;
         private DevExpress.XtraBars.Navigation.AccordionControlElement adceLoaiDia;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

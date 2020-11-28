@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
+            this.btn_ThemDiaBS = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Dong = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_SoLuongDia = new DevExpress.XtraEditors.TextEdit();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_TieuDe = new DevExpress.XtraEditors.TextEdit();
-            this.btn_Them = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Dong = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -61,20 +61,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 356);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.tablePanel1.SetColumn(this.label1, 1);
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(171, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(410, 53);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Thêm CD/DVD";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tablePanel1
             // 
@@ -105,7 +91,7 @@
             this.tablePanel4.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel4.Controls.Add(this.btn_Them);
+            this.tablePanel4.Controls.Add(this.btn_ThemDiaBS);
             this.tablePanel4.Controls.Add(this.btn_Dong);
             this.tablePanel4.Location = new System.Drawing.Point(170, 249);
             this.tablePanel4.Name = "tablePanel4";
@@ -114,6 +100,37 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePanel4.Size = new System.Drawing.Size(412, 61);
             this.tablePanel4.TabIndex = 4;
+            // 
+            // btn_ThemDiaBS
+            // 
+            this.btn_ThemDiaBS.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemDiaBS.Appearance.Options.UseFont = true;
+            this.tablePanel4.SetColumn(this.btn_ThemDiaBS, 0);
+            this.btn_ThemDiaBS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_ThemDiaBS.ImageOptions.Image = global::GUI.Properties.Resources.icons8_add_property_32;
+            this.btn_ThemDiaBS.Location = new System.Drawing.Point(3, 3);
+            this.btn_ThemDiaBS.Name = "btn_ThemDiaBS";
+            this.btn_ThemDiaBS.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.tablePanel4.SetRow(this.btn_ThemDiaBS, 0);
+            this.btn_ThemDiaBS.Size = new System.Drawing.Size(200, 55);
+            this.btn_ThemDiaBS.TabIndex = 1;
+            this.btn_ThemDiaBS.Text = "Thêm Bản Sao";
+            // 
+            // btn_Dong
+            // 
+            this.btn_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dong.Appearance.Options.UseFont = true;
+            this.tablePanel4.SetColumn(this.btn_Dong, 1);
+            this.btn_Dong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Dong.ImageOptions.Image = global::GUI.Properties.Resources.icons8_close_pane_32;
+            this.btn_Dong.Location = new System.Drawing.Point(209, 3);
+            this.btn_Dong.Name = "btn_Dong";
+            this.btn_Dong.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.tablePanel4.SetRow(this.btn_Dong, 0);
+            this.btn_Dong.Size = new System.Drawing.Size(200, 55);
+            this.btn_Dong.TabIndex = 0;
+            this.btn_Dong.Text = "Đóng";
+            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
             // 
             // tablePanel3
             // 
@@ -199,35 +216,19 @@
             this.txt_TieuDe.Size = new System.Drawing.Size(235, 26);
             this.txt_TieuDe.TabIndex = 4;
             // 
-            // btn_Them
+            // label1
             // 
-            this.btn_Them.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Appearance.Options.UseFont = true;
-            this.tablePanel4.SetColumn(this.btn_Them, 0);
-            this.btn_Them.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Them.ImageOptions.Image = global::GUI.Properties.Resources.icons8_add_property_32;
-            this.btn_Them.Location = new System.Drawing.Point(3, 3);
-            this.btn_Them.Name = "btn_Them";
-            this.btn_Them.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.tablePanel4.SetRow(this.btn_Them, 0);
-            this.btn_Them.Size = new System.Drawing.Size(200, 55);
-            this.btn_Them.TabIndex = 1;
-            this.btn_Them.Text = "Thêm Bản Sao";
-            // 
-            // btn_Dong
-            // 
-            this.btn_Dong.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dong.Appearance.Options.UseFont = true;
-            this.tablePanel4.SetColumn(this.btn_Dong, 1);
-            this.btn_Dong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Dong.ImageOptions.Image = global::GUI.Properties.Resources.icons8_close_pane_32;
-            this.btn_Dong.Location = new System.Drawing.Point(209, 3);
-            this.btn_Dong.Name = "btn_Dong";
-            this.btn_Dong.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.tablePanel4.SetRow(this.btn_Dong, 0);
-            this.btn_Dong.Size = new System.Drawing.Size(200, 55);
-            this.btn_Dong.TabIndex = 0;
-            this.btn_Dong.Text = "Đóng";
+            this.tablePanel1.SetColumn(this.label1, 1);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(171, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.tablePanel1.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(410, 53);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Thêm CD/DVD";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormThemDiaBS
             // 
@@ -258,7 +259,7 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.Utils.Layout.TablePanel tablePanel4;
-        private DevExpress.XtraEditors.SimpleButton btn_Them;
+        private DevExpress.XtraEditors.SimpleButton btn_ThemDiaBS;
         private DevExpress.XtraEditors.SimpleButton btn_Dong;
         private DevExpress.Utils.Layout.TablePanel tablePanel3;
         private System.Windows.Forms.Label label2;

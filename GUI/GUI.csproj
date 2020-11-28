@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionMethod.cs" />
+    <Compile Include="FormChucNang\FormThemDatTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormThemDatTruoc.Designer.cs">
+      <DependentUpon>FormThemDatTruoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChucNang\FormThemDiaBS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormChucNang\FormThemDatTruoc.resx">
+      <DependentUpon>FormThemDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChucNang\FormThemDiaBS.resx">
       <DependentUpon>FormThemDiaBS.cs</DependentUpon>
     </EmbeddedResource>
