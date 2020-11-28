@@ -7,13 +7,10 @@
     {
         public override void Up()
         {
-            Sql(@"create trigger ");
-
         }
         
         public override void Down()
         {
-
         }
     }
 }

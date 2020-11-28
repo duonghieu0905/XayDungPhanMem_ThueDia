@@ -13,7 +13,7 @@ namespace Entities
         [Key]
         public int IdDisk { get; set; }
         public virtual Title Title { get; set; }
-        public int IdTitle { get; set; }
+        public int? IdTitle { get; set; }
         public string DiskRentalStatus { get; set; }
         public string DiskStatus { get; set; }
     }

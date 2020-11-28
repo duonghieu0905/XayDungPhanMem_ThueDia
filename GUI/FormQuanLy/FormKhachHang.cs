@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GUI.FormChucNang;
 
 namespace GUI.FormQuanLy
 {
@@ -24,6 +25,13 @@ namespace GUI.FormQuanLy
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_ThemKhachHang_Click(object sender, EventArgs e)
+        {
+            FormThemKH frm = new FormThemKH();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.ShowDialog();
         }
     }
 }

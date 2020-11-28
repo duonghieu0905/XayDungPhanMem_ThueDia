@@ -23,17 +23,17 @@
                 c => new
                     {
                         IdListRented = c.Int(nullable: false, identity: true),
-                        IdDisk = c.Int(nullable: false),
-                        IdCustomer = c.Int(nullable: false),
-                        LateFee = c.Double(nullable: false),
-                        RentalDate = c.DateTime(nullable: false),
-                        ExpectedReturnDate = c.DateTime(nullable: false),
-                        ActualReturnDate = c.DateTime(nullable: false),
+                        IdDisk = c.Int(),
+                        IdCustomer = c.Int(),
+                        LateFee = c.Double(),
+                        RentalDate = c.DateTime(),
+                        ExpectedReturnDate = c.DateTime(),
+                        ActualReturnDate = c.DateTime(),
                         StatusOnBill = c.String(),
                     })
                 .PrimaryKey(t => t.IdListRented)
-                .ForeignKey("dbo.Customers", t => t.IdCustomer, cascadeDelete: true)
-                .ForeignKey("dbo.Disks", t => t.IdDisk, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.IdCustomer)
+                .ForeignKey("dbo.Disks", t => t.IdDisk)
                 .Index(t => t.IdDisk)
                 .Index(t => t.IdCustomer);
             
@@ -42,12 +42,12 @@
                 c => new
                     {
                         IdDisk = c.Int(nullable: false, identity: true),
-                        IdTitle = c.Int(nullable: false),
-                        DiskRentalStatus = c.Int(nullable: false),
+                        IdTitle = c.Int(),
+                        DiskRentalStatus = c.String(),
                         DiskStatus = c.String(),
                     })
                 .PrimaryKey(t => t.IdDisk)
-                .ForeignKey("dbo.Titles", t => t.IdTitle, cascadeDelete: true)
+                .ForeignKey("dbo.Titles", t => t.IdTitle)
                 .Index(t => t.IdTitle);
             
             CreateTable(
@@ -55,13 +55,13 @@
                 c => new
                     {
                         IdTitle = c.Int(nullable: false, identity: true),
-                        IdDiskType = c.Int(nullable: false),
+                        IdDiskType = c.Int(),
                         NameTitle = c.String(),
-                        TotalDisk = c.Int(nullable: false),
-                        TotalDiskOnShelf = c.Int(nullable: false),
+                        TotalDisk = c.Int(),
+                        TotalDiskOnShelf = c.Int(),
                     })
                 .PrimaryKey(t => t.IdTitle)
-                .ForeignKey("dbo.DiskTypes", t => t.IdDiskType, cascadeDelete: true)
+                .ForeignKey("dbo.DiskTypes", t => t.IdDiskType)
                 .Index(t => t.IdDiskType);
             
             CreateTable(
@@ -69,10 +69,10 @@
                 c => new
                     {
                         IdDiskType = c.Int(nullable: false, identity: true),
-                        TypeName = c.Int(nullable: false),
-                        TimeRented = c.Int(nullable: false),
-                        LateFee = c.Double(nullable: false),
-                        Price = c.Double(nullable: false),
+                        TypeName = c.String(),
+                        TimeRented = c.Int(),
+                        LateFee = c.Double(),
+                        Price = c.Double(),
                     })
                 .PrimaryKey(t => t.IdDiskType);
             
@@ -81,14 +81,14 @@
                 c => new
                     {
                         IdListTitlePreOrder = c.Int(nullable: false, identity: true),
-                        IdCustomer = c.Int(nullable: false),
-                        IdTitle = c.Int(nullable: false),
-                        NumberOfDisk = c.Int(nullable: false),
-                        StatusProcess = c.Int(nullable: false),
+                        IdCustomer = c.Int(),
+                        IdTitle = c.Int(),
+                        NumberOfDisk = c.Int(),
+                        StatusProcess = c.String(),
                     })
                 .PrimaryKey(t => t.IdListTitlePreOrder)
-                .ForeignKey("dbo.Customers", t => t.IdCustomer, cascadeDelete: true)
-                .ForeignKey("dbo.Titles", t => t.IdTitle, cascadeDelete: true)
+                .ForeignKey("dbo.Customers", t => t.IdCustomer)
+                .ForeignKey("dbo.Titles", t => t.IdTitle)
                 .Index(t => t.IdCustomer)
                 .Index(t => t.IdTitle);
             
@@ -97,14 +97,14 @@
                 c => new
                     {
                         IdDetailPreOrder = c.Int(nullable: false, identity: true),
-                        IdCustomer = c.Int(nullable: false),
-                        IdDisk = c.Int(nullable: false),
-                        IdListTitlePreOrder = c.Int(nullable: false),
+                        IdCustomer = c.Int(),
+                        IdDisk = c.Int(),
+                        IdListTitlePreOrder = c.Int(),
                     })
                 .PrimaryKey(t => t.IdDetailPreOrder)
-                .ForeignKey("dbo.Customers", t => t.IdCustomer, cascadeDelete: true)
-                .ForeignKey("dbo.Disks", t => t.IdDisk, cascadeDelete: true)
-                .ForeignKey("dbo.ListTitlePreOrders", t => t.IdListTitlePreOrder, cascadeDelete: false)
+                .ForeignKey("dbo.Customers", t => t.IdCustomer)
+                .ForeignKey("dbo.Disks", t => t.IdDisk)
+                .ForeignKey("dbo.ListTitlePreOrders", t => t.IdListTitlePreOrder)
                 .Index(t => t.IdCustomer)
                 .Index(t => t.IdDisk)
                 .Index(t => t.IdListTitlePreOrder);

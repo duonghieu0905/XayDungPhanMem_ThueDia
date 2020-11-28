@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI.FormChucNang
 {
-    public partial class FormThemDia : DevExpress.XtraEditors.XtraForm
+    public partial class FormThemKH : Form
     {
-        public FormThemDia()
+        public FormThemKH()
         {
             InitializeComponent();
         }

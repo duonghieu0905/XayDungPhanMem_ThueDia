@@ -73,23 +73,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionMethod.cs" />
-    <Compile Include="FormChucNang\FormThemDia.cs">
+    <Compile Include="FormChucNang\FormThemDiaBS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChucNang\FormThemDia.Designer.cs">
-      <DependentUpon>FormThemDia.cs</DependentUpon>
+    <Compile Include="FormChucNang\FormThemDiaBS.Designer.cs">
+      <DependentUpon>FormThemDiaBS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChucNang\FormThemKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormThemKH.Designer.cs">
+      <DependentUpon>FormThemKH.cs</DependentUpon>
     </Compile>
     <Compile Include="FormChucNang\FormThemTieuDe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormChucNang\FormThemTieuDe.Designer.cs">
       <DependentUpon>FormThemTieuDe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormChucNang\ThemKhachHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormChucNang\ThemKhachHang.Designer.cs">
-      <DependentUpon>ThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuanLy\FormCD.cs">
       <SubType>Form</SubType>
@@ -135,11 +135,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormChucNang\FormThemDia.resx">
-      <DependentUpon>FormThemDia.cs</DependentUpon>
+    <EmbeddedResource Include="FormChucNang\FormThemDiaBS.resx">
+      <DependentUpon>FormThemDiaBS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChucNang\ThemKhachHang.resx">
-      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="FormChucNang\FormThemKH.resx">
+      <DependentUpon>FormThemKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChucNang\FormThemTieuDe.resx">
+      <DependentUpon>FormThemTieuDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy\FormBaoCao.resx">
       <DependentUpon>FormBaoCao.cs</DependentUpon>

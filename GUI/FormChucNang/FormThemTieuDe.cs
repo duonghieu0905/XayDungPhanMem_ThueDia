@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GUI.FormChucNang
 {
-    public partial class FormThemTieuDe : Form
+    public partial class FormThemTieuDe : DevExpress.XtraEditors.XtraForm
     {
         public FormThemTieuDe()
         {

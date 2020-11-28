@@ -301,11 +301,11 @@
             this.Controls.Add(this.sa);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.IconOptions.Image = global::GUI.Properties.Resources.icons8_cd_642;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.NavigationControl = this.sa;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhóm 11 - App Cho Thuê Đĩa";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sa)).EndInit();

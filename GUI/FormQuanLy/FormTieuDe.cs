@@ -29,7 +29,8 @@ namespace GUI.FormQuanLy
 
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
-            
+            FormThemDiaBS frm = new FormThemDiaBS();
+            frm.ShowDialog();
         }
     }
 }
