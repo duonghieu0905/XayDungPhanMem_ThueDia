@@ -97,6 +97,13 @@ namespace GUI
             fluent.Controls.Add(frm);
             frm.Show();
         }
+        public static void AddFormToPanel(Panel panel, Form frm)
+        {
+            panel.Controls.Clear();
+            ConfigForm(frm);
+            panel.Controls.Add(frm);
+            frm.Show();
+        }
         /// <summary>
         /// List bắt đầu cho đăng nhập
         /// </summary>

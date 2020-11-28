@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionMethod.cs" />
+    <Compile Include="FormChucNang\FormLienHeDatTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormLienHeDatTruoc.Designer.cs">
+      <DependentUpon>FormLienHeDatTruoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChucNang\FormThemDatTruoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,24 @@
     </Compile>
     <Compile Include="FormChucNang\FormThemTieuDe.Designer.cs">
       <DependentUpon>FormThemTieuDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDichVu\FormDatTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDichVu\FormDatTruoc.Designer.cs">
+      <DependentUpon>FormDatTruoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDichVu\FormThueDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDichVu\FormThueDia.Designer.cs">
+      <DependentUpon>FormThueDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDichVu\FormTraDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDichVu\FormTraDia.Designer.cs">
+      <DependentUpon>FormTraDia.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuanLy\FormCD.cs">
       <SubType>Form</SubType>
@@ -141,6 +165,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormChucNang\FormLienHeDatTruoc.resx">
+      <DependentUpon>FormLienHeDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChucNang\FormThemDatTruoc.resx">
       <DependentUpon>FormThemDatTruoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +179,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormChucNang\FormThemTieuDe.resx">
       <DependentUpon>FormThemTieuDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDichVu\FormDatTruoc.resx">
+      <DependentUpon>FormDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDichVu\FormThueDia.resx">
+      <DependentUpon>FormThueDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDichVu\FormTraDia.resx">
+      <DependentUpon>FormTraDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLy\FormBaoCao.resx">
       <DependentUpon>FormBaoCao.cs</DependentUpon>
@@ -376,7 +412,7 @@
     <None Include="Resources\icons8_guest_321.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FormDichVu\" />
+    <None Include="Resources\icons8_delete_view_32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images-removebg-preview.png" />
@@ -497,6 +533,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_close_pane_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_task_completed_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_inspection_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unavailable_16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

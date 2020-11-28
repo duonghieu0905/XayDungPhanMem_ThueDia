@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using GUI.FormQuanLy;
+using GUI.FormDichVu;
 using System.Collections.Generic;
 
 namespace GUI
@@ -86,17 +87,20 @@ namespace GUI
 
         private void acdeThueDia_Click(object sender, EventArgs e)
         {
-
+            FormThueDia frm = new FormThueDia();
+            ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
         private void adceTraDia_Click(object sender, EventArgs e)
         {
-
+            FormTraDia frm = new FormTraDia();
+            ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
         private void adceDatTruoc_Click(object sender, EventArgs e)
         {
-
+            FormDatTruoc frm = new FormDatTruoc();
+            ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
         private void adceKhachHang_Click(object sender, EventArgs e)
