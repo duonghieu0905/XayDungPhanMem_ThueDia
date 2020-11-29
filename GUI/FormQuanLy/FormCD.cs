@@ -12,10 +12,11 @@ namespace GUI.FormQuanLy
 {
     public partial class FormCD : DevExpress.XtraEditors.XtraForm
     {
-        
-        public FormCD()
+        private string auth;
+        public FormCD(string auth)
         {
             InitializeComponent();
+            this.auth = auth;
         }
 
         private void FormCD_Load(object sender, EventArgs e)
@@ -25,6 +26,14 @@ namespace GUI.FormQuanLy
         private void AddInfoToSuccessForm() {
             ExpressionMethod.AddToComboBoxStatusCD(cbx_TrangThaiDia);
             ExpressionMethod.AddToComboBoxStatusRentCD(cbx_TrangThaiThue);
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            if (ExpressionMethod.CheckAuth(this.auth))
+            {
+
+            }
         }
     }
 }

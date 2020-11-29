@@ -73,11 +73,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExpressionMethod.cs" />
+    <Compile Include="FormChucNang\FormDanhSachDatTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormDanhSachDatTruoc.Designer.cs">
+      <DependentUpon>FormDanhSachDatTruoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChucNang\FormLienHeDatTruoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormChucNang\FormLienHeDatTruoc.Designer.cs">
       <DependentUpon>FormLienHeDatTruoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChucNang\FormThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChucNang\FormThanhToan.Designer.cs">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="FormChucNang\FormThemDatTruoc.cs">
       <SubType>Form</SubType>
@@ -165,8 +177,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormChucNang\FormDanhSachDatTruoc.resx">
+      <DependentUpon>FormDanhSachDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChucNang\FormLienHeDatTruoc.resx">
       <DependentUpon>FormLienHeDatTruoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChucNang\FormThanhToan.resx">
+      <DependentUpon>FormThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormChucNang\FormThemDatTruoc.resx">
       <DependentUpon>FormThemDatTruoc.cs</DependentUpon>
@@ -542,6 +560,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_unavailable_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_medium_risk_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_important_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_medium_risk_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_box_important_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_medium_risk_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{20f06ccf-968e-43a5-b36d-9abb013d3800}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_pane_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_card_payment_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiply_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checkmark_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checked_322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -180,7 +180,33 @@ namespace GUI
             grdc.DataSource = binding;
             grdv.BestFitColumns();
         }
-        
+        /// <summary>
+        /// Check quyền quản lí
+        /// true là quản lí
+        /// false là nhân viên
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <returns></returns>
+        public static bool CheckAuth(string auth)
+        {
+            if (auth.Equals("Nhân Viên"))
+            {
+                MessageBox.Show("Chỉ quản lý có quyền thực hiện chức này.\nVui lòng đăng nhập để thực hiện", "Phân Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Config list view
+        /// </summary>
+        /// <param name="lstv"></param>
+        public static void ConfigListView(ListView lstv)
+        {
+            lstv.GridLines = true;
+            lstv.View = View.Details;
+            lstv.CheckBoxes = true;
+            lstv.FullRowSelect = true;
+        }
         
     }
 }

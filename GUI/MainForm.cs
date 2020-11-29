@@ -105,19 +105,19 @@ namespace GUI
 
         private void adceKhachHang_Click(object sender, EventArgs e)
         {
-            FormKhachHang frm = new FormKhachHang();
+            FormKhachHang frm = new FormKhachHang(bar_TrangThai.Caption);
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
         private void acdeTieuDe_Click(object sender, EventArgs e)
         {
-            FormTieuDe frm = new FormTieuDe();
+            FormTieuDe frm = new FormTieuDe(bar_TrangThai.Caption);
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
         private void acdeCD_Click(object sender, EventArgs e)
         {
-            FormCD frm = new FormCD();
+            FormCD frm = new FormCD(bar_TrangThai.Caption);
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
@@ -131,6 +131,10 @@ namespace GUI
         {
             FormLoaiDia frm = new FormLoaiDia();
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
+        }
+        private void btn_Warning_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
         }
     }
 }

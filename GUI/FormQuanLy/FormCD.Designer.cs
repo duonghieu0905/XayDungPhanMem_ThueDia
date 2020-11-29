@@ -82,10 +82,11 @@
             // 
             this.tablePanel6.SetColumn(this.label4, 0);
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 7);
+            this.label4.Location = new System.Drawing.Point(4, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.tablePanel6.SetRow(this.label4, 0);
-            this.label4.Size = new System.Drawing.Size(124, 28);
+            this.label4.Size = new System.Drawing.Size(159, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "SL Trên Kệ";
             // 
@@ -97,37 +98,38 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel6.Controls.Add(this.label4);
             this.tablePanel6.Controls.Add(this.txt_DiaTrenKe);
-            this.tablePanel6.Location = new System.Drawing.Point(168, 454);
-            this.tablePanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablePanel6.Location = new System.Drawing.Point(216, 539);
+            this.tablePanel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel6.Name = "tablePanel6";
             this.tablePanel2.SetRow(this.tablePanel6, 3);
             this.tablePanel6.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel6.Size = new System.Drawing.Size(324, 42);
+            this.tablePanel6.Size = new System.Drawing.Size(417, 49);
             this.tablePanel6.TabIndex = 5;
             // 
             // txt_DiaTrenKe
             // 
             this.tablePanel6.SetColumn(this.txt_DiaTrenKe, 1);
-            this.txt_DiaTrenKe.Location = new System.Drawing.Point(133, 8);
-            this.txt_DiaTrenKe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_DiaTrenKe.Location = new System.Drawing.Point(171, 9);
+            this.txt_DiaTrenKe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_DiaTrenKe.Name = "txt_DiaTrenKe";
             this.txt_DiaTrenKe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiaTrenKe.Properties.Appearance.Options.UseFont = true;
             this.txt_DiaTrenKe.Properties.NullValuePrompt = "Số Lượng Trên Kệ";
             this.txt_DiaTrenKe.Properties.ReadOnly = true;
             this.tablePanel6.SetRow(this.txt_DiaTrenKe, 0);
-            this.txt_DiaTrenKe.Size = new System.Drawing.Size(188, 26);
+            this.txt_DiaTrenKe.Size = new System.Drawing.Size(242, 30);
             this.txt_DiaTrenKe.TabIndex = 2;
             // 
             // label3
             // 
             this.tablePanel5.SetColumn(this.label3, 0);
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 7);
+            this.label3.Location = new System.Drawing.Point(4, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.tablePanel5.SetRow(this.label3, 0);
-            this.label3.Size = new System.Drawing.Size(124, 28);
+            this.label3.Size = new System.Drawing.Size(159, 33);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tên Tiêu Đề";
             // 
@@ -135,20 +137,20 @@
             // 
             this.tablePanel1.SetColumn(this.grd_TieuDe, 1);
             this.grd_TieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grd_TieuDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grd_TieuDe.Location = new System.Drawing.Point(31, 104);
+            this.grd_TieuDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grd_TieuDe.Location = new System.Drawing.Point(40, 123);
             this.grd_TieuDe.MainView = this.gridView1;
-            this.grd_TieuDe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grd_TieuDe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grd_TieuDe.Name = "grd_TieuDe";
             this.tablePanel1.SetRow(this.grd_TieuDe, 2);
-            this.grd_TieuDe.Size = new System.Drawing.Size(688, 954);
+            this.grd_TieuDe.Size = new System.Drawing.Size(885, 948);
             this.grd_TieuDe.TabIndex = 2;
             this.grd_TieuDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.DetailHeight = 431;
+            this.gridView1.DetailHeight = 512;
             this.gridView1.GridControl = this.grd_TieuDe;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowFooter = true;
@@ -156,15 +158,15 @@
             // txt_TenTieuDe
             // 
             this.tablePanel5.SetColumn(this.txt_TenTieuDe, 1);
-            this.txt_TenTieuDe.Location = new System.Drawing.Point(133, 8);
-            this.txt_TenTieuDe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_TenTieuDe.Location = new System.Drawing.Point(171, 9);
+            this.txt_TenTieuDe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_TenTieuDe.Name = "txt_TenTieuDe";
             this.txt_TenTieuDe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenTieuDe.Properties.Appearance.Options.UseFont = true;
             this.txt_TenTieuDe.Properties.NullValuePrompt = "Tên Tiêu Đề";
             this.txt_TenTieuDe.Properties.ReadOnly = true;
             this.tablePanel5.SetRow(this.txt_TenTieuDe, 0);
-            this.txt_TenTieuDe.Size = new System.Drawing.Size(188, 26);
+            this.txt_TenTieuDe.Size = new System.Drawing.Size(242, 30);
             this.txt_TenTieuDe.TabIndex = 2;
             // 
             // tablePanel5
@@ -175,13 +177,13 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel5.Controls.Add(this.label3);
             this.tablePanel5.Controls.Add(this.txt_TenTieuDe);
-            this.tablePanel5.Location = new System.Drawing.Point(168, 404);
-            this.tablePanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablePanel5.Location = new System.Drawing.Point(216, 480);
+            this.tablePanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel5.Name = "tablePanel5";
             this.tablePanel2.SetRow(this.tablePanel5, 2);
             this.tablePanel5.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel5.Size = new System.Drawing.Size(324, 42);
+            this.tablePanel5.Size = new System.Drawing.Size(417, 49);
             this.tablePanel5.TabIndex = 4;
             // 
             // tileNavCategory1
@@ -230,8 +232,8 @@
             this.tablePanel2.Controls.Add(this.tablePanel3);
             this.tablePanel2.Controls.Add(this.pictureBox1);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(725, 104);
-            this.tablePanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablePanel2.Location = new System.Drawing.Point(932, 123);
+            this.tablePanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel1.SetRow(this.tablePanel2, 2);
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
@@ -243,7 +245,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 100F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F)});
-            this.tablePanel2.Size = new System.Drawing.Size(660, 954);
+            this.tablePanel2.Size = new System.Drawing.Size(849, 948);
             this.tablePanel2.TabIndex = 3;
             // 
             // tablePanel7
@@ -255,13 +257,13 @@
             this.tablePanel7.Controls.Add(this.cbx_TrangThaiThue);
             this.tablePanel7.Controls.Add(this.label6);
             this.tablePanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel7.Location = new System.Drawing.Point(168, 552);
-            this.tablePanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tablePanel7.Location = new System.Drawing.Point(216, 654);
+            this.tablePanel7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.tablePanel7.Name = "tablePanel7";
             this.tablePanel2.SetRow(this.tablePanel7, 5);
             this.tablePanel7.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel7.Size = new System.Drawing.Size(324, 46);
+            this.tablePanel7.Size = new System.Drawing.Size(417, 55);
             this.tablePanel7.TabIndex = 6;
             // 
             // cbx_TrangThaiThue
@@ -269,21 +271,22 @@
             this.tablePanel7.SetColumn(this.cbx_TrangThaiThue, 1);
             this.cbx_TrangThaiThue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_TrangThaiThue.FormattingEnabled = true;
-            this.cbx_TrangThaiThue.Location = new System.Drawing.Point(133, 9);
-            this.cbx_TrangThaiThue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbx_TrangThaiThue.Location = new System.Drawing.Point(171, 11);
+            this.cbx_TrangThaiThue.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbx_TrangThaiThue.Name = "cbx_TrangThaiThue";
             this.tablePanel7.SetRow(this.cbx_TrangThaiThue, 0);
-            this.cbx_TrangThaiThue.Size = new System.Drawing.Size(188, 27);
+            this.cbx_TrangThaiThue.Size = new System.Drawing.Size(242, 32);
             this.cbx_TrangThaiThue.TabIndex = 4;
             // 
             // label6
             // 
             this.tablePanel7.SetColumn(this.label6, 0);
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 9);
+            this.label6.Location = new System.Drawing.Point(4, 11);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.tablePanel7.SetRow(this.label6, 0);
-            this.label6.Size = new System.Drawing.Size(124, 28);
+            this.label6.Size = new System.Drawing.Size(159, 33);
             this.label6.TabIndex = 3;
             this.label6.Text = "TT Thuê";
             // 
@@ -298,13 +301,13 @@
             this.tablePanel4.Controls.Add(this.btn_CapNhat);
             this.tablePanel4.Controls.Add(this.btn_Xoa);
             this.tablePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel4.Location = new System.Drawing.Point(168, 604);
-            this.tablePanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablePanel4.Location = new System.Drawing.Point(216, 716);
+            this.tablePanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel4.Name = "tablePanel4";
             this.tablePanel2.SetRow(this.tablePanel4, 6);
             this.tablePanel4.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel4.Size = new System.Drawing.Size(324, 92);
+            this.tablePanel4.Size = new System.Drawing.Size(417, 109);
             this.tablePanel4.TabIndex = 3;
             // 
             // btn_XacNhan
@@ -317,12 +320,12 @@
             this.btn_XacNhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_XacNhan.ImageOptions.Image = global::GUI.Properties.Resources.icons8_inspection_32;
             this.btn_XacNhan.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_XacNhan.Location = new System.Drawing.Point(111, 4);
-            this.btn_XacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_XacNhan.Location = new System.Drawing.Point(143, 5);
+            this.btn_XacNhan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_XacNhan.Name = "btn_XacNhan";
             this.btn_XacNhan.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel4.SetRow(this.btn_XacNhan, 0);
-            this.btn_XacNhan.Size = new System.Drawing.Size(102, 84);
+            this.btn_XacNhan.Size = new System.Drawing.Size(131, 99);
             this.btn_XacNhan.TabIndex = 1;
             this.btn_XacNhan.Text = "Xác nhận";
             // 
@@ -336,12 +339,12 @@
             this.btn_CapNhat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_CapNhat.ImageOptions.Image = global::GUI.Properties.Resources.icons8_renew_32;
             this.btn_CapNhat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_CapNhat.Location = new System.Drawing.Point(3, 4);
-            this.btn_CapNhat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_CapNhat.Location = new System.Drawing.Point(4, 5);
+            this.btn_CapNhat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_CapNhat.Name = "btn_CapNhat";
             this.btn_CapNhat.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel4.SetRow(this.btn_CapNhat, 0);
-            this.btn_CapNhat.Size = new System.Drawing.Size(102, 84);
+            this.btn_CapNhat.Size = new System.Drawing.Size(131, 99);
             this.btn_CapNhat.TabIndex = 0;
             this.btn_CapNhat.Text = "Cập nhật";
             // 
@@ -355,14 +358,15 @@
             this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Xoa.ImageOptions.Image = global::GUI.Properties.Resources.icons8_delete_file_32;
             this.btn_Xoa.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
-            this.btn_Xoa.Location = new System.Drawing.Point(219, 4);
-            this.btn_Xoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Xoa.Location = new System.Drawing.Point(282, 5);
+            this.btn_Xoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel4.SetRow(this.btn_Xoa, 0);
-            this.btn_Xoa.Size = new System.Drawing.Size(102, 84);
+            this.btn_Xoa.Size = new System.Drawing.Size(131, 99);
             this.btn_Xoa.TabIndex = 0;
             this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // tablePanel3
             // 
@@ -373,13 +377,13 @@
             this.tablePanel3.Controls.Add(this.cbx_TrangThaiDia);
             this.tablePanel3.Controls.Add(this.label5);
             this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel3.Location = new System.Drawing.Point(168, 504);
-            this.tablePanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablePanel3.Location = new System.Drawing.Point(216, 598);
+            this.tablePanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel3.Name = "tablePanel3";
             this.tablePanel2.SetRow(this.tablePanel3, 4);
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(324, 42);
+            this.tablePanel3.Size = new System.Drawing.Size(417, 49);
             this.tablePanel3.TabIndex = 2;
             // 
             // cbx_TrangThaiDia
@@ -387,21 +391,22 @@
             this.tablePanel3.SetColumn(this.cbx_TrangThaiDia, 1);
             this.cbx_TrangThaiDia.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_TrangThaiDia.FormattingEnabled = true;
-            this.cbx_TrangThaiDia.Location = new System.Drawing.Point(133, 7);
-            this.cbx_TrangThaiDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbx_TrangThaiDia.Location = new System.Drawing.Point(171, 8);
+            this.cbx_TrangThaiDia.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbx_TrangThaiDia.Name = "cbx_TrangThaiDia";
             this.tablePanel3.SetRow(this.cbx_TrangThaiDia, 0);
-            this.cbx_TrangThaiDia.Size = new System.Drawing.Size(188, 27);
+            this.cbx_TrangThaiDia.Size = new System.Drawing.Size(242, 32);
             this.cbx_TrangThaiDia.TabIndex = 4;
             // 
             // label5
             // 
             this.tablePanel3.SetColumn(this.label5, 0);
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 7);
+            this.label5.Location = new System.Drawing.Point(4, 8);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.tablePanel3.SetRow(this.label5, 0);
-            this.label5.Size = new System.Drawing.Size(124, 28);
+            this.label5.Size = new System.Drawing.Size(159, 33);
             this.label5.TabIndex = 3;
             this.label5.Text = "TT Đĩa";
             // 
@@ -410,11 +415,11 @@
             this.tablePanel2.SetColumn(this.pictureBox1, 1);
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::GUI.Properties.Resources._77123921dd5f589b1a8693e5e445ec1f;
-            this.pictureBox1.Location = new System.Drawing.Point(168, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(216, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.tablePanel2.SetRow(this.pictureBox1, 0);
-            this.pictureBox1.Size = new System.Drawing.Size(324, 342);
+            this.pictureBox1.Size = new System.Drawing.Size(417, 406);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -429,10 +434,11 @@
             this.tablePanel1.SetColumn(this.label1, 1);
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(31, 4);
+            this.label1.Location = new System.Drawing.Point(40, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(688, 42);
+            this.label1.Size = new System.Drawing.Size(885, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kho CD/DVD";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -442,10 +448,11 @@
             this.tablePanel1.SetColumn(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(725, 4);
+            this.label2.Location = new System.Drawing.Point(932, 4);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 0);
-            this.label2.Size = new System.Drawing.Size(660, 42);
+            this.label2.Size = new System.Drawing.Size(849, 50);
             this.label2.TabIndex = 0;
             this.label2.Text = "Thông Tin Chi Tiết CD/DVD";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -462,22 +469,22 @@
             this.tablePanel1.Controls.Add(this.label2);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tablePanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 50F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1388, 1062);
+            this.tablePanel1.Size = new System.Drawing.Size(1785, 1076);
             this.tablePanel1.TabIndex = 2;
             // 
             // FormCD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1388, 1062);
+            this.ClientSize = new System.Drawing.Size(1785, 1076);
             this.Controls.Add(this.tablePanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCD";
             this.Text = "FormCD";
             this.Load += new System.EventHandler(this.FormCD_Load);

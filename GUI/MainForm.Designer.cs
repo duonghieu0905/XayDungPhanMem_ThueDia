@@ -42,7 +42,7 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.bar_TrangThai = new DevExpress.XtraBars.BarSubItem();
             this.bar_BtnLog = new DevExpress.XtraBars.BarButtonItem();
-            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_Warning = new DevExpress.XtraBars.BarButtonItem();
             this.fluent_label = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.sa)).BeginInit();
@@ -58,12 +58,12 @@
             this.sa.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.adceGroupDichVu,
             this.adceGroupQuanLy});
-            this.sa.Location = new System.Drawing.Point(0, 21);
-            this.sa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sa.Location = new System.Drawing.Point(0, 25);
+            this.sa.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.sa.Name = "sa";
             this.sa.OptionsMinimizing.AllowMinimizeMode = DevExpress.Utils.DefaultBoolean.True;
             this.sa.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Hidden;
-            this.sa.Size = new System.Drawing.Size(229, 753);
+            this.sa.Size = new System.Drawing.Size(294, 894);
             this.sa.TabIndex = 1;
             this.sa.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -241,15 +241,15 @@
             this.fluentDesignFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bar_TrangThai,
             this.bar_BtnLog,
-            this.barButtonItem1});
+            this.btn_Warning});
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1160, 21);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1491, 25);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             this.fluentDesignFormControl1.TitleItemLinks.Add(this.bar_TrangThai);
-            this.fluentDesignFormControl1.TitleItemLinks.Add(this.barButtonItem1);
+            this.fluentDesignFormControl1.TitleItemLinks.Add(this.btn_Warning);
             // 
             // bar_TrangThai
             // 
@@ -278,40 +278,40 @@
             this.bar_BtnLog.Name = "bar_BtnLog";
             this.bar_BtnLog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bar_BtnLog_ItemClick);
             // 
-            // barLargeButtonItem1
+            // btn_Warning
             // 
-            this.barLargeButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barLargeButtonItem1.Caption = "barLargeButtonItem1";
-            this.barLargeButtonItem1.Id = 2;
-            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.btn_Warning.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.btn_Warning.Hint = "Hiện tại không có đặt trước";
+            this.btn_Warning.Id = 0;
+            this.btn_Warning.ImageOptions.Image = global::GUI.Properties.Resources.icons8_medium_risk_321;
+            this.btn_Warning.Name = "btn_Warning";
+            this.btn_Warning.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Warning_ItemClick);
             // 
             // fluent_label
             // 
             this.fluent_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluent_label.Location = new System.Drawing.Point(229, 21);
-            this.fluent_label.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fluent_label.Location = new System.Drawing.Point(294, 25);
+            this.fluent_label.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.fluent_label.Name = "fluent_label";
-            this.fluent_label.Size = new System.Drawing.Size(931, 753);
+            this.fluent_label.Size = new System.Drawing.Size(1197, 894);
             this.fluent_label.TabIndex = 0;
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barButtonItem1.Id = 0;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 774);
+            this.ClientSize = new System.Drawing.Size(1491, 919);
             this.ControlContainer = this.fluent_label;
             this.Controls.Add(this.fluent_label);
             this.Controls.Add(this.sa);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Image = global::GUI.Properties.Resources.icons8_cd_642;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "MainForm";
             this.NavigationControl = this.sa;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -335,11 +335,11 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement acdeTieuDe;
         private DevExpress.XtraBars.Navigation.AccordionControlElement acdeCD;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluent_label;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
         private DevExpress.XtraBars.BarButtonItem bar_BtnLog;
         private DevExpress.XtraBars.Navigation.AccordionControlElement adceBaoCao;
         public DevExpress.XtraBars.BarSubItem bar_TrangThai;
         private DevExpress.XtraBars.Navigation.AccordionControlElement adceLoaiDia;
+        private DevExpress.XtraBars.BarButtonItem btn_Warning;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

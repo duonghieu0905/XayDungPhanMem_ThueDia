@@ -23,5 +23,11 @@ namespace GUI.FormDichVu
             FormLienHeDatTruoc frm = new FormLienHeDatTruoc();
             ExpressionMethod.AddFormToPanel(pnl, frm);
         }
+
+        private void btn_DanhSachDatTruoc_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            FormDanhSachDatTruoc frm = new FormDanhSachDatTruoc();
+            ExpressionMethod.AddFormToPanel(pnl, frm);
+        }
     }
 }

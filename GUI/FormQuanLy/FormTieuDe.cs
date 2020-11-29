@@ -13,30 +13,44 @@ namespace GUI.FormQuanLy
 {
     public partial class FormTieuDe : DevExpress.XtraEditors.XtraForm
     {
-        public FormTieuDe()
+        private string auth;
+        public FormTieuDe(string auth)
         {
             InitializeComponent();
+            this.auth = auth;
         }
 
         private void FormTieuDe_Load(object sender, EventArgs e)
         {
-            AddInfoToSuccessForm();
-        }
-        private void AddInfoToSuccessForm()
-        {
-           
+
         }
 
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
-            FormThemDiaBS frm = new FormThemDiaBS();
-            frm.ShowDialog();
+            if (ExpressionMethod.CheckAuth(this.auth))
+            {
+                FormThemDiaBS frm = new FormThemDiaBS();
+                frm.ShowDialog();
+            }
+          
         }
 
         private void btn_ThemTieuDe_Click(object sender, EventArgs e)
         {
-            FormThemTieuDe frm = new FormThemTieuDe();
-            frm.ShowDialog();
+            if (ExpressionMethod.CheckAuth(this.auth))
+            {
+                FormThemTieuDe frm = new FormThemTieuDe();
+                frm.ShowDialog();
+            }
+           
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            if (ExpressionMethod.CheckAuth(this.auth))
+            {
+
+            }
         }
     }
 }
