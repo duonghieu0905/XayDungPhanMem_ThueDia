@@ -16,5 +16,14 @@ namespace GUI.FormQuanLy
         {
             InitializeComponent();
         }
+
+        private void FormLoaiDia_Load(object sender, EventArgs e)
+        {
+            ConfigToSuccessView();
+        }
+        private void ConfigToSuccessView()
+        {
+            ExpressionMethod.EditGridView(gridView1);
+        }
     }
 }

@@ -16,5 +16,15 @@ namespace GUI.FormChucNang
         {
             InitializeComponent();
         }
+
+        private void FormDanhSachDatTruoc_Load(object sender, EventArgs e)
+        {
+            ConfigToSuccessView();
+        }
+        private void ConfigToSuccessView()
+        {
+            ExpressionMethod.EditGridView(gridView1);
+            ExpressionMethod.EditGridView(gridView2);
+        }
     }
 }

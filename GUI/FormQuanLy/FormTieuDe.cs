@@ -23,7 +23,11 @@ namespace GUI.FormQuanLy
 
         private void FormTieuDe_Load(object sender, EventArgs e)
         {
-
+            ConfigToSuccessView();
+        }
+        private void ConfigToSuccessView()
+        {
+            ExpressionMethod.EditGridView(gridView1);
         }
 
         private void btn_ThemDia_Click(object sender, EventArgs e)

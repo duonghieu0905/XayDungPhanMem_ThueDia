@@ -22,7 +22,11 @@ namespace GUI.FormQuanLy
 
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
-            
+            ConfigToSuccessView();
+        }
+        private void ConfigToSuccessView()
+        {
+            ExpressionMethod.EditGridView(gridView1);
         }
 
         private void btn_ThemKhachHang_Click(object sender, EventArgs e)

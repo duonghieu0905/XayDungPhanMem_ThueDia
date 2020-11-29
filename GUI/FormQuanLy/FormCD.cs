@@ -24,6 +24,7 @@ namespace GUI.FormQuanLy
             AddInfoToSuccessForm();
         }
         private void AddInfoToSuccessForm() {
+            ExpressionMethod.EditGridView(gridView1);
             ExpressionMethod.AddToComboBoxStatusCD(cbx_TrangThaiDia);
             ExpressionMethod.AddToComboBoxStatusRentCD(cbx_TrangThaiThue);
         }

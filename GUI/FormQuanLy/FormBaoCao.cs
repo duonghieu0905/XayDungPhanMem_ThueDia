@@ -29,6 +29,9 @@ namespace GUI.FormQuanLy
         {
             ExpressionMethod.AddOptionToReportCustomer(cbx_ThongKeKH);
             ExpressionMethod.AddOptionToReportTitle(cbx_BaoCaoTieuDe);
+            ExpressionMethod.EditGridView(gridView1);
+            ExpressionMethod.EditGridView(gridView2);
+            ExpressionMethod.EditGridView(gridView3);
         }
 
        

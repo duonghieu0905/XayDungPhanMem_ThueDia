@@ -25,6 +25,7 @@ namespace GUI.FormDichVu
         private void AddInfoToAccessForm()
         {
             tablePnl.Rows[4].Height = 610;
+            ExpressionMethod.EditGridView(gridView1);
         }
 
         private void btn_TimKiemKhachHang_Click(object sender, EventArgs e)
