@@ -109,11 +109,11 @@
     <Compile Include="FormChucNang\FormThemKH.Designer.cs">
       <DependentUpon>FormThemKH.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChucNang\FormThemTieuDe.cs">
+    <Compile Include="FormChucNang\FormThemTD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChucNang\FormThemTieuDe.Designer.cs">
-      <DependentUpon>FormThemTieuDe.cs</DependentUpon>
+    <Compile Include="FormChucNang\FormThemTD.Designer.cs">
+      <DependentUpon>FormThemTD.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDichVu\FormDatTruoc.cs">
       <SubType>Form</SubType>
@@ -195,8 +195,8 @@
     <EmbeddedResource Include="FormChucNang\FormThemKH.resx">
       <DependentUpon>FormThemKH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChucNang\FormThemTieuDe.resx">
-      <DependentUpon>FormThemTieuDe.cs</DependentUpon>
+    <EmbeddedResource Include="FormChucNang\FormThemTD.resx">
+      <DependentUpon>FormThemTD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDichVu\FormDatTruoc.resx">
       <DependentUpon>FormDatTruoc.cs</DependentUpon>
@@ -599,6 +599,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_inspection_322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_hand_with_pen_32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

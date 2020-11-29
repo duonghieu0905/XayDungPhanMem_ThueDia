@@ -12,9 +12,11 @@ namespace GUI.FormChucNang
 {
     public partial class FormThemDatTruoc : Form
     {
-        public FormThemDatTruoc()
+        private string matd;
+        public FormThemDatTruoc(string matd)
         {
             InitializeComponent();
+            this.matd = matd;
         }
 
         private void btn_Dong_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@
             this.tileNavPane1.DefaultCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             this.tileNavPane1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tileNavPane1.Location = new System.Drawing.Point(0, 0);
-            this.tileNavPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tileNavPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tileNavPane1.Name = "tileNavPane1";
             this.tileNavPane1.Size = new System.Drawing.Size(1200, 66);
             this.tileNavPane1.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             this.pnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl.Location = new System.Drawing.Point(0, 66);
-            this.pnl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl.Margin = new System.Windows.Forms.Padding(4);
             this.pnl.Name = "pnl";
             this.pnl.Size = new System.Drawing.Size(1200, 592);
             this.pnl.TabIndex = 1;
@@ -88,6 +88,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormDatTruoc";
             this.Text = "FormDatTruoc";
+            this.Load += new System.EventHandler(this.FormDatTruoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tileNavPane1)).EndInit();
             this.ResumeLayout(false);
 

@@ -29,5 +29,11 @@ namespace GUI.FormDichVu
             FormDanhSachDatTruoc frm = new FormDanhSachDatTruoc();
             ExpressionMethod.AddFormToPanel(pnl, frm);
         }
+
+        private void FormDatTruoc_Load(object sender, EventArgs e)
+        {
+            FormDanhSachDatTruoc frm = new FormDanhSachDatTruoc();
+            ExpressionMethod.AddFormToPanel(pnl, frm);
+        }
     }
 }

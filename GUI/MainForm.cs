@@ -16,9 +16,10 @@ namespace GUI
             InitializeComponent();
         }
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            
+        { 
             ConfigView();
+            FormThueDia frm = new FormThueDia();
+            ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
         /// <summary>
         /// Config Design

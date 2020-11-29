@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.FormChucNang
 {
-    public partial class FormThemTieuDe : DevExpress.XtraEditors.XtraForm
+    public partial class FormThemTD : Form
     {
-        public FormThemTieuDe()
+        public FormThemTD()
         {
             InitializeComponent();
-        }
-
-        private void btn_Dong_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

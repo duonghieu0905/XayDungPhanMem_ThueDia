@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.FormChucNang;
+using Entities;
 
 namespace GUI.FormQuanLy
 {
@@ -39,7 +40,7 @@ namespace GUI.FormQuanLy
         {
             if (ExpressionMethod.CheckAuth(this.auth))
             {
-                FormThemTieuDe frm = new FormThemTieuDe();
+                FormThemTD frm = new FormThemTD();
                 frm.ShowDialog();
             }
            
@@ -51,6 +52,12 @@ namespace GUI.FormQuanLy
             {
 
             }
+        }
+
+        private void btn_DatTruoc_Click(object sender, EventArgs e)
+        {
+            FormThemDatTruoc frm = new FormThemDatTruoc(null);
+            frm.ShowDialog();
         }
     }
 }
