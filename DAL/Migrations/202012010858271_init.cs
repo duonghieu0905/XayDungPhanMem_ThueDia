@@ -57,7 +57,6 @@
                         IdTitle = c.Int(nullable: false, identity: true),
                         IdDiskType = c.Int(),
                         NameTitle = c.String(),
-                        TotalDisk = c.Int(),
                         TotalDiskOnShelf = c.Int(),
                     })
                 .PrimaryKey(t => t.IdTitle)
