@@ -10,7 +10,6 @@ namespace Entities
         public virtual DiskType DiskType { get; set; }
         public int? IdDiskType { get; set; }
         public string NameTitle { get; set; }
-        public int? TotalDisk { get; set; }
         public int? TotalDiskOnShelf { get; set; }
         public ICollection<Disk> Disks { get; set; }
     }
