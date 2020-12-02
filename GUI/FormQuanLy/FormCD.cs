@@ -8,41 +8,78 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUL;
+using Entities;
 
 namespace GUI.FormQuanLy
 {
     public partial class FormCD : DevExpress.XtraEditors.XtraForm
     {
         private string auth;
-        private BindingSource binding= new BindingSource();
+        private BindingSource binding;
         private DiskBUL db;
         public FormCD(string auth)
         {
             InitializeComponent();
             this.auth = auth;
+            db = new DiskBUL();
+            binding = new BindingSource();
         }
 
         private void FormCD_Load(object sender, EventArgs e)
         {
-            AddInfoToSuccessForm();
-            
+            AddInfoToSuccessForm();     
+            LoadView();
+           
         }
         private void AddInfoToSuccessForm() {
-            ExpressionMethod.EditGridView(gridView1);
+            ExpressionMethod.EditGridView(grv_CD);
             ExpressionMethod.AddToComboBoxStatusCD(cbx_TrangThaiDia);
             ExpressionMethod.AddToComboBoxStatusRentCD(cbx_TrangThaiThue);
-            db = new DiskBUL();
+        }
+        private void LoadView()
+        {
             binding.DataSource = db.GetDisks();
-            ExpressionMethod.LoadGridControl(grdc_CD, gridView1, binding);
+            ExpressionMethod.LoadGridControl(grdc_CD, grv_CD, binding);
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             if (ExpressionMethod.CheckAuth(this.auth))
             {
-
+                DialogResult result = MessageBox.Show("Xác nhận xóa đĩa bản sao này", "Xóa đĩa bản sao", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (result == DialogResult.Yes)
+                {
+                    if (db.Delete(Int32.Parse(pictureBox1.Tag.ToString())))
+                    {
+                        MessageBox.Show("Xóa thành công", "Xóa đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        binding.DataSource = db.GetDisks();
+                    }
+                    else
+                        MessageBox.Show("Xóa thất bại", "Xóa đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
-        
+
+        private void grv_CD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            LoadToTextBox(grv_CD.GetSelectedRows()[0]);
+        }
+        private void LoadToTextBox(int indexSelected)
+        {
+            Disk disk = binding[indexSelected] as Disk;
+            pictureBox1.Tag = disk.IdDisk;
+            txt_TenTieuDe.Text = disk.IdTitle.ToString();
+            switch (disk.DiskStatus)
+            {
+                case "Good": cbx_TrangThaiDia.SelectedIndex = 0; break;
+                case "Damage": cbx_TrangThaiDia.SelectedIndex = 1; break;
+            }
+            switch (disk.DiskRentalStatus)
+            {
+                case "OnShelf": cbx_TrangThaiThue.SelectedIndex = 0; break;
+                case "OnHold": cbx_TrangThaiThue.SelectedIndex = 1; break;
+                case "Rented":cbx_TrangThaiThue.SelectedIndex = 2; break;
+            }
+        }
     }
 }

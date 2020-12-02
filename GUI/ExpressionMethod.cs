@@ -3,6 +3,8 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using BUL;
+using Entities;
 
 namespace GUI
 {
@@ -48,12 +50,10 @@ namespace GUI
         public static void AddToComboBoxKindOfTitle(ComboBox cbx)
         {
             ConfigComboBox(cbx);
-            List<dynamic> lst = new List<dynamic>();
-            lst.Add(new { id = 1, value = "Đĩa Phim" });
-            lst.Add(new { id = 2, value = "Đĩa Game" });
+            var lst = new DiskTypeBUL().GetDiskTypes();
             cbx.DataSource = lst;
-            cbx.DisplayMember = "value";
-            cbx.ValueMember = "id";
+            cbx.DisplayMember = "TypeName";
+            cbx.ValueMember = "IdDiskType";
         }
         /// <summary>
         /// Thêm vào combobox các trạng thái thuê: Trên giá đang chờ và đã thuê
@@ -63,9 +63,9 @@ namespace GUI
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
-            lst.Add(new { id = 1, value = "Trên Giá" });
-            lst.Add(new { id = 2, value = "Đang Chờ" });
-            lst.Add(new { id = 3, value = "Đã Thuê" });
+            lst.Add(new { id = 1, value = "OnShelf" });
+            lst.Add(new { id = 2, value = "OnHold" });
+            lst.Add(new { id = 3, value = "Rented" });
             cbx.DataSource = lst;
             cbx.DisplayMember = "value";
             cbx.ValueMember = "id";
@@ -78,9 +78,8 @@ namespace GUI
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
-            lst.Add(new { id = 1, value = "Tốt" });
-            lst.Add(new { id = 2, value = "Bị Mất" });
-            lst.Add(new { id = 3, value = "Bị Hỏng" });
+            lst.Add(new { id = 1, value = "Good" });
+            lst.Add(new { id = 2, value = "Damage" });
             cbx.DataSource = lst;
             cbx.DisplayMember = "value";
             cbx.ValueMember = "id";
@@ -206,6 +205,15 @@ namespace GUI
             lstv.View = View.Details;
             lstv.CheckBoxes = true;
             lstv.FullRowSelect = true;
+        }
+        /// <summary>
+        /// Kiểm tra số điện thoại
+        /// </summary>
+        /// <param name="phoneNumber"></param>
+        /// <returns></returns>
+        public static bool CheckPhoneNumber(string phoneNumber)
+        {
+            return false;
         }
         
     }

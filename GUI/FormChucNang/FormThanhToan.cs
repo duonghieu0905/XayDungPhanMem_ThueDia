@@ -79,5 +79,10 @@ namespace GUI.FormChucNang
             for (int i = 0; i < lstvThanhToanTreHan.Items.Count; i++)
                 lstvThanhToanTreHan.Items[i].Checked = false;
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

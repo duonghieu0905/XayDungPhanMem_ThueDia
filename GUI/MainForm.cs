@@ -68,6 +68,7 @@ namespace GUI
                 ExpressionMethod.AddFormToFluent(fluent_label, frm);
                 this.form = frm;
                 frm.btn_Login.Click += Btn_Login_Click;
+                frm.Enter+= Btn_Login_Click;
             }
 
         }

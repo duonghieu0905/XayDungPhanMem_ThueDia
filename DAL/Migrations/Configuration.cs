@@ -18,6 +18,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            
         }
 
         protected override void Seed(DAL.QuanLyThueDiaDBContext context)

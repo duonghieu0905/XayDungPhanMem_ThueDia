@@ -6,5 +6,10 @@
         {
             InitializeComponent();
         }
+
+        private void LoginForm_Load(object sender, System.EventArgs e)
+        {
+
+        }    
     }
 }

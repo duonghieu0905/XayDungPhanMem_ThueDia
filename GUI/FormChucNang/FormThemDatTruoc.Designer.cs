@@ -100,7 +100,6 @@
             this.txt_MaKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MaKhachHang.Properties.Appearance.Options.UseFont = true;
             this.txt_MaKhachHang.Properties.NullValuePrompt = "Khách Hàng Đặt Trước";
-            this.txt_MaKhachHang.Properties.ReadOnly = true;
             this.tablePanel3.SetRow(this.txt_MaKhachHang, 0);
             this.txt_MaKhachHang.Size = new System.Drawing.Size(304, 30);
             this.txt_MaKhachHang.TabIndex = 4;
@@ -195,7 +194,6 @@
             this.txt_SoLuong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SoLuong.Properties.Appearance.Options.UseFont = true;
             this.txt_SoLuong.Properties.NullValuePrompt = "Số Lượng";
-            this.txt_SoLuong.Properties.ReadOnly = true;
             this.tablePanel5.SetRow(this.txt_SoLuong, 0);
             this.txt_SoLuong.Size = new System.Drawing.Size(304, 30);
             this.txt_SoLuong.TabIndex = 4;
@@ -232,6 +230,7 @@
             this.btn_ThemDatTruoc.Size = new System.Drawing.Size(264, 67);
             this.btn_ThemDatTruoc.TabIndex = 1;
             this.btn_ThemDatTruoc.Text = "Thêm Đặt Trước";
+            this.btn_ThemDatTruoc.Click += new System.EventHandler(this.btn_ThemDatTruoc_Click);
             // 
             // btn_Dong
             // 
@@ -306,6 +305,7 @@
             this.Name = "FormThemDatTruoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThemDatTruoc";
+            this.Load += new System.EventHandler(this.FormThemDatTruoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
             this.tablePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaKhachHang.Properties)).EndInit();

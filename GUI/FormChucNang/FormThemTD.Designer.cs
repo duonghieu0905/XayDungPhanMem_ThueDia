@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_TenKhachHang = new DevExpress.XtraEditors.TextEdit();
+            this.txt_TenTieuDe = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -54,7 +54,7 @@
             this.tablePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TenKhachHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenTieuDe.Properties)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,13 +117,13 @@
             // txt_SoLuongDia
             // 
             this.tablePanel5.SetColumn(this.txt_SoLuongDia, 1);
+            this.txt_SoLuongDia.EditValue = 1;
             this.txt_SoLuongDia.Location = new System.Drawing.Point(184, 21);
             this.txt_SoLuongDia.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.txt_SoLuongDia.Name = "txt_SoLuongDia";
             this.txt_SoLuongDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SoLuongDia.Properties.Appearance.Options.UseFont = true;
             this.txt_SoLuongDia.Properties.NullValuePrompt = "Số Lượng Đĩa";
-            this.txt_SoLuongDia.Properties.ReadOnly = true;
             this.tablePanel5.SetRow(this.txt_SoLuongDia, 0);
             this.txt_SoLuongDia.Size = new System.Drawing.Size(242, 30);
             this.txt_SoLuongDia.TabIndex = 4;
@@ -160,6 +160,7 @@
             this.btn_ThemTT.Size = new System.Drawing.Size(210, 64);
             this.btn_ThemTT.TabIndex = 1;
             this.btn_ThemTT.Text = "Thêm Tiêu Đề";
+            this.btn_ThemTT.Click += new System.EventHandler(this.btn_ThemTT_Click);
             // 
             // btn_Dong
             // 
@@ -176,6 +177,7 @@
             this.btn_Dong.Size = new System.Drawing.Size(210, 64);
             this.btn_Dong.TabIndex = 0;
             this.btn_Dong.Text = "Đóng";
+            this.btn_Dong.Click += new System.EventHandler(this.btn_Dong_Click);
             // 
             // tablePanel3
             // 
@@ -228,7 +230,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 40F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 60F)});
             this.tablePanel2.Controls.Add(this.label4);
-            this.tablePanel2.Controls.Add(this.txt_TenKhachHang);
+            this.tablePanel2.Controls.Add(this.txt_TenTieuDe);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel2.Location = new System.Drawing.Point(182, 84);
             this.tablePanel2.Margin = new System.Windows.Forms.Padding(4);
@@ -253,19 +255,18 @@
             this.label4.Text = "Tên Tiêu Đề";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txt_TenKhachHang
+            // txt_TenTieuDe
             // 
-            this.tablePanel2.SetColumn(this.txt_TenKhachHang, 1);
-            this.txt_TenKhachHang.Location = new System.Drawing.Point(182, 21);
-            this.txt_TenKhachHang.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
-            this.txt_TenKhachHang.Name = "txt_TenKhachHang";
-            this.txt_TenKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenKhachHang.Properties.Appearance.Options.UseFont = true;
-            this.txt_TenKhachHang.Properties.NullValuePrompt = "Tiêu Đề";
-            this.txt_TenKhachHang.Properties.ReadOnly = true;
-            this.tablePanel2.SetRow(this.txt_TenKhachHang, 0);
-            this.txt_TenKhachHang.Size = new System.Drawing.Size(246, 30);
-            this.txt_TenKhachHang.TabIndex = 4;
+            this.tablePanel2.SetColumn(this.txt_TenTieuDe, 1);
+            this.txt_TenTieuDe.Location = new System.Drawing.Point(182, 21);
+            this.txt_TenTieuDe.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
+            this.txt_TenTieuDe.Name = "txt_TenTieuDe";
+            this.txt_TenTieuDe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenTieuDe.Properties.Appearance.Options.UseFont = true;
+            this.txt_TenTieuDe.Properties.NullValuePrompt = "Tiêu Đề";
+            this.tablePanel2.SetRow(this.txt_TenTieuDe, 0);
+            this.txt_TenTieuDe.Size = new System.Drawing.Size(246, 30);
+            this.txt_TenTieuDe.TabIndex = 4;
             // 
             // label1
             // 
@@ -301,6 +302,7 @@
             this.Name = "FormThemTD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormThemTD";
+            this.Load += new System.EventHandler(this.FormThemTD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).EndInit();
@@ -312,7 +314,7 @@
             this.tablePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
             this.tablePanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TenKhachHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TenTieuDe.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -332,7 +334,7 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.TextEdit txt_TenKhachHang;
+        private DevExpress.XtraEditors.TextEdit txt_TenTieuDe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
     }

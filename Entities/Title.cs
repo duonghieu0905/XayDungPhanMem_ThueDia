@@ -9,13 +9,15 @@ namespace Entities
         [Key]
         [DisplayName("Mã Tiêu Đề")]
         public int IdTitle { get; set; }
+        [Display(Order =-1)]
         public virtual DiskType DiskType { get; set; }
         [DisplayName("Mã Loại Đĩa")]
         public int? IdDiskType { get; set; }
         [DisplayName("Tên Tiêu Đề")]
         public string NameTitle { get; set; }
-        [DisplayName("Số Lượng Còn Trên Kệ")]
+        [DisplayName("SL Trên Kệ")]
         public int? TotalDiskOnShelf { get; set; }
+        [Display(Order = -1)]
         public ICollection<Disk> Disks { get; set; }
     }
 }

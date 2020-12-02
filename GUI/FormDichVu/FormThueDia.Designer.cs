@@ -36,6 +36,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
             this.grdc_DSThueDia = new DevExpress.XtraGrid.GridControl();
+            this.contextDS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnLoaiBoKhoiDS = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_ThemDia = new DevExpress.XtraEditors.SimpleButton();
@@ -55,8 +57,6 @@
             this.txt_MaKHNhapVao = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextDS = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnLoaiBoKhoiDS = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePnl)).BeginInit();
             this.tablePnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -65,6 +65,7 @@
             this.tablePanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).BeginInit();
+            this.contextDS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
             this.tablePanel4.SuspendLayout();
@@ -78,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaKHNhapVao.Properties)).BeginInit();
-            this.contextDS.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePnl
@@ -202,6 +202,22 @@
             this.grdc_DSThueDia.TabIndex = 6;
             this.grdc_DSThueDia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // contextDS
+            // 
+            this.contextDS.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextDS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnLoaiBoKhoiDS});
+            this.contextDS.Name = "contextDS";
+            this.contextDS.Size = new System.Drawing.Size(235, 30);
+            // 
+            // btnLoaiBoKhoiDS
+            // 
+            this.btnLoaiBoKhoiDS.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiBoKhoiDS.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
+            this.btnLoaiBoKhoiDS.Name = "btnLoaiBoKhoiDS";
+            this.btnLoaiBoKhoiDS.Size = new System.Drawing.Size(234, 26);
+            this.btnLoaiBoKhoiDS.Text = "Loại Khỏi Danh Sách";
             // 
             // gridView1
             // 
@@ -479,7 +495,6 @@
             this.txt_MaKHNhapVao.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MaKHNhapVao.Properties.Appearance.Options.UseFont = true;
             this.txt_MaKHNhapVao.Properties.NullValuePrompt = "Nhập mã khách hàng";
-            this.txt_MaKHNhapVao.Properties.ReadOnly = true;
             this.tablePanel2.SetRow(this.txt_MaKHNhapVao, 0);
             this.txt_MaKHNhapVao.Size = new System.Drawing.Size(159, 30);
             this.txt_MaKHNhapVao.TabIndex = 7;
@@ -515,22 +530,6 @@
             this.label1.Text = "Thuê Đĩa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // contextDS
-            // 
-            this.contextDS.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextDS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnLoaiBoKhoiDS});
-            this.contextDS.Name = "contextDS";
-            this.contextDS.Size = new System.Drawing.Size(235, 30);
-            // 
-            // btnLoaiBoKhoiDS
-            // 
-            this.btnLoaiBoKhoiDS.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaiBoKhoiDS.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
-            this.btnLoaiBoKhoiDS.Name = "btnLoaiBoKhoiDS";
-            this.btnLoaiBoKhoiDS.Size = new System.Drawing.Size(234, 26);
-            this.btnLoaiBoKhoiDS.Text = "Loại Khỏi Danh Sách";
-            // 
             // FormThueDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -550,6 +549,7 @@
             this.tablePanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).EndInit();
+            this.contextDS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
             this.tablePanel4.ResumeLayout(false);
@@ -565,7 +565,6 @@
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaKHNhapVao.Properties)).EndInit();
-            this.contextDS.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

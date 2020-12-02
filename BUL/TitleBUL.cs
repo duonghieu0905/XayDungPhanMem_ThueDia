@@ -1,6 +1,7 @@
 ﻿using DAL;
 using Entities;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BUL
 {
@@ -26,6 +27,15 @@ namespace BUL
         public bool DeleteTitle(int idTitle)
         {
             return db.DeleteTitle(idTitle);
+        }
+        public int TotalDiskOfTitle(int idTitle)
+        {
+            DiskDAL dbDisk = new DiskDAL();
+            return dbDisk.GetAllDisk().Where(x => x.IdTitle == idTitle).Count();
+        }
+        public int GetLastTitle()
+        {
+            return db.GetAllTitle().Last().IdTitle;
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Entities
         [Key]
         [DisplayName("Mã Đơn Thuê")]
         public int IdListRented { get; set; }
+        [Display(Order = -1)]
         public virtual Disk Disk { get; set; }
         [DisplayName("Mã Đĩa")]
         public int? IdDisk { get; set; }
+        [Display(Order = -1)]
         public virtual Customer Customer { get; set; }
         [DisplayName("Mã kHách Hàng")]
         public int? IdCustomer { get; set; }

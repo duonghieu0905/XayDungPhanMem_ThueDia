@@ -30,7 +30,7 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.grdc_CD = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grv_CD = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txt_TenTieuDe = new DevExpress.XtraEditors.TextEdit();
             this.tablePanel5 = new DevExpress.Utils.Layout.TablePanel();
             this.tileNavCategory1 = new DevExpress.XtraBars.Navigation.TileNavCategory();
@@ -55,10 +55,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel6 = new DevExpress.Utils.Layout.TablePanel();
-            this.txt_DiaTrenKe = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_CD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_CD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenTieuDe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
@@ -74,8 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_DiaTrenKe.Properties)).BeginInit();
-            this.SuspendLayout();
+            
             // 
             // label3
             // 
@@ -95,21 +93,22 @@
             this.grdc_CD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdc_CD.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grdc_CD.Location = new System.Drawing.Point(40, 105);
-            this.grdc_CD.MainView = this.gridView1;
+            this.grdc_CD.MainView = this.grv_CD;
             this.grdc_CD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grdc_CD.Name = "grdc_CD";
             this.tablePanel1.SetRow(this.grdc_CD, 2);
             this.grdc_CD.Size = new System.Drawing.Size(885, 966);
             this.grdc_CD.TabIndex = 2;
             this.grdc_CD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grv_CD});
             // 
-            // gridView1
+            // grv_CD
             // 
-            this.gridView1.DetailHeight = 512;
-            this.gridView1.GridControl = this.grdc_CD;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
+            this.grv_CD.DetailHeight = 512;
+            this.grv_CD.GridControl = this.grdc_CD;
+            this.grv_CD.Name = "grv_CD";
+            this.grv_CD.OptionsView.ShowFooter = true;
+            this.grv_CD.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grv_CD_FocusedRowChanged);
             // 
             // txt_TenTieuDe
             // 
@@ -447,16 +446,7 @@
             this.tablePanel6.TabIndex = 5;
             // 
             // txt_DiaTrenKe
-            // 
-            this.txt_DiaTrenKe.Location = new System.Drawing.Point(171, 5);
-            this.txt_DiaTrenKe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_DiaTrenKe.Name = "txt_DiaTrenKe";
-            this.txt_DiaTrenKe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DiaTrenKe.Properties.Appearance.Options.UseFont = true;
-            this.txt_DiaTrenKe.Properties.NullValuePrompt = "Số Lượng Trên Kệ";
-            this.txt_DiaTrenKe.Properties.ReadOnly = true;
-            this.txt_DiaTrenKe.Size = new System.Drawing.Size(242, 30);
-            this.txt_DiaTrenKe.TabIndex = 2;
+     
             // 
             // label4
             // 
@@ -478,7 +468,7 @@
             this.Text = "FormCD";
             this.Load += new System.EventHandler(this.FormCD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdc_CD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_CD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenTieuDe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).EndInit();
             this.tablePanel5.ResumeLayout(false);
@@ -494,8 +484,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_DiaTrenKe.Properties)).EndInit();
-            this.ResumeLayout(false);
+         
 
         }
 
@@ -503,7 +492,7 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraGrid.GridControl grdc_CD;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grv_CD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private DevExpress.Utils.Layout.TablePanel tablePanel5;
@@ -527,7 +516,6 @@
         private System.Windows.Forms.ComboBox cbx_TrangThaiThue;
         private System.Windows.Forms.Label label6;
         private DevExpress.Utils.Layout.TablePanel tablePanel6;
-        private DevExpress.XtraEditors.TextEdit txt_DiaTrenKe;
         private System.Windows.Forms.Label label4;
     }
 }

@@ -9,59 +9,101 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.FormChucNang;
 using Entities;
+using BUL;
 
 namespace GUI.FormQuanLy
 {
     public partial class FormTieuDe : DevExpress.XtraEditors.XtraForm
     {
         private string auth;
+        private BindingSource binding;
+        private TitleBUL db;
         public FormTieuDe(string auth)
         {
             InitializeComponent();
             this.auth = auth;
+            db = new TitleBUL();
+            binding= new BindingSource();
         }
 
         private void FormTieuDe_Load(object sender, EventArgs e)
         {
             ConfigToSuccessView();
+            LoadView();
         }
         private void ConfigToSuccessView()
         {
-            ExpressionMethod.EditGridView(gridView1);
+            ExpressionMethod.EditGridView(grv_TieuDe);
         }
 
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
             if (ExpressionMethod.CheckAuth(this.auth))
             {
-                FormThemDiaBS frm = new FormThemDiaBS();
-                frm.ShowDialog();
+                FormThemDiaBS frm = new FormThemDiaBS(Int32.Parse(pictureBox1.Tag.ToString()));
+                frm.Show();
+                frm.FormClosing += Frm_FormClosing;
             }
           
         }
-
         private void btn_ThemTieuDe_Click(object sender, EventArgs e)
         {
             if (ExpressionMethod.CheckAuth(this.auth))
             {
                 FormThemTD frm = new FormThemTD();
-                frm.ShowDialog();
+                frm.Show();
+                frm.FormClosing += Frm_FormClosing;
             }
            
+        }
+
+        private void Frm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            binding.DataSource = db.GetTitles();
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             if (ExpressionMethod.CheckAuth(this.auth))
             {
-
+                DialogResult result = MessageBox.Show("Xác nhận tiêu đề", "Xóa tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    if (db.DeleteTitle(Int32.Parse(pictureBox1.Tag.ToString())))
+                    {
+                        MessageBox.Show("Xóa tiêu đề thành công", "Xóa tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        binding.DataSource = db.GetTitles();
+                    }
+                    else
+                        MessageBox.Show("Xóa tiêu đề thất bại", "Xóa tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
         private void btn_DatTruoc_Click(object sender, EventArgs e)
         {
-            FormThemDatTruoc frm = new FormThemDatTruoc(null);
-            frm.ShowDialog();
+            FormThemDatTruoc frm = new FormThemDatTruoc(Int32.Parse(pictureBox1.Tag.ToString()));
+            frm.Show();
+            frm.FormClosing += Frm_FormClosing;
+        }
+        private void LoadView()
+        {
+            binding.DataSource = db.GetTitles();
+            ExpressionMethod.LoadGridControl(grd_TieuDe, grv_TieuDe, binding);
+        }
+
+        private void grv_TieuDe_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            LoadToTextBox(grv_TieuDe.GetSelectedRows()[0]);
+        }
+        private void LoadToTextBox(int indexSelected)
+        {
+            Title title = binding[indexSelected] as Title;
+            pictureBox1.Tag = title.IdTitle;
+            txt_DiaTrenKe.Text = title.TotalDiskOnShelf.ToString();
+            txt_LoaiDia.Text = title.IdDiskType.ToString();
+            txt_SoLuongDia.Text = db.TotalDiskOfTitle(title.IdTitle).ToString();
+            txt_TenTieuDe.Text = title.NameTitle;
         }
     }
 }

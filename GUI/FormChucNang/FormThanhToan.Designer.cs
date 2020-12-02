@@ -208,6 +208,7 @@
             this.btnDong.Size = new System.Drawing.Size(194, 145);
             this.btnDong.TabIndex = 1;
             this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnThanhToan
             // 

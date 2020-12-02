@@ -16,6 +16,8 @@ namespace BUL
         }
         public bool AddDisk(Disk disk)
         {
+            disk.DiskRentalStatus = "OnShelf";
+            disk.DiskStatus = "Good";
             return db.AddDisk(disk);
         }
         public bool UpdateDisk(Disk disk)

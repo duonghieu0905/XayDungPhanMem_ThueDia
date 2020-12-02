@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grv_TieuDe = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grd_TieuDe = new DevExpress.XtraGrid.GridControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_DatTruoc = new DevExpress.XtraEditors.SimpleButton();
@@ -58,7 +58,7 @@
             this.navButton2 = new DevExpress.XtraBars.Navigation.NavButton();
             this.navButton4 = new DevExpress.XtraBars.Navigation.NavButton();
             this.tileNavCategory1 = new DevExpress.XtraBars.Navigation.TileNavCategory();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_TieuDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_TieuDe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
@@ -95,12 +95,13 @@
             this.label1.Text = "Danh Mục Tiêu Đề";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gridView1
+            // grv_TieuDe
             // 
-            this.gridView1.DetailHeight = 539;
-            this.gridView1.GridControl = this.grd_TieuDe;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
+            this.grv_TieuDe.DetailHeight = 539;
+            this.grv_TieuDe.GridControl = this.grd_TieuDe;
+            this.grv_TieuDe.Name = "grv_TieuDe";
+            this.grv_TieuDe.OptionsView.ShowFooter = true;
+            this.grv_TieuDe.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grv_TieuDe_FocusedRowChanged);
             // 
             // grd_TieuDe
             // 
@@ -108,14 +109,14 @@
             this.grd_TieuDe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_TieuDe.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grd_TieuDe.Location = new System.Drawing.Point(37, 119);
-            this.grd_TieuDe.MainView = this.gridView1;
+            this.grd_TieuDe.MainView = this.grv_TieuDe;
             this.grd_TieuDe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grd_TieuDe.Name = "grd_TieuDe";
             this.tablePanel1.SetRow(this.grd_TieuDe, 2);
             this.grd_TieuDe.Size = new System.Drawing.Size(825, 900);
             this.grd_TieuDe.TabIndex = 2;
             this.grd_TieuDe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grv_TieuDe});
             // 
             // pictureBox1
             // 
@@ -516,7 +517,7 @@
             this.Name = "FormTieuDe";
             this.Text = "FormTieuDe";
             this.Load += new System.EventHandler(this.FormTieuDe_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_TieuDe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grd_TieuDe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
@@ -552,7 +553,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_Xoa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraGrid.GridControl grd_TieuDe;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grv_TieuDe;
         private DevExpress.XtraEditors.SimpleButton btn_ThemTieuDe;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;

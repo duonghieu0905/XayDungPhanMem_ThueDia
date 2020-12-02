@@ -15,7 +15,9 @@ namespace Entities
         public string CustomerName { get; set; }
         [DisplayName("Số Điện Thoại")]
         public string PhoneNumber { get; set; }
+        [Display(Order = -1)]
         public ICollection<ListRented> ListRenteds { get; set; }
+        [Display(Order = -1)]
         public ICollection<ListTitlePreOrder> ListTitlePreOrders { get; set; }
     }
 }
