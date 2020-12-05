@@ -57,16 +57,12 @@ namespace GUI.FormQuanLy
            
         }
 
-        private void Frm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            binding.DataSource = db.GetTitles();
-        }
-
+        
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             if (ExpressionMethod.CheckAuth(this.auth))
             {
-                DialogResult result = MessageBox.Show("Xác nhận tiêu đề", "Xóa tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Xác nhận xóa tiêu đề", "Xóa tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     if (db.DeleteTitle(Int32.Parse(pictureBox1.Tag.ToString())))
@@ -105,5 +101,11 @@ namespace GUI.FormQuanLy
             txt_SoLuongDia.Text = db.TotalDiskOfTitle(title.IdTitle).ToString();
             txt_TenTieuDe.Text = title.NameTitle;
         }
+        private void Frm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            db = new TitleBUL();
+            binding.DataSource = db.GetTitles();
+        }
+
     }
 }

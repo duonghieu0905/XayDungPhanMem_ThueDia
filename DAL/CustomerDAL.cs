@@ -15,6 +15,10 @@ namespace DAL
         {
             return context.Customers.ToList();
         }
+        public Customer GetCustomer(int idCustomer)
+        {
+            return context.Customers.Find(idCustomer);
+        }
         public bool AddCustomer(Customer customer)
         {
             context.Customers.Add(customer);

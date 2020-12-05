@@ -33,7 +33,7 @@ namespace GUI.FormDichVu
                 DialogResult result = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    FormThanhToan frm = new FormThanhToan(null, null);
+                    FormThanhToan frm = new FormThanhToan(null, null,null);
                     frm.ShowDialog();
                 }
             }

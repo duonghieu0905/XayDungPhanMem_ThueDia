@@ -15,6 +15,10 @@ namespace BUL
         {
             return db.GetAllCustomer();
         }
+        public Customer GetCustomer(int idCustomer)
+        {
+            return db.GetCustomer(idCustomer);
+        }
         public bool AddCustomer(Customer customer)
         {
             return db.AddCustomer(customer);

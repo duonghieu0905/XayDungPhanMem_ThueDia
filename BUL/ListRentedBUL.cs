@@ -10,6 +10,7 @@ namespace BUL
 {
     public class ListRentedBUL
     {
+        private const string UNPAID = "Unpaid";
         private ListRentedDAL db;
         public ListRentedBUL()
         {
@@ -18,6 +19,10 @@ namespace BUL
         public List<ListRented> ListRenteds()
         {
             return db.GetAllListRented();
+        }
+        public List<ListRented> ListLate(int idCustomer)
+        {
+            return db.GetAllListRented().Where(x => x.IdCustomer == idCustomer && x.StatusOnBill.Equals(UNPAID)).ToList();
         }
         public bool AddListRented(ListRented listRented)
         {
@@ -31,5 +36,6 @@ namespace BUL
         {
             return db.DeleteListRented(idListRented);
         }
+        
     }
 }

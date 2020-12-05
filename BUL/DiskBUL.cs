@@ -14,6 +14,10 @@ namespace BUL
         {
             return db.GetAllDisk();
         }
+        public Disk GetDisk(int idDisk)
+        {
+            return db.GetDisk(idDisk);
+        }
         public bool AddDisk(Disk disk)
         {
             disk.DiskRentalStatus = "OnShelf";

@@ -55,7 +55,7 @@ namespace GUI.FormChucNang
                 }
                 MessageBox.Show("Thêm thành công", "Thêm đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            this.Close();
+            
         }
     }
 }

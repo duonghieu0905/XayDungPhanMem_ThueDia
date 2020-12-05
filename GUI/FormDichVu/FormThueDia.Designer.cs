@@ -38,10 +38,10 @@
             this.grdc_DSThueDia = new DevExpress.XtraGrid.GridControl();
             this.contextDS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnLoaiBoKhoiDS = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grv_ThueDia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_ThemDia = new DevExpress.XtraEditors.SimpleButton();
-            this.txt_MaDia = new DevExpress.XtraEditors.TextEdit();
+            this.txt_MaDiaNhapVao = new DevExpress.XtraEditors.TextEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
             this.txtMaKH = new DevExpress.XtraEditors.TextEdit();
@@ -66,10 +66,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).BeginInit();
             this.contextDS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_ThueDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
             this.tablePanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MaDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaDiaNhapVao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
             this.tablePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).BeginInit();
@@ -195,13 +195,14 @@
             this.grdc_DSThueDia.ContextMenuStrip = this.contextDS;
             this.grdc_DSThueDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdc_DSThueDia.Location = new System.Drawing.Point(3, 233);
-            this.grdc_DSThueDia.MainView = this.gridView1;
+            this.grdc_DSThueDia.MainView = this.grv_ThueDia;
             this.grdc_DSThueDia.Name = "grdc_DSThueDia";
             this.tablePnl.SetRow(this.grdc_DSThueDia, 4);
             this.grdc_DSThueDia.Size = new System.Drawing.Size(1194, 253);
             this.grdc_DSThueDia.TabIndex = 6;
             this.grdc_DSThueDia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grv_ThueDia});
+            this.grdc_DSThueDia.DataSourceChanged += new System.EventHandler(this.grdc_DSThueDia_DataSourceChanged);
             // 
             // contextDS
             // 
@@ -218,12 +219,13 @@
             this.btnLoaiBoKhoiDS.Name = "btnLoaiBoKhoiDS";
             this.btnLoaiBoKhoiDS.Size = new System.Drawing.Size(234, 26);
             this.btnLoaiBoKhoiDS.Text = "Loại Khỏi Danh Sách";
+            this.btnLoaiBoKhoiDS.Click += new System.EventHandler(this.btnLoaiBoKhoiDS_Click);
             // 
-            // gridView1
+            // grv_ThueDia
             // 
-            this.gridView1.GridControl = this.grdc_DSThueDia;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
+            this.grv_ThueDia.GridControl = this.grdc_DSThueDia;
+            this.grv_ThueDia.Name = "grv_ThueDia";
+            this.grv_ThueDia.OptionsView.ShowFooter = true;
             // 
             // tablePanel4
             // 
@@ -234,7 +236,7 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 15F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
             this.tablePanel4.Controls.Add(this.btn_ThemDia);
-            this.tablePanel4.Controls.Add(this.txt_MaDia);
+            this.tablePanel4.Controls.Add(this.txt_MaDiaNhapVao);
             this.tablePanel4.Controls.Add(this.label7);
             this.tablePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel4.Location = new System.Drawing.Point(3, 173);
@@ -263,21 +265,21 @@
             this.btn_ThemDia.Size = new System.Drawing.Size(171, 44);
             this.btn_ThemDia.TabIndex = 9;
             this.btn_ThemDia.Text = "Thêm Đĩa Thuê";
+            this.btn_ThemDia.Click += new System.EventHandler(this.btn_ThemDia_Click);
             // 
-            // txt_MaDia
+            // txt_MaDiaNhapVao
             // 
-            this.tablePanel4.SetColumn(this.txt_MaDia, 1);
-            this.txt_MaDia.EditValue = "";
-            this.txt_MaDia.Location = new System.Drawing.Point(189, 13);
-            this.txt_MaDia.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
-            this.txt_MaDia.Name = "txt_MaDia";
-            this.txt_MaDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaDia.Properties.Appearance.Options.UseFont = true;
-            this.txt_MaDia.Properties.NullValuePrompt = "Nhập Mã Đĩa";
-            this.txt_MaDia.Properties.ReadOnly = true;
-            this.tablePanel4.SetRow(this.txt_MaDia, 0);
-            this.txt_MaDia.Size = new System.Drawing.Size(159, 28);
-            this.txt_MaDia.TabIndex = 8;
+            this.tablePanel4.SetColumn(this.txt_MaDiaNhapVao, 1);
+            this.txt_MaDiaNhapVao.EditValue = "";
+            this.txt_MaDiaNhapVao.Location = new System.Drawing.Point(189, 13);
+            this.txt_MaDiaNhapVao.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
+            this.txt_MaDiaNhapVao.Name = "txt_MaDiaNhapVao";
+            this.txt_MaDiaNhapVao.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaDiaNhapVao.Properties.Appearance.Options.UseFont = true;
+            this.txt_MaDiaNhapVao.Properties.NullValuePrompt = "Nhập Mã Đĩa";
+            this.tablePanel4.SetRow(this.txt_MaDiaNhapVao, 0);
+            this.txt_MaDiaNhapVao.Size = new System.Drawing.Size(159, 28);
+            this.txt_MaDiaNhapVao.TabIndex = 8;
             // 
             // label7
             // 
@@ -550,11 +552,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).EndInit();
             this.contextDS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_ThueDia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
             this.tablePanel4.ResumeLayout(false);
             this.tablePanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MaDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MaDiaNhapVao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
             this.tablePanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).EndInit();
@@ -587,11 +589,11 @@
         private DevExpress.XtraEditors.TextEdit txtSoDienThoai;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.Utils.Layout.TablePanel tablePanel4;
-        private DevExpress.XtraEditors.TextEdit txt_MaDia;
+        private DevExpress.XtraEditors.TextEdit txt_MaDiaNhapVao;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.SimpleButton btn_ThemDia;
         private DevExpress.XtraGrid.GridControl grdc_DSThueDia;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView grv_ThueDia;
         private DevExpress.Utils.Layout.TablePanel tablePanel5;
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.TextEdit txtTongTien;

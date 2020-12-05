@@ -226,6 +226,7 @@
             this.btnThanhToan.Size = new System.Drawing.Size(194, 145);
             this.btnThanhToan.TabIndex = 0;
             this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // tablePanel3
             // 

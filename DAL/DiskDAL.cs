@@ -16,6 +16,10 @@ namespace DAL
         {
             return context.Disks.ToList();
         }
+        public Disk GetDisk(int idDisk)
+        {
+            return context.Disks.Find(idDisk);
+        }
         public bool AddDisk(Disk disk)
         {
             context.Disks.Add(disk);

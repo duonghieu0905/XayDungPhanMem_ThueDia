@@ -18,7 +18,7 @@ namespace GUI
         private void MainForm_Load(object sender, EventArgs e)
         { 
             ConfigView();
-            FormThueDia frm = new FormThueDia();
+            FormThueDia frm = new FormThueDia(bar_TrangThai.Caption.ToString());
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace GUI
 
         private void acdeThueDia_Click(object sender, EventArgs e)
         {
-            FormThueDia frm = new FormThueDia();
+            FormThueDia frm = new FormThueDia(bar_TrangThai.Caption.ToString());
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 
