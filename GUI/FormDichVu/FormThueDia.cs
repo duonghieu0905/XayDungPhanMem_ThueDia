@@ -16,10 +16,8 @@ namespace GUI.FormDichVu
     public partial class FormThueDia : DevExpress.XtraEditors.XtraForm
     {
         private CustomerBUL dbCus;
-        private DiskBUL dbDisk;
         private ListRentedBUL dbRented;
-        private DiskTypeBUL dbDiskType;
-        private TitleBUL dbTitle;
+        private List<DiskInfoRent> db;
         private BindingSource binding;
         private string auth;
         private const string STATUS_RENTED = "Rented";
@@ -27,10 +25,8 @@ namespace GUI.FormDichVu
         {
             InitializeComponent();
             dbCus = new CustomerBUL();
-            dbDisk = new DiskBUL();
             dbRented = new ListRentedBUL();
-            dbDiskType = new DiskTypeBUL();
-            dbTitle = new TitleBUL();
+            db = ExpressionMethod.DBDiskRent();
             this.binding = new BindingSource();
             this.auth = auth;
         }
@@ -40,7 +36,7 @@ namespace GUI.FormDichVu
             AddInfoToAccessForm();
             LoadView();
         }
-        
+
         private void AddInfoToAccessForm()
         {
             tablePnl.Rows[4].Height = 610;
@@ -48,7 +44,7 @@ namespace GUI.FormDichVu
         }
         private void LoadView()
         {
-            binding.DataSource = new List<Disk>();
+            binding.DataSource = new List<DiskInfoRent>();
             ExpressionMethod.LoadGridControl(grdc_DSThueDia, grv_ThueDia, binding);
         }
         private void LoadDataCustomerToText(Customer customer)
@@ -71,6 +67,7 @@ namespace GUI.FormDichVu
             {
                 LoadDataCustomerToText(customer);
             }
+            
             var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
             if (lstLate.Count > 0)
             {
@@ -88,7 +85,7 @@ namespace GUI.FormDichVu
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
             int dianhap = Int32.Parse(txt_MaDiaNhapVao.Text.ToString());
-            Disk disk = dbDisk.GetDisk(dianhap);
+            DiskInfoRent disk = db.Find(x=>x.IdDisk==dianhap);
             if (disk == null)
             {
                 MessageBox.Show("Không tìm thấy đĩa", "Thông tin đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,7 +96,7 @@ namespace GUI.FormDichVu
                 AddDiskToListRent(disk);
             }
         }
-        private void AddDiskToListRent(Disk disk)
+        private void AddDiskToListRent(DiskInfoRent disk)
         {
             if (disk.DiskRentalStatus.Equals(STATUS_RENTED))
             {
@@ -115,33 +112,48 @@ namespace GUI.FormDichVu
             //Thêm vào danh sách
 
             binding.Add(disk);
+            
         }
 
         private void btnLoaiBoKhoiDS_Click(object sender, EventArgs e)
         {
             binding.RemoveAt(grv_ThueDia.GetSelectedRows()[0]);
         }
-
-        private void grdc_DSThueDia_DataSourceChanged(object sender, EventArgs e)
+        private void grv_ThueDia_RowCountChanged(object sender, EventArgs e)
         {
-            
+            double total = 0;
+            foreach (var item in binding.DataSource as List<DiskInfoRent>)
+            {
+                total += item.Price;
+            }
+            txtTongTien.Text = total.ToString();
         }
-        private void DeDayVeCoiTiep()
+       
+        private void ThucHienThueDia()
         {
-            List<Disk> disks = dbDisk.GetDisks();
-            List<DiskType> diskTypes = dbDiskType.GetDiskTypes();
-            List<Title> titles = dbTitle.GetTitles();
-            var db = dbDisk.GetDisks()
-                .Join(dbTitle.GetTitles(), d => d.IdTitle, t => t.IdTitle, (d, t) => new { d, t })
-                .Join(dbDiskType.GetDiskTypes(), dt => dt.t.IdDiskType, ty => ty.IdDiskType, (dt, ty) => new { dt, ty })
-                .Select(x => new {
-                    IdDisk = x.dt.d.IdDisk,
-                    Title = x.dt.t.NameTitle,
-                    TypeName = x.ty.TypeName,
-                    TimeRented = x.ty.TimeRented,
-                    LateFee = x.ty.LateFee,
-                    Price = x.ty.Price,
-                }).ToList();
+            int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
+            foreach (var item in binding.DataSource as List<DiskInfoRent>)
+            {
+                ListRented rented = new ListRented { IdDisk = item.IdDisk, IdCustomer = idCustomer, LateFee = item.LateFee, RentalDate = DateTime.Today, ExpectedReturnDate = DateTime.Today.AddDays(item.TimeRented), ActualReturnDate = null, StatusOnBill = null };
+                if (dbRented.AddListRented(rented)==false)
+                {
+                    MessageBox.Show("Thuê đĩa thất bại", "Thuê đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            MessageBox.Show("Thuê đĩa thành công", "Thuê đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            db = ExpressionMethod.DBDiskRent();
+            binding.DataSource = new List<DiskInfoRent>();
+
+        }
+
+        private void btnXacNhanThueDia_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Xác nhận thuê đĩa", "Thuê đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                ThucHienThueDia();
+            }
         }
     }
 }

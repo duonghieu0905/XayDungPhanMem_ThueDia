@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tablePnl = new DevExpress.Utils.Layout.TablePanel();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXacNhanThueDia = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel5 = new DevExpress.Utils.Layout.TablePanel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
@@ -112,7 +112,7 @@
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 15F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 85F)});
-            this.tablePanel1.Controls.Add(this.simpleButton1);
+            this.tablePanel1.Controls.Add(this.btnXacNhanThueDia);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(3, 552);
             this.tablePanel1.Name = "tablePanel1";
@@ -122,24 +122,25 @@
             this.tablePanel1.Size = new System.Drawing.Size(1194, 103);
             this.tablePanel1.TabIndex = 8;
             // 
-            // simpleButton1
+            // btnXacNhanThueDia
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.AutoSize = true;
-            this.tablePanel1.SetColumn(this.simpleButton1, 0);
-            this.simpleButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.simpleButton1.ImageOptions.Image = global::GUI.Properties.Resources.icons8_inspection_322;
-            this.simpleButton1.Location = new System.Drawing.Point(4, 5);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.tablePanel1.SetRow(this.simpleButton1, 0);
-            this.simpleButton1.Size = new System.Drawing.Size(171, 93);
-            this.simpleButton1.TabIndex = 8;
-            this.simpleButton1.Text = "Xác Nhận Thuê Đĩa";
+            this.btnXacNhanThueDia.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhanThueDia.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnXacNhanThueDia.Appearance.Options.UseFont = true;
+            this.btnXacNhanThueDia.Appearance.Options.UseForeColor = true;
+            this.btnXacNhanThueDia.AutoSize = true;
+            this.tablePanel1.SetColumn(this.btnXacNhanThueDia, 0);
+            this.btnXacNhanThueDia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXacNhanThueDia.ImageOptions.Image = global::GUI.Properties.Resources.icons8_inspection_322;
+            this.btnXacNhanThueDia.Location = new System.Drawing.Point(4, 5);
+            this.btnXacNhanThueDia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXacNhanThueDia.Name = "btnXacNhanThueDia";
+            this.btnXacNhanThueDia.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.tablePanel1.SetRow(this.btnXacNhanThueDia, 0);
+            this.btnXacNhanThueDia.Size = new System.Drawing.Size(171, 93);
+            this.btnXacNhanThueDia.TabIndex = 8;
+            this.btnXacNhanThueDia.Text = "Xác Nhận Thuê Đĩa";
+            this.btnXacNhanThueDia.Click += new System.EventHandler(this.btnXacNhanThueDia_Click);
             // 
             // tablePanel5
             // 
@@ -202,7 +203,6 @@
             this.grdc_DSThueDia.TabIndex = 6;
             this.grdc_DSThueDia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grv_ThueDia});
-            this.grdc_DSThueDia.DataSourceChanged += new System.EventHandler(this.grdc_DSThueDia_DataSourceChanged);
             // 
             // contextDS
             // 
@@ -226,6 +226,7 @@
             this.grv_ThueDia.GridControl = this.grdc_DSThueDia;
             this.grv_ThueDia.Name = "grv_ThueDia";
             this.grv_ThueDia.OptionsView.ShowFooter = true;
+            this.grv_ThueDia.RowCountChanged += new System.EventHandler(this.grv_ThueDia_RowCountChanged);
             // 
             // tablePanel4
             // 
@@ -598,7 +599,7 @@
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.TextEdit txtTongTien;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnXacNhanThueDia;
         private System.Windows.Forms.ContextMenuStrip contextDS;
         private System.Windows.Forms.ToolStripMenuItem btnLoaiBoKhoiDS;
     }

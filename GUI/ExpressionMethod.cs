@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using BUL;
 using Entities;
+using System.Linq;
+using System;
 
 namespace GUI
 {
@@ -214,6 +216,53 @@ namespace GUI
         public static bool CheckPhoneNumber(string phoneNumber)
         {
             return false;
+        }
+        /// <summary>
+        /// Join and return a db DiskRent
+        /// </summary>
+        /// <returns></returns>
+        public static List<DiskInfoRent> DBDiskRent()
+        {
+            DiskTypeBUL dbDiskType= new DiskTypeBUL();
+            TitleBUL dbTitle = new TitleBUL();
+            DiskBUL dbDisk = new DiskBUL();
+            List<DiskInfoRent> lst = new List<DiskInfoRent>();
+            List<Disk> disks = dbDisk.GetDisks();
+            List<DiskType> diskTypes = dbDiskType.GetDiskTypes();
+            List<Title> titles = dbTitle.GetTitles();
+            var db = dbDisk.GetDisks()
+                .Join(dbTitle.GetTitles(), d => d.IdTitle, t => t.IdTitle, (d, t) => new { d, t })
+                .Join(dbDiskType.GetDiskTypes(), dt => dt.t.IdDiskType, ty => ty.IdDiskType, (dt, ty) => new { dt, ty })
+                .Select(x => new
+                {
+                    IdDisk = x.dt.d.IdDisk,
+                    Title = x.dt.t.NameTitle,
+                    TypeName = x.ty.TypeName,
+                    TimeRented = x.ty.TimeRented,
+                    LateFee = x.ty.LateFee,
+                    Price = x.ty.Price,
+                    DiskRentalStatus = x.dt.d.DiskRentalStatus
+                }).ToList();
+            foreach (var item in db)
+                lst.Add(new DiskInfoRent { IdDisk = item.IdDisk, LateFee = (int)item.LateFee, Price = (int)item.Price, TimeRented = (int)item.TimeRented, Title = item.Title, TypeName = item.TypeName, DiskRentalStatus = item.DiskRentalStatus });
+            return lst;
+        }
+        public static List<DiskInfoReturn> DBDiskReturn()
+        {
+            List<DiskInfoReturn> lst = new List<DiskInfoReturn>();
+            CustomerBUL dbCustomer = new CustomerBUL();
+            TitleBUL dbTitle = new TitleBUL();
+            DiskBUL dbDisk = new DiskBUL();
+            ListRentedBUL dbRented = new ListRentedBUL();
+            var db = dbRented.GetListRenteds().Where(x => x.StatusOnBill == null)
+                .Join(dbDisk.GetDisks(), rt => rt.IdDisk, d => d.IdDisk, (rt, d) => new { rt, d })
+                .Join(dbTitle.GetTitles(), rtd => rtd.d.IdTitle, t => t.IdTitle, (rtd, t) => new { rtd, t })
+                .Join(dbCustomer.GetCustomers(), rtdt => rtdt.rtd.rt.IdCustomer, c => c.IdCustomer, (rtdt, c) => new { rtdt, c });
+            foreach (var item in db)
+            {
+                lst.Add(new DiskInfoReturn { Address = item.c.Address, CustomerName = item.c.CustomerName, ExpectedDate = (DateTime)item.rtdt.rtd.rt.ExpectedReturnDate, IdCustomer = (int)item.rtdt.rtd.rt.IdCustomer, IdDisk = (int)item.rtdt.rtd.rt.IdDisk, PhoneNumber = item.c.PhoneNumber, RentedDate = (DateTime)item.rtdt.rtd.rt.RentalDate, Title = item.rtdt.t.NameTitle });
+            }
+            return lst;
         }
         
     }

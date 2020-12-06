@@ -45,6 +45,8 @@
     <Compile Include="Customer.cs" />
     <Compile Include="DetailPreOrder.cs" />
     <Compile Include="Disk.cs" />
+    <Compile Include="DiskInfoRent.cs" />
+    <Compile Include="DiskInfoReturn.cs" />
     <Compile Include="DiskType.cs" />
     <Compile Include="ListRented.cs" />
     <Compile Include="ListTitlePreOrder.cs" />

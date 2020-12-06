@@ -16,13 +16,13 @@ namespace BUL
         {
             db = new ListRentedDAL();
         }
-        public List<ListRented> ListRenteds()
+        public List<ListRented> GetListRenteds()
         {
             return db.GetAllListRented();
         }
         public List<ListRented> ListLate(int idCustomer)
         {
-            return db.GetAllListRented().Where(x => x.IdCustomer == idCustomer && x.StatusOnBill.Equals(UNPAID)).ToList();
+            return db.GetAllListRented().Where(x => x.IdCustomer == idCustomer && x.StatusOnBill!=null&& x.StatusOnBill.Equals(UNPAID)).ToList();
         }
         public bool AddListRented(ListRented listRented)
         {
