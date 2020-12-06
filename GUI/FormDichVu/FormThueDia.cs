@@ -21,6 +21,9 @@ namespace GUI.FormDichVu
         private BindingSource binding;
         private string auth;
         private const string STATUS_RENTED = "Rented";
+        private const string STATUS_ONHOLD = "OnHold";
+        private double totalRent = 0;
+        private double totalOnHold = 0;
         public FormThueDia(string auth)
         {
             InitializeComponent();
@@ -41,11 +44,38 @@ namespace GUI.FormDichVu
         {
             tablePnl.Rows[4].Height = 610;
             ExpressionMethod.EditGridView(grv_ThueDia);
+            ExpressionMethod.ConfigListView(lsvOnHold);
+            AddColumnToList();
+        }
+        private void AddColumnToList()
+        {
+            lsvOnHold.Columns.Add("Mã Đĩa",this.Width/7);
+            lsvOnHold.Columns.Add("Tiêu Đề", this.Width / 7);
+            lsvOnHold.Columns.Add("Loại Đĩa", this.Width / 7);
+            lsvOnHold.Columns.Add("Thời Gian Thuê", this.Width / 7);
+            lsvOnHold.Columns.Add("Phí Trễ", this.Width / 7);
+            lsvOnHold.Columns.Add("Giá Thuê", this.Width / 7);
+            lsvOnHold.Columns.Add("Trạng Thái Thuê", this.Width / 7);
         }
         private void LoadView()
         {
             binding.DataSource = new List<DiskInfoRent>();
             ExpressionMethod.LoadGridControl(grdc_DSThueDia, grv_ThueDia, binding);
+            
+            
+        }
+        private void AddInfoListView()
+        {
+            lsvOnHold.Items.Clear();
+            int IdCustomer = Int32.Parse(txtMaKH.Text.ToString());
+            var dbOnHold = db
+                .Join(new DetailPreOrderBUL().GetDetailPreOrders(), x => x.IdDisk, pre => pre.IdDisk, (x, pre) =>new {x,pre});
+            foreach (var item in dbOnHold)
+            {
+                ListViewItem listViewItem = new ListViewItem(new string[] { item.x.IdDisk.ToString(), item.x.Title, item.x.TypeName, item.x.TimeRented.ToString(), item.x.LateFee.ToString(), item.x.Price.ToString(), item.x.DiskRentalStatus });
+                listViewItem.Tag = item.pre;
+                lsvOnHold.Items.Add(listViewItem);
+            }
         }
         private void LoadDataCustomerToText(Customer customer)
         {
@@ -66,6 +96,7 @@ namespace GUI.FormDichVu
             else
             {
                 LoadDataCustomerToText(customer);
+                AddInfoListView();
             }
             
             var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
@@ -103,7 +134,11 @@ namespace GUI.FormDichVu
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin\nĐĩa này đã được thuê", "Thuê Đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            if (disk.DiskRentalStatus.Equals(STATUS_ONHOLD))
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin\nĐĩa này đã được đặt trước", "Thuê Đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (binding.Contains(disk))
             {
                 MessageBox.Show("Vui lòng kiểm tra lại thông tin\nĐĩa này đã tồn tại trong danh sách", "Thuê Đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -121,12 +156,12 @@ namespace GUI.FormDichVu
         }
         private void grv_ThueDia_RowCountChanged(object sender, EventArgs e)
         {
-            double total = 0;
+            this.totalRent = 0;
             foreach (var item in binding.DataSource as List<DiskInfoRent>)
             {
-                total += item.Price;
+                this.totalRent += item.Price;
             }
-            txtTongTien.Text = total.ToString();
+            txtTongTien.Text = (totalRent+totalOnHold).ToString();
         }
        
         private void ThucHienThueDia()
@@ -146,13 +181,63 @@ namespace GUI.FormDichVu
             binding.DataSource = new List<DiskInfoRent>();
 
         }
+        private void ThucHienLayDiaDatTruoc()
+        {
+            DetailPreOrderBUL dbpre = new DetailPreOrderBUL();
+            int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
+            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            {
+                //xét lại trigger cập nhật số lượng
+                //Nếu check
+                if (lsvOnHold.Items[i].Checked)
+                {
+                    dbRented.AddListRented(ListItemToListRented(lsvOnHold.Items[i]));
+                }
+                //Xóa preorder
+                DetailPreOrder pre = lsvOnHold.Items[i].Tag as DetailPreOrder;
+                dbpre.DeleteDetailPreOrder(pre.IdDetailPreOrder);
+            }
 
+        }
+        // Đang làm dở phần xử lí lấy đĩa thuê
+        private ListRented ListItemToListRented(ListViewItem item)
+        {
+            ListRented rented = new ListRented { };
+            return rented;
+        }
         private void btnXacNhanThueDia_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Xác nhận thuê đĩa", "Thuê đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.Yes)
             {
                 ThucHienThueDia();
+            }
+        }
+
+        private void lsvOnHold_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            this.totalOnHold = 0;
+            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            {
+                if (lsvOnHold.Items[i].Checked == true)
+                    this.totalOnHold += double.Parse(lsvOnHold.Items[i].SubItems[5].Text.ToString());
+            }
+            txtTongTien.Text = (totalRent + totalOnHold).ToString();
+        }
+
+        private void btnCheckAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            {
+                lsvOnHold.Items[i].Checked = true;
+            }
+        }
+
+        private void btnRemoveAllCheck_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            {
+                lsvOnHold.Items[i].Checked = false;
             }
         }
     }

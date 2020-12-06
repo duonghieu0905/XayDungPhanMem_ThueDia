@@ -95,7 +95,7 @@ namespace GUI
 
         private void adceTraDia_Click(object sender, EventArgs e)
         {
-            FormTraDia frm = new FormTraDia();
+            FormTraDia frm = new FormTraDia(bar_TrangThai.Caption.ToString());
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
 

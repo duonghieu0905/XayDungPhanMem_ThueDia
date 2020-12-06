@@ -11,6 +11,7 @@ namespace BUL
     public class ListRentedBUL
     {
         private const string UNPAID = "Unpaid";
+        private const string PAID = "Unpaid";
         private ListRentedDAL db;
         public ListRentedBUL()
         {
@@ -20,10 +21,15 @@ namespace BUL
         {
             return db.GetAllListRented();
         }
+        public ListRented GetListRented(int idListRented)
+        {
+            return db.GetListRented(idListRented);
+        }
         public List<ListRented> ListLate(int idCustomer)
         {
-            return db.GetAllListRented().Where(x => x.IdCustomer == idCustomer && x.StatusOnBill!=null&& x.StatusOnBill.Equals(UNPAID)).ToList();
+            return db.GetAllListRented().Where(x => x.IdCustomer == idCustomer && x.StatusOnBill != null && x.StatusOnBill.Equals(UNPAID)).ToList();
         }
+        
         public bool AddListRented(ListRented listRented)
         {
             return db.AddListRented(listRented);
@@ -36,6 +42,20 @@ namespace BUL
         {
             return db.DeleteListRented(idListRented);
         }
-        
+        public bool ReturnDisk(int idListRented)
+        {
+            ListRented rented = GetListRented(idListRented);
+            rented.ActualReturnDate = DateTime.Today;
+            return UpdateListRented(rented);
+            
+        }
+        public bool PayTheBill(int idListRented)
+        {
+            ListRented rented = GetListRented(idListRented);
+            rented.StatusOnBill = PAID;
+            return UpdateListRented(rented);
+
+        }
+
     }
 }

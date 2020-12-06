@@ -30,15 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tablePnl = new DevExpress.Utils.Layout.TablePanel();
+            this.tablePanel6 = new DevExpress.Utils.Layout.TablePanel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lsvOnHold = new System.Windows.Forms.ListView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grdc_DSThueDia = new DevExpress.XtraGrid.GridControl();
+            this.contextDS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnLoaiBoKhoiDS = new System.Windows.Forms.ToolStripMenuItem();
+            this.grv_ThueDia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.btnXacNhanThueDia = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel5 = new DevExpress.Utils.Layout.TablePanel();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
-            this.grdc_DSThueDia = new DevExpress.XtraGrid.GridControl();
-            this.contextDS = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnLoaiBoKhoiDS = new System.Windows.Forms.ToolStripMenuItem();
-            this.grv_ThueDia = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tablePanel4 = new DevExpress.Utils.Layout.TablePanel();
             this.btn_ThemDia = new DevExpress.XtraEditors.SimpleButton();
             this.txt_MaDiaNhapVao = new DevExpress.XtraEditors.TextEdit();
@@ -57,16 +61,23 @@
             this.txt_MaKHNhapVao = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextOnHold = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnCheckAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRemoveAllCheck = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePnl)).BeginInit();
             this.tablePnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).BeginInit();
+            this.tablePanel6.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).BeginInit();
+            this.contextDS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grv_ThueDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).BeginInit();
             this.tablePanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).BeginInit();
-            this.contextDS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grv_ThueDia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).BeginInit();
             this.tablePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaDiaNhapVao.Properties)).BeginInit();
@@ -79,15 +90,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaKHNhapVao.Properties)).BeginInit();
+            this.contextOnHold.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePnl
             // 
             this.tablePnl.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
+            this.tablePnl.Controls.Add(this.tablePanel6);
             this.tablePnl.Controls.Add(this.tablePanel1);
             this.tablePnl.Controls.Add(this.tablePanel5);
-            this.tablePnl.Controls.Add(this.grdc_DSThueDia);
             this.tablePnl.Controls.Add(this.tablePanel4);
             this.tablePnl.Controls.Add(this.tablePanel3);
             this.tablePnl.Controls.Add(this.tablePanel2);
@@ -105,6 +117,98 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 60F)});
             this.tablePnl.Size = new System.Drawing.Size(1200, 658);
             this.tablePnl.TabIndex = 0;
+            // 
+            // tablePanel6
+            // 
+            this.tablePnl.SetColumn(this.tablePanel6, 0);
+            this.tablePanel6.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel6.Controls.Add(this.groupBox2);
+            this.tablePanel6.Controls.Add(this.groupBox1);
+            this.tablePanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel6.Location = new System.Drawing.Point(3, 233);
+            this.tablePanel6.Name = "tablePanel6";
+            this.tablePnl.SetRow(this.tablePanel6, 4);
+            this.tablePanel6.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel6.Size = new System.Drawing.Size(1194, 253);
+            this.tablePanel6.TabIndex = 9;
+            // 
+            // groupBox2
+            // 
+            this.tablePanel6.SetColumn(this.groupBox2, 1);
+            this.groupBox2.Controls.Add(this.lsvOnHold);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(600, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.tablePanel6.SetRow(this.groupBox2, 0);
+            this.groupBox2.Size = new System.Drawing.Size(591, 247);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh sách đặt trước";
+            // 
+            // lsvOnHold
+            // 
+            this.lsvOnHold.CheckBoxes = true;
+            this.lsvOnHold.ContextMenuStrip = this.contextOnHold;
+            this.lsvOnHold.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvOnHold.HideSelection = false;
+            this.lsvOnHold.Location = new System.Drawing.Point(3, 23);
+            this.lsvOnHold.Name = "lsvOnHold";
+            this.lsvOnHold.Size = new System.Drawing.Size(585, 221);
+            this.lsvOnHold.TabIndex = 0;
+            this.lsvOnHold.UseCompatibleStateImageBehavior = false;
+            this.lsvOnHold.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lsvOnHold_ItemChecked);
+            // 
+            // groupBox1
+            // 
+            this.tablePanel6.SetColumn(this.groupBox1, 0);
+            this.groupBox1.Controls.Add(this.grdc_DSThueDia);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.tablePanel6.SetRow(this.groupBox1, 0);
+            this.groupBox1.Size = new System.Drawing.Size(591, 247);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Danh sách thuê";
+            // 
+            // grdc_DSThueDia
+            // 
+            this.grdc_DSThueDia.ContextMenuStrip = this.contextDS;
+            this.grdc_DSThueDia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdc_DSThueDia.Location = new System.Drawing.Point(3, 23);
+            this.grdc_DSThueDia.MainView = this.grv_ThueDia;
+            this.grdc_DSThueDia.Name = "grdc_DSThueDia";
+            this.grdc_DSThueDia.Size = new System.Drawing.Size(585, 221);
+            this.grdc_DSThueDia.TabIndex = 8;
+            this.grdc_DSThueDia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grv_ThueDia});
+            // 
+            // contextDS
+            // 
+            this.contextDS.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextDS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnLoaiBoKhoiDS});
+            this.contextDS.Name = "contextDS";
+            this.contextDS.Size = new System.Drawing.Size(235, 30);
+            // 
+            // btnLoaiBoKhoiDS
+            // 
+            this.btnLoaiBoKhoiDS.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoaiBoKhoiDS.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
+            this.btnLoaiBoKhoiDS.Name = "btnLoaiBoKhoiDS";
+            this.btnLoaiBoKhoiDS.Size = new System.Drawing.Size(234, 26);
+            this.btnLoaiBoKhoiDS.Text = "Loại Khỏi Danh Sách";
+            this.btnLoaiBoKhoiDS.Click += new System.EventHandler(this.btnLoaiBoKhoiDS_Click);
+            // 
+            // grv_ThueDia
+            // 
+            this.grv_ThueDia.GridControl = this.grdc_DSThueDia;
+            this.grv_ThueDia.Name = "grv_ThueDia";
+            this.grv_ThueDia.OptionsView.ShowFooter = true;
+            this.grv_ThueDia.RowCountChanged += new System.EventHandler(this.grv_ThueDia_RowCountChanged);
             // 
             // tablePanel1
             // 
@@ -189,44 +293,6 @@
             this.tablePanel5.SetRow(this.txtTongTien, 0);
             this.txtTongTien.Size = new System.Drawing.Size(159, 28);
             this.txtTongTien.TabIndex = 8;
-            // 
-            // grdc_DSThueDia
-            // 
-            this.tablePnl.SetColumn(this.grdc_DSThueDia, 0);
-            this.grdc_DSThueDia.ContextMenuStrip = this.contextDS;
-            this.grdc_DSThueDia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_DSThueDia.Location = new System.Drawing.Point(3, 233);
-            this.grdc_DSThueDia.MainView = this.grv_ThueDia;
-            this.grdc_DSThueDia.Name = "grdc_DSThueDia";
-            this.tablePnl.SetRow(this.grdc_DSThueDia, 4);
-            this.grdc_DSThueDia.Size = new System.Drawing.Size(1194, 253);
-            this.grdc_DSThueDia.TabIndex = 6;
-            this.grdc_DSThueDia.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grv_ThueDia});
-            // 
-            // contextDS
-            // 
-            this.contextDS.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextDS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnLoaiBoKhoiDS});
-            this.contextDS.Name = "contextDS";
-            this.contextDS.Size = new System.Drawing.Size(235, 30);
-            // 
-            // btnLoaiBoKhoiDS
-            // 
-            this.btnLoaiBoKhoiDS.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoaiBoKhoiDS.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
-            this.btnLoaiBoKhoiDS.Name = "btnLoaiBoKhoiDS";
-            this.btnLoaiBoKhoiDS.Size = new System.Drawing.Size(234, 26);
-            this.btnLoaiBoKhoiDS.Text = "Loại Khỏi Danh Sách";
-            this.btnLoaiBoKhoiDS.Click += new System.EventHandler(this.btnLoaiBoKhoiDS_Click);
-            // 
-            // grv_ThueDia
-            // 
-            this.grv_ThueDia.GridControl = this.grdc_DSThueDia;
-            this.grv_ThueDia.Name = "grv_ThueDia";
-            this.grv_ThueDia.OptionsView.ShowFooter = true;
-            this.grv_ThueDia.RowCountChanged += new System.EventHandler(this.grv_ThueDia_RowCountChanged);
             // 
             // tablePanel4
             // 
@@ -533,6 +599,31 @@
             this.label1.Text = "Thuê Đĩa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // contextOnHold
+            // 
+            this.contextOnHold.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextOnHold.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnCheckAll,
+            this.btnRemoveAllCheck});
+            this.contextOnHold.Name = "contextOnHold";
+            this.contextOnHold.Size = new System.Drawing.Size(187, 56);
+            // 
+            // btnCheckAll
+            // 
+            this.btnCheckAll.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckAll.Name = "btnCheckAll";
+            this.btnCheckAll.Size = new System.Drawing.Size(210, 26);
+            this.btnCheckAll.Text = "Chọn tất cả";
+            this.btnCheckAll.Click += new System.EventHandler(this.btnCheckAll_Click);
+            // 
+            // btnRemoveAllCheck
+            // 
+            this.btnRemoveAllCheck.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveAllCheck.Name = "btnRemoveAllCheck";
+            this.btnRemoveAllCheck.Size = new System.Drawing.Size(210, 26);
+            this.btnRemoveAllCheck.Text = "Bỏ chọn tất cả";
+            this.btnRemoveAllCheck.Click += new System.EventHandler(this.btnRemoveAllCheck_Click);
+            // 
             // FormThueDia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -545,15 +636,19 @@
             this.Load += new System.EventHandler(this.FormThueDia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablePnl)).EndInit();
             this.tablePnl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).EndInit();
+            this.tablePanel6.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).EndInit();
+            this.contextDS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grv_ThueDia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel5)).EndInit();
             this.tablePanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_DSThueDia)).EndInit();
-            this.contextDS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grv_ThueDia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel4)).EndInit();
             this.tablePanel4.ResumeLayout(false);
             this.tablePanel4.PerformLayout();
@@ -568,6 +663,7 @@
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_MaKHNhapVao.Properties)).EndInit();
+            this.contextOnHold.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -593,8 +689,6 @@
         private DevExpress.XtraEditors.TextEdit txt_MaDiaNhapVao;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.SimpleButton btn_ThemDia;
-        private DevExpress.XtraGrid.GridControl grdc_DSThueDia;
-        private DevExpress.XtraGrid.Views.Grid.GridView grv_ThueDia;
         private DevExpress.Utils.Layout.TablePanel tablePanel5;
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.TextEdit txtTongTien;
@@ -602,5 +696,14 @@
         private DevExpress.XtraEditors.SimpleButton btnXacNhanThueDia;
         private System.Windows.Forms.ContextMenuStrip contextDS;
         private System.Windows.Forms.ToolStripMenuItem btnLoaiBoKhoiDS;
+        private DevExpress.Utils.Layout.TablePanel tablePanel6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraGrid.GridControl grdc_DSThueDia;
+        private DevExpress.XtraGrid.Views.Grid.GridView grv_ThueDia;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListView lsvOnHold;
+        private System.Windows.Forms.ContextMenuStrip contextOnHold;
+        private System.Windows.Forms.ToolStripMenuItem btnCheckAll;
+        private System.Windows.Forms.ToolStripMenuItem btnRemoveAllCheck;
     }
 }

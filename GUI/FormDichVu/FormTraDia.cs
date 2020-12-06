@@ -19,13 +19,15 @@ namespace GUI.FormDichVu
         private ListRentedBUL dbListRented;
         private List<DiskInfoReturn> db;
         private BindingSource binding;
-        public FormTraDia()
+        private string auth;
+        public FormTraDia(string auth)
         {
             InitializeComponent();
             dbListRented = new ListRentedBUL();
             db = ExpressionMethod.DBDiskReturn();
             binding = new BindingSource();
             binding.DataSource = new List<DiskInfoReturn>();
+            this.auth = auth;
         }
 
         private void btn_XacNhanTraDia_Click(object sender, EventArgs e)
@@ -61,16 +63,30 @@ namespace GUI.FormDichVu
 
         private void btnThucHienTraDia_Click(object sender, EventArgs e)
         {
-            if (true)
+            DialogResult result = MessageBox.Show("Xác nhận trả đĩa", "Trả đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                DialogResult result = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                ThucHienTraDia();
+            }
+            var customer = new CustomerBUL().GetCustomer(Int32.Parse(txtMaKH.Text.ToString()));
+            var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
+            if (lstLate.Count > 0)
+            {
+                DialogResult result1 = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result1 == DialogResult.Yes)
                 {
-                    FormThanhToan frm = new FormThanhToan(null, null,null);
-                    frm.ShowDialog();
-                    db = ExpressionMethod.DBDiskReturn();
+                    FormThanhToan frm = new FormThanhToan(customer, lstLate, this.auth);
+                    frm.Show();
+                    frm.FormClosing += Frm_FormClosing;
                 }
             }
+        }
+
+        private void Frm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            db = ExpressionMethod.DBDiskReturn();
+            dbListRented = new ListRentedBUL();
         }
 
         private void FormTraDia_Load(object sender, EventArgs e)
@@ -92,8 +108,15 @@ namespace GUI.FormDichVu
         {
             foreach (var item in binding.DataSource as List<DiskInfoReturn>)
             {
+                if (dbListRented.ReturnDisk(item.IdListRented) == false)
+                {
+                    MessageBox.Show("Trả đĩa thất bại", "Trả đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
+            MessageBox.Show("Trả đĩa thành công", "Trả đĩa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            db = ExpressionMethod.DBDiskReturn();
+            binding.DataSource = new List<DiskInfoReturn>();
         }
     }
 }

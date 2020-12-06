@@ -59,7 +59,7 @@ namespace GUI.FormChucNang
                 string rentalDate = ((DateTime)item.RentalDate).ToString(FORMAT_DATE);
                 string expectedDate = ((DateTime)item.ExpectedReturnDate).ToString(FORMAT_DATE);
                 string actualDate = ((DateTime)item.ActualReturnDate).ToString(FORMAT_DATE);
-                ListViewItem listViewItem = new ListViewItem(new string[] {item.IdCustomer.ToString(),"1",rentalDate,expectedDate,actualDate,item.LateFee.ToString()});
+                ListViewItem listViewItem = new ListViewItem(new string[] {item.IdDisk.ToString(),"1",rentalDate,expectedDate,actualDate,item.LateFee.ToString()});
                 listViewItem.Tag = item.IdListRented;
                 lstvThanhToanTreHan.Items.Add(listViewItem);
             }

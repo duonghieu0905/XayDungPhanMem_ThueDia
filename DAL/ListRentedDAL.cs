@@ -21,6 +21,10 @@ namespace DAL
             context.SaveChanges();
             return true;
         }
+        public ListRented GetListRented(int idListRented)
+        {
+            return context.ListRenteds.Find(idListRented);
+        }
         public bool UpdateListRented(ListRented listRented)
         {
             ListRented listRentedUpdate = context.ListRenteds.Find(listRented.IdListRented);

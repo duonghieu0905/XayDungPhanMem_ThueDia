@@ -260,7 +260,7 @@ namespace GUI
                 .Join(dbCustomer.GetCustomers(), rtdt => rtdt.rtd.rt.IdCustomer, c => c.IdCustomer, (rtdt, c) => new { rtdt, c });
             foreach (var item in db)
             {
-                lst.Add(new DiskInfoReturn { Address = item.c.Address, CustomerName = item.c.CustomerName, ExpectedDate = (DateTime)item.rtdt.rtd.rt.ExpectedReturnDate, IdCustomer = (int)item.rtdt.rtd.rt.IdCustomer, IdDisk = (int)item.rtdt.rtd.rt.IdDisk, PhoneNumber = item.c.PhoneNumber, RentedDate = (DateTime)item.rtdt.rtd.rt.RentalDate, Title = item.rtdt.t.NameTitle });
+                lst.Add(new DiskInfoReturn { Address = item.c.Address, CustomerName = item.c.CustomerName, ExpectedDate = (DateTime)item.rtdt.rtd.rt.ExpectedReturnDate, IdCustomer = (int)item.rtdt.rtd.rt.IdCustomer, IdDisk = (int)item.rtdt.rtd.rt.IdDisk, PhoneNumber = item.c.PhoneNumber, RentedDate = (DateTime)item.rtdt.rtd.rt.RentalDate, Title = item.rtdt.t.NameTitle,IdListRented=item.rtdt.rtd.rt.IdListRented });
             }
             return lst;
         }
