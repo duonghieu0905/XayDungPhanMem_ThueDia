@@ -72,7 +72,7 @@
 					select top 1 @IdListTitlePreOrder=d.IdListTitlePreOrder from deleted d
 					select @count=COUNT(*) from DetailPreOrders where @IdListTitlePreOrder=IdListTitlePreOrder
 					IF @count=0
-						update ListTitlePreOrders set StatusProcess='completed' where IdListTitlePreOrder=@IdListTitlePreOrder
+						update ListTitlePreOrders set StatusProcess='Completed' where IdListTitlePreOrder=@IdListTitlePreOrder
 				end");
         }
 

@@ -51,6 +51,8 @@
     <Compile Include="ListRented.cs" />
     <Compile Include="ListTitlePreOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportCustomer.cs" />
+    <Compile Include="ReportTitle.cs" />
     <Compile Include="Title.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

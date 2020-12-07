@@ -166,6 +166,7 @@ namespace GUI.FormDichVu
        
         private void ThucHienThueDia()
         {
+            ThucHienLayDiaDatTruoc();
             int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
             foreach (var item in binding.DataSource as List<DiskInfoRent>)
             {
@@ -187,22 +188,24 @@ namespace GUI.FormDichVu
             int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
             for (int i = 0; i < lsvOnHold.Items.Count; i++)
             {
-                //xét lại trigger cập nhật số lượng
-                //Nếu check
                 if (lsvOnHold.Items[i].Checked)
                 {
                     dbRented.AddListRented(ListItemToListRented(lsvOnHold.Items[i]));
                 }
-                //Xóa preorder
                 DetailPreOrder pre = lsvOnHold.Items[i].Tag as DetailPreOrder;
                 dbpre.DeleteDetailPreOrder(pre.IdDetailPreOrder);
             }
-
+            AddInfoListView();
         }
-        // Đang làm dở phần xử lí lấy đĩa thuê
         private ListRented ListItemToListRented(ListViewItem item)
         {
-            ListRented rented = new ListRented { };
+            int idDisk = Int32.Parse(item.SubItems[0].Text.ToString());
+            int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
+            int timeRent = Int32.Parse(item.SubItems[3].Text.ToString());
+            double lateFee = double.Parse(item.SubItems[4].Text.ToString());
+            ListRented rented = new ListRented {
+            ActualReturnDate=null,RentalDate=DateTime.Today,ExpectedReturnDate=DateTime.Today.AddDays(timeRent),IdCustomer=idCustomer,IdDisk=idDisk,LateFee=lateFee,StatusOnBill=null
+            };
             return rented;
         }
         private void btnXacNhanThueDia_Click(object sender, EventArgs e)
