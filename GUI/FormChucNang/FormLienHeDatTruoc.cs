@@ -23,7 +23,7 @@ namespace GUI.FormChucNang
         }
         private void ConfigToSuccessView()
         {
-            ExpressionMethod.EditGridView(gridView1);
+            ExpressionMethod.EditGridView(grvDanhSachDat);
         }
     }
 }

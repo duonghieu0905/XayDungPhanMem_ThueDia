@@ -136,7 +136,9 @@ namespace GUI.FormQuanLy
         private void LoadDuDoanGridView(int idCustomer)
         {
             var dbAllRented = dbRented.GetListRenteds();
-            var lstDuDoan = dbAllRented.Where(x => x.IdCustomer == idCustomer && x.StatusOnBill == null && x.ExpectedReturnDate < DateTime.Today).Select(x => new { IdDisk = x.IdDisk, ExpectedReturnDate = x.ExpectedReturnDate });
+            var lstDuDoan = dbAllRented.Where(x => x.IdCustomer == idCustomer && x.StatusOnBill == null && x.ExpectedReturnDate < DateTime.Today).Select(x => new { IdDisk = x.IdDisk, ExpectedReturnDate = x.ExpectedReturnDate })
+                .Join(dbDisk.GetDisks(), dd => dd.IdDisk, d => d.IdDisk, (dd, d) => new { dd, d })
+                .Join(dbTitle.GetTitles(), ddd => ddd.d.IdTitle, t => t.IdTitle,(ddd,t)=> new{ IdDisk = ddd.dd.IdDisk, ExpectedReturnDate = ddd.dd.ExpectedReturnDate,Title=t.NameTitle });
             var bindingDuDoan = new BindingSource();
             bindingDuDoan.DataSource = lstDuDoan;
             ExpressionMethod.LoadGridControl(grcDuDoan, grvDuDoan, bindingDuDoan);
