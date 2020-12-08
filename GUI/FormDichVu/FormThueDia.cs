@@ -66,10 +66,14 @@ namespace GUI.FormDichVu
         }
         private void AddInfoListView()
         {
+            //Thieu ne
             lsvOnHold.Items.Clear();
             int IdCustomer = Int32.Parse(txtMaKH.Text.ToString());
             var dbOnHold = db
-                .Join(new DetailPreOrderBUL().GetDetailPreOrders().Where(x=>x.Accepted==true), x => x.IdDisk, pre => pre.IdDisk, (x, pre) =>new {x,pre});
+                .Join(new DetailPreOrderBUL().GetDetailPreOrders().Where(x => x.Accepted == true&&x.IdCustomer==IdCustomer), x => x.IdDisk, pre => pre.IdDisk, (x, pre) => new { x, pre });
+                //.Join(new ListTitlePreOrderBUL().GetListTitlePreOrders().Where(x => x.IdCustomer == IdCustomer),xpre=>xpre.pre.id)
+                
+            
             foreach (var item in dbOnHold)
             {
                 ListViewItem listViewItem = new ListViewItem(new string[] { item.x.IdDisk.ToString(), item.x.Title, item.x.TypeName, item.x.TimeRented.ToString(), item.x.LateFee.ToString(), item.x.Price.ToString(), item.x.DiskRentalStatus });

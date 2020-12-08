@@ -41,13 +41,7 @@ namespace GUI
                 bar_TrangThai.ImageOptions.Image = Properties.Resources.icons8_guest_32;
                 bar_BtnLog.ImageOptions.Image = Properties.Resources.icons8_key2_16;
             }
-            else
-            {
-                bar_TrangThai.Caption = lst[2];
-                bar_BtnLog.Caption = lst[4];
-                bar_TrangThai.ImageOptions.Image = Properties.Resources.icons8_businessman_32;
-                bar_BtnLog.ImageOptions.Image = Properties.Resources.icons8_exit_16;
-            }
+            
         }
 
         private void bar_BtnLog_ItemClick(object sender, ItemClickEventArgs e)
@@ -68,7 +62,6 @@ namespace GUI
                 ExpressionMethod.AddFormToFluent(fluent_label, frm);
                 this.form = frm;
                 frm.btn_Login.Click += Btn_Login_Click;
-                frm.Enter+= Btn_Login_Click;
             }
 
         }
@@ -79,9 +72,13 @@ namespace GUI
             string password = ((LoginForm)form).txt_MatKhau.Text;
             if (account.Equals("admin") && (password.Equals("admin")))
             {
-                ChangeBar();
+                bar_TrangThai.Caption = lst[2];
+                bar_BtnLog.Caption = lst[4];
+                bar_TrangThai.ImageOptions.Image = Properties.Resources.icons8_businessman_32;
+                bar_BtnLog.ImageOptions.Image = Properties.Resources.icons8_exit_16;
                 MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else MessageBox.Show("Đăng nhập thất bại\n Sai tên đăng nhập hoặc mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
 

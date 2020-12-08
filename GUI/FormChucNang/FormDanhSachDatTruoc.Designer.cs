@@ -34,31 +34,23 @@
             this.grdc_DanhSach = new DevExpress.XtraGrid.GridControl();
             this.contextMenuDS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnHuyDatTruoc = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.grdc_ChiTiet = new DevExpress.XtraGrid.GridControl();
+            this.grvDSDatTruoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.contextMenuCT = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnHuyMucDatTruoc = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DanhSach)).BeginInit();
             this.contextMenuDS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_ChiTiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvDSDatTruoc)).BeginInit();
             this.contextMenuCT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
             this.tablePanel1.Controls.Add(this.groupBox2);
-            this.tablePanel1.Controls.Add(this.groupBox1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
@@ -76,7 +68,7 @@
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.tablePanel1.SetRow(this.groupBox2, 0);
-            this.groupBox2.Size = new System.Drawing.Size(444, 528);
+            this.groupBox2.Size = new System.Drawing.Size(894, 528);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Đặt Trước";
@@ -86,12 +78,12 @@
             this.grdc_DanhSach.ContextMenuStrip = this.contextMenuDS;
             this.grdc_DanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdc_DanhSach.Location = new System.Drawing.Point(3, 23);
-            this.grdc_DanhSach.MainView = this.gridView1;
+            this.grdc_DanhSach.MainView = this.grvDSDatTruoc;
             this.grdc_DanhSach.Name = "grdc_DanhSach";
-            this.grdc_DanhSach.Size = new System.Drawing.Size(438, 502);
+            this.grdc_DanhSach.Size = new System.Drawing.Size(888, 502);
             this.grdc_DanhSach.TabIndex = 1;
             this.grdc_DanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.grvDSDatTruoc});
             // 
             // contextMenuDS
             // 
@@ -99,47 +91,22 @@
             this.contextMenuDS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHuyDatTruoc});
             this.contextMenuDS.Name = "contextMenuDS";
-            this.contextMenuDS.Size = new System.Drawing.Size(192, 30);
+            this.contextMenuDS.Size = new System.Drawing.Size(215, 58);
             // 
             // btnHuyDatTruoc
             // 
             this.btnHuyDatTruoc.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyDatTruoc.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
             this.btnHuyDatTruoc.Name = "btnHuyDatTruoc";
-            this.btnHuyDatTruoc.Size = new System.Drawing.Size(191, 26);
+            this.btnHuyDatTruoc.Size = new System.Drawing.Size(214, 26);
             this.btnHuyDatTruoc.Text = "Hủy Đặt Trước";
+            this.btnHuyDatTruoc.Click += new System.EventHandler(this.btnHuyDatTruoc_Click);
             // 
-            // gridView1
+            // grvDSDatTruoc
             // 
-            this.gridView1.GridControl = this.grdc_DanhSach;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            // 
-            // groupBox1
-            // 
-            this.tablePanel1.SetColumn(this.groupBox1, 1);
-            this.groupBox1.Controls.Add(this.grdc_ChiTiet);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox1.Location = new System.Drawing.Point(453, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.tablePanel1.SetRow(this.groupBox1, 0);
-            this.groupBox1.Size = new System.Drawing.Size(444, 528);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chi Tiết Đặt Trước";
-            // 
-            // grdc_ChiTiet
-            // 
-            this.grdc_ChiTiet.ContextMenuStrip = this.contextMenuCT;
-            this.grdc_ChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_ChiTiet.Location = new System.Drawing.Point(3, 23);
-            this.grdc_ChiTiet.MainView = this.gridView2;
-            this.grdc_ChiTiet.Name = "grdc_ChiTiet";
-            this.grdc_ChiTiet.Size = new System.Drawing.Size(438, 502);
-            this.grdc_ChiTiet.TabIndex = 2;
-            this.grdc_ChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.grvDSDatTruoc.GridControl = this.grdc_DanhSach;
+            this.grvDSDatTruoc.Name = "grvDSDatTruoc";
+            this.grvDSDatTruoc.OptionsView.ShowFooter = true;
             // 
             // contextMenuCT
             // 
@@ -157,12 +124,6 @@
             this.btnHuyMucDatTruoc.Size = new System.Drawing.Size(179, 26);
             this.btnHuyMucDatTruoc.Text = "Hủy Mục Này";
             // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.grdc_ChiTiet;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowFooter = true;
-            // 
             // FormDanhSachDatTruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -178,11 +139,8 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DanhSach)).EndInit();
             this.contextMenuDS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_ChiTiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvDSDatTruoc)).EndInit();
             this.contextMenuCT.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,9 +154,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnHuyMucDatTruoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraGrid.GridControl grdc_DanhSach;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraGrid.GridControl grdc_ChiTiet;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView grvDSDatTruoc;
     }
 }

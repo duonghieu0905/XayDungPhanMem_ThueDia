@@ -17,6 +17,7 @@ namespace Entities
         public virtual Title Title { get; set; }
         [DisplayName("Mã Tiêu Đề")]
         public int? IdTitle { get; set; }
+        [Display(Order = -1)]
         [DisplayName("Số Lượng Đặt Trước")]
         public int? NumberOfDisk { get; set; }
         [DisplayName("Trạng Thái Đơn Đặt Trước")]
