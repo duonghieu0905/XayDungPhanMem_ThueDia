@@ -16,6 +16,8 @@ namespace Entities
         public virtual Disk Disk { get; set; }
         [DisplayName("Mã Đĩa Bản Sao")]
         public int? IdDisk { get; set; }
+        [DisplayName("Chấp Thuận")]
+        public bool? Accepted { get; set; }
         [Display(Order = -1)]
         public virtual ListTitlePreOrder ListTitlePreOrder { get; set; }
         public int? IdListTitlePreOrder { get; set; }

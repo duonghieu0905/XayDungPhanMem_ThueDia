@@ -42,7 +42,7 @@ namespace GUI.FormDichVu
 
         private void AddInfoToAccessForm()
         {
-            tablePnl.Rows[4].Height = 610;
+            tablePnl.Rows[4].Height = 450;
             ExpressionMethod.EditGridView(grv_ThueDia);
             ExpressionMethod.ConfigListView(lsvOnHold);
             AddColumnToList();
@@ -69,7 +69,7 @@ namespace GUI.FormDichVu
             lsvOnHold.Items.Clear();
             int IdCustomer = Int32.Parse(txtMaKH.Text.ToString());
             var dbOnHold = db
-                .Join(new DetailPreOrderBUL().GetDetailPreOrders(), x => x.IdDisk, pre => pre.IdDisk, (x, pre) =>new {x,pre});
+                .Join(new DetailPreOrderBUL().GetDetailPreOrders().Where(x=>x.Accepted==true), x => x.IdDisk, pre => pre.IdDisk, (x, pre) =>new {x,pre});
             foreach (var item in dbOnHold)
             {
                 ListViewItem listViewItem = new ListViewItem(new string[] { item.x.IdDisk.ToString(), item.x.Title, item.x.TypeName, item.x.TimeRented.ToString(), item.x.LateFee.ToString(), item.x.Price.ToString(), item.x.DiskRentalStatus });

@@ -99,9 +99,9 @@
             //Chi Tiết Đặt Trước
             var lstDetailPreOrder = new List<DetailPreOrder>
             {
-                new DetailPreOrder { IdCustomer = 1, IdListTitlePreOrder = 1, IdDisk = 2 },
-                new DetailPreOrder { IdCustomer = 1, IdListTitlePreOrder = 1, IdDisk = 3 },
-                new DetailPreOrder { IdCustomer = 1, IdListTitlePreOrder = 1, IdDisk = 4 },
+                new DetailPreOrder { IdCustomer = 1, IdListTitlePreOrder = 1, IdDisk = 2,Accepted=false },
+                new DetailPreOrder { IdCustomer = 1, IdListTitlePreOrder = 1, IdDisk = 3,Accepted=false },
+                new DetailPreOrder { IdCustomer = 1, IdListTitlePreOrder = 1, IdDisk = 4,Accepted=false },
             };
             //Update database first
             lstCustomer.ForEach(x => context.Customers.AddOrUpdate(x));

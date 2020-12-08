@@ -14,6 +14,10 @@ namespace BUL
         {
             return db.GetAllListTitlePreOrder();
         }
+        public ListTitlePreOrder GetListTitlePreOrder(int idListTitlePreOrder)
+        {
+            return db.GetListTitlePreOrder(idListTitlePreOrder);
+        }
         public bool AddListTitlePreOrder(ListTitlePreOrder listTitlePreOrder)
         {
             listTitlePreOrder.StatusProcess = "Incompleted";

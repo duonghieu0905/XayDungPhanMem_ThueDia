@@ -57,13 +57,9 @@
     <Compile Include="DiskTypeDAL.cs" />
     <Compile Include="ListRentedDAL.cs" />
     <Compile Include="ListTitlePreOrderDAL.cs" />
-    <Compile Include="Migrations\202012010858271_init.cs" />
-    <Compile Include="Migrations\202012010858271_init.designer.cs">
-      <DependentUpon>202012010858271_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012060757063_trigger.cs" />
-    <Compile Include="Migrations\202012060757063_trigger.designer.cs">
-      <DependentUpon>202012060757063_trigger.cs</DependentUpon>
+    <Compile Include="Migrations\202012071401358_init.cs" />
+    <Compile Include="Migrations\202012071401358_init.designer.cs">
+      <DependentUpon>202012071401358_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TitleDAL.cs" />
@@ -81,11 +77,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012010858271_init.resx">
-      <DependentUpon>202012010858271_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012060757063_trigger.resx">
-      <DependentUpon>202012060757063_trigger.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202012071401358_init.resx">
+      <DependentUpon>202012071401358_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,6 +15,10 @@ namespace DAL
         {
             return context.ListTitlePreOrders.ToList();
         }
+        public ListTitlePreOrder GetListTitlePreOrder(int idListTitlePreOrder)
+        {
+            return context.ListTitlePreOrders.Find(idListTitlePreOrder);
+        }
         public bool AddListTitlePreOrder(ListTitlePreOrder listTitlePreOrder)
         {
             context.ListTitlePreOrders.Add(listTitlePreOrder);

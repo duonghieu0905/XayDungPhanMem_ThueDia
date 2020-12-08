@@ -27,5 +27,15 @@ namespace BUL
         {
             return db.DeleteDetailPreOrderDAL(idDetailPreOrder);
         }
+        public DetailPreOrder GetDetailPreOrder(int idDetailPreOrder)
+        {
+            return db.GetDetailPreOrder(idDetailPreOrder);
+        }
+        public bool UpdateAccepted(int idDetailPreOrder)
+        {
+            var s = GetDetailPreOrder(idDetailPreOrder);
+            s.Accepted = true;
+            return UpdateDetailPreOrder(s);
+        }
     }
 }

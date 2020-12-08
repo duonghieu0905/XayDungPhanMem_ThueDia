@@ -38,6 +38,8 @@ namespace DAL
         public bool DeleteDisk(int idDisk)
         {
             Disk diskDelete = context.Disks.Find(idDisk);
+            if (diskDelete.DiskRentalStatus.Equals("Rented") || diskDelete.DiskRentalStatus.Equals("OnHold"))
+                return false;
             context.Disks.Remove(diskDelete);
             context.SaveChanges();
             return true;

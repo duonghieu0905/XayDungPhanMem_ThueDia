@@ -15,7 +15,7 @@ namespace Entities
         public string CustomerName { get; set; }
         [DisplayName("Địa Chỉ")]
         public string Address { get; set; }
-        [DisplayName("Số điệnt thoại")]
+        [DisplayName("Số điện thoại")]
         public string PhoneNumber { get; set; }
         [DisplayName("Số Đĩa Thuê")]
         public int TotalDiskRent { get; set; }

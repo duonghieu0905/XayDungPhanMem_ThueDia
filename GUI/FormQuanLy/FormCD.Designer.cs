@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).BeginInit();
-            
+            this.SuspendLayout();
             // 
             // label3
             // 
@@ -445,9 +445,6 @@
             this.tablePanel6.Size = new System.Drawing.Size(417, 40);
             this.tablePanel6.TabIndex = 5;
             // 
-            // txt_DiaTrenKe
-     
-            // 
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -484,7 +481,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel6)).EndInit();
-         
+            this.ResumeLayout(false);
 
         }
 
