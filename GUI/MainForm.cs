@@ -125,8 +125,12 @@ namespace GUI
 
         private void adceBaoCao_Click(object sender, EventArgs e)
         {
-            FormBaoCao frm = new FormBaoCao();
-            ExpressionMethod.AddFormToFluent(fluent_label, frm);
+            if (ExpressionMethod.CheckAuth(bar_TrangThai.Caption.ToString()))
+            {
+                FormBaoCao frm = new FormBaoCao();
+                ExpressionMethod.AddFormToFluent(fluent_label, frm);
+            }
+           
         }
 
         private void adceLoaiDia_Click(object sender, EventArgs e)

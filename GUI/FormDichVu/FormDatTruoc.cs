@@ -32,7 +32,7 @@ namespace GUI.FormDichVu
 
         private void FormDatTruoc_Load(object sender, EventArgs e)
         {
-            FormDanhSachDatTruoc frm = new FormDanhSachDatTruoc();
+            FormLienHeDatTruoc frm = new FormLienHeDatTruoc();
             ExpressionMethod.AddFormToPanel(pnl, frm);
         }
     }

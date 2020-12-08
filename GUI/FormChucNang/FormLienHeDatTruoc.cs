@@ -92,14 +92,21 @@ namespace GUI.FormChucNang
         }
         private void AcceptFromList()
         {
-            // Doi tat ca trong list thành accept
-            foreach (var item in bindingDSDatTruoc.DataSource as List<MyDeTailOrder>)
+            DialogResult result=MessageBox.Show("Xác nhận lấy đĩa", "Lấy Đĩa Đặt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                dbDetail.UpdateAccepted(item.IdDetailPreOrder);
-                //cap nhat trang thai dia
+                // Doi tat ca trong list thành accept
+                foreach (var item in bindingDSDatTruoc.DataSource as List<MyDeTailOrder>)
+                {
+                    dbDetail.UpdateAccepted(item.IdDetailPreOrder);
+                    //cap nhat trang thai dia
+                }
+                MessageBox.Show("Thực hiện chấp thuận lấy đĩa thành công", "Lấy Đĩa Đặt", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadNhungTieuDeDangChoAccept();
+                ThucHienKiemTraNguoiDatDia();
             }
-            LoadNhungTieuDeDangChoAccept();
-            ThucHienKiemTraNguoiDatDia();
+           
+            
         }
 
         private void btnTuChoi_Click(object sender, EventArgs e)
@@ -108,28 +115,39 @@ namespace GUI.FormChucNang
         }
         private void DenyList()
         {
-            //Xoa het o list detail 
-            foreach (var item in bindingDSDatTruoc.DataSource as List<MyDeTailOrder>)
+            DialogResult result = MessageBox.Show("Xác nhận từ chối không lấy đĩa", "Lấy Đĩa Đặt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
             {
-                dbDetail.DeleteDetailPreOrder(item.IdDetailPreOrder);
-                //cap nhat trang thai dia
-                var disk = dbDisk.GetDisk(item.IdDisk);
-                disk.DiskRentalStatus = STATUS_ONSHELF;
-                dbDisk.UpdateDisk(disk);
+                //Xoa het o list detail 
+                foreach (var item in bindingDSDatTruoc.DataSource as List<MyDeTailOrder>)
+                {
+                    dbDetail.DeleteDetailPreOrder(item.IdDetailPreOrder);
+                    //cap nhat trang thai dia
+                    var disk = dbDisk.GetDisk(item.IdDisk);
+                    disk.DiskRentalStatus = STATUS_ONSHELF;
+                    dbDisk.UpdateDisk(disk);
+                }
+                LoadNhungTieuDeDangChoAccept();
+                ThucHienKiemTraNguoiDatDia();
             }
-            LoadNhungTieuDeDangChoAccept();
-            ThucHienKiemTraNguoiDatDia();
+            
+           
         }
         private void DenyAtLocation()
         {
-            var dto = bindingDSDatTruoc[grvDSGanDia.GetSelectedRows()[0]] as MyDeTailOrder;
-            bindingDSDatTruoc.RemoveAt(grvDSGanDia.GetSelectedRows()[0]);
-            dbDetail.DeleteDetailPreOrder(dto.IdDetailPreOrder);
-             var disk = dbDisk.GetDisk(dto.IdDisk);
-            disk.DiskRentalStatus = STATUS_ONSHELF;
-            dbDisk.UpdateDisk(disk);
-            LoadNhungTieuDeDangChoAccept();
-            ThucHienKiemTraNguoiDatDia();
+
+            DialogResult result = MessageBox.Show("Xác nhận bỏ mục này", "Lấy Đĩa Đặt", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                var dto = bindingDSDatTruoc[grvDSGanDia.GetSelectedRows()[0]] as MyDeTailOrder;
+                bindingDSDatTruoc.RemoveAt(grvDSGanDia.GetSelectedRows()[0]);
+                dbDetail.DeleteDetailPreOrder(dto.IdDetailPreOrder);
+                var disk = dbDisk.GetDisk(dto.IdDisk);
+                disk.DiskRentalStatus = STATUS_ONSHELF;
+                dbDisk.UpdateDisk(disk);
+                LoadNhungTieuDeDangChoAccept();
+                ThucHienKiemTraNguoiDatDia();
+            }
         }
 
         private void btnHuyMuc_Click(object sender, EventArgs e)
