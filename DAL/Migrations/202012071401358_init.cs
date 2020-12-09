@@ -108,17 +108,37 @@
                 .Index(t => t.IdCustomer)
                 .Index(t => t.IdDisk)
                 .Index(t => t.IdListTitlePreOrder);
-            Sql(@"CREATE TRIGGER trigger_insert_disk ON Disks
-                    FOR INSERT
-                    AS
-                    BEGIN
-	                    declare @idTitle int
-	                    declare @count int
-	                    select top 1 @idTitle=IdTitle from inserted
-	                    select @count=COUNT(*) from Disks where @idTitle=IdTitle and DiskRentalStatus='OnShelf'
-	                    update Titles set TotalDiskOnShelf=@count where IdTitle=@idTitle
-                    END");
-            Sql(@"CREATE TRIGGER add_lst_rented ON ListRenteds
+            // xu li khi them dia thi kiem tra thu cap nhat so luong dia
+            Sql(@"CREATE TRIGGER [dbo].[trigger_insert_disk] ON [dbo].[Disks]
+                FOR INSERT
+                AS
+                BEGIN
+	                declare @idTitle int
+	                declare @count int
+	                select top 1 @idTitle=IdTitle from inserted
+	                select @count=COUNT(*) from Disks where @idTitle=IdTitle and DiskRentalStatus='OnShelf'
+	                update Titles set TotalDiskOnShelf=@count where IdTitle=@idTitle
+                END");
+            Sql(@"CREATE TRIGGER [dbo].[insert_disk] ON [dbo].[Disks]
+                FOR INSERT
+                AS
+                BEGIN
+	                declare @idTitle int
+	                declare @idListTitlePreOrder int
+	                declare @idCustomer int
+	                declare @idDisk int
+	                declare @StatusRented nvarchar(max)
+	                select top 1 @idTitle=i.IdTitle,@idDisk=i.IdDisk,@StatusRented=i.DiskRentalStatus from inserted i
+		                IF @StatusRented!='OnShelf'
+		                return
+	                select top 1 @idListTitlePreOrder=IdListTitlePreOrder,@idCustomer=IdCustomer from ListTitlePreOrders where IdTitle=@idTitle and NumberOfDisk>0 and StatusProcess='Incompleted'
+	                IF @idListTitlePreOrder is not null
+		                BEGIN
+		                insert into DetailPreOrders values(@idCustomer,@idDisk,0,@idListTitlePreOrder)
+		                update Disks set DiskRentalStatus='OnHold' where @idDisk=IdDisk
+		                END
+                END");
+            Sql(@"CREATE TRIGGER [dbo].[add_lst_rented] ON [dbo].[ListRenteds]
                     FOR INSERT
                     AS
                     BEGIN
@@ -129,7 +149,7 @@
 	                    IF @ActualReturnDate is null and @StatusOnBill is null
 	                    update Disks set DiskRentalStatus='Rented' where IdDisk=@idDisk
                     END");
-            Sql(@"CREATE TRIGGER update_lst_rented_return ON ListRenteds
+            Sql(@"CREATE TRIGGER [dbo].[update_lst_rented_return] ON [dbo].[ListRenteds]
 					FOR UPDATE
 					AS
 					BEGIN
@@ -154,12 +174,11 @@
 							update ListRenteds set StatusOnBill=@status where IdListRented=@idListRented
 
 						END
-					END
-					");
-            Sql(@"CREATE TRIGGER insert_detail_preorder ON DetailPreOrders
+                        END");
+            Sql(@" CREATE TRIGGER insert_detail_preorder ON DetailPreOrders
                     FOR INSERT
-                    as
-                    begin
+                    AS
+                    BEGIN
 	                    declare @IdListTitlePreOrder int
 	                    select top 1 @IdListTitlePreOrder=i.IdListTitlePreOrder from inserted i
 	                    update ListTitlePreOrders set NumberOfDisk=NumberOfDisk-1 where IdListTitlePreOrder=@IdListTitlePreOrder
@@ -167,7 +186,7 @@
 	                    select top 1 @count=NumberOfDisk from ListTitlePreOrders where @IdListTitlePreOrder=IdListTitlePreOrder
 	                    IF @count =0
 	                    update ListTitlePreOrders set StatusProcess='Completed' where IdListTitlePreOrder=@IdListTitlePreOrder
-                    end");
+                    END");
         }
 
         public override void Down()
