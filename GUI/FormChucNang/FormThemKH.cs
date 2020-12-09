@@ -30,6 +30,8 @@ namespace GUI.FormChucNang
         {
             try
             {
+                if (txt_SoDienThoai.CheckSDT() == false)
+                    return;
                 DialogResult result = MessageBox.Show("Xác nhận thêm khách hàng", "Thêm khách hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {

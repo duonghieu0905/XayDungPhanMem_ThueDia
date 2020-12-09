@@ -63,7 +63,6 @@ namespace GUI.FormQuanLy
         private void AddInfoToSuccessForm()
         {
             ExpressionMethod.AddOptionToReportCustomer(cbx_ThongKeKH);
-            ExpressionMethod.AddOptionToReportTitle(cbx_BaoCaoTieuDe);
             ExpressionMethod.EditGridView(grvDuDoan);
             ExpressionMethod.EditGridView(grvKH);
             ExpressionMethod.EditGridView(grvTieuDe);
@@ -181,6 +180,11 @@ namespace GUI.FormQuanLy
             }
             txtTongPhiNo.Text = phitrehan.ToString();
             
+        }
+
+        private void btn_ThongKeTieuDe_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

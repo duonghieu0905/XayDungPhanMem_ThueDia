@@ -39,6 +39,8 @@ namespace GUI.FormChucNang
         {
             try
             {
+                if (txt_SoLuongDia.CheckSoLuong() == false)
+                    return;
                 DialogResult result = MessageBox.Show("Xác nhận thêm tiêu đề", "Thêm tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {

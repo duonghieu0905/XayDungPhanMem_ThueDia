@@ -7,6 +7,8 @@ using BUL;
 using Entities;
 using System.Linq;
 using System;
+using System.Text.RegularExpressions;
+using DevExpress.XtraEditors;
 
 namespace GUI
 {
@@ -16,7 +18,7 @@ namespace GUI
         /// Config ComboBox
         /// </summary>
         /// <param name="cbx"></param>
-        public static void ConfigComboBox(ComboBox cbx)
+        public static void ConfigComboBox(System.Windows.Forms.ComboBox cbx)
         {
             cbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }
@@ -34,7 +36,7 @@ namespace GUI
         /// Thêm vào combo box các giá trị giới tính
         /// </summary>
         /// <param name="cbx"></param>
-        public static void AddToComboBoxGender(ComboBox cbx)
+        public static void AddToComboBoxGender(System.Windows.Forms.ComboBox cbx)
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
@@ -49,7 +51,7 @@ namespace GUI
         /// Thêm vào combobox các loại đĩa : Phim và Game
         /// </summary>
         /// <param name="cbx"></param>
-        public static void AddToComboBoxKindOfTitle(ComboBox cbx)
+        public static void AddToComboBoxKindOfTitle(System.Windows.Forms.ComboBox cbx)
         {
             ConfigComboBox(cbx);
             var lst = new DiskTypeBUL().GetDiskTypes();
@@ -61,7 +63,7 @@ namespace GUI
         /// Thêm vào combobox các trạng thái thuê: Trên giá đang chờ và đã thuê
         /// </summary>
         /// <param name="cbx"></param>
-        public static void AddToComboBoxStatusRentCD(ComboBox cbx)
+        public static void AddToComboBoxStatusRentCD(System.Windows.Forms.ComboBox cbx)
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
@@ -76,7 +78,7 @@ namespace GUI
         ///  Thêm vào combobox các trạng thái hiện tại của đĩa : Tốt , bị mất , hỏng
         /// </summary>
         /// <param name="cbx"></param>
-        public static void AddToComboBoxStatusCD(ComboBox cbx)
+        public static void AddToComboBoxStatusCD(System.Windows.Forms.ComboBox cbx)
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
@@ -123,7 +125,7 @@ namespace GUI
         ///  Thêm các lựa chọn cho bản báo cáo cho khách hàng
         /// </summary>
         /// <param name="cbx"></param>
-        public static void AddOptionToReportCustomer(ComboBox cbx)
+        public static void AddOptionToReportCustomer(System.Windows.Forms.ComboBox cbx)
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
@@ -138,7 +140,7 @@ namespace GUI
         /// Thêm lựa chọn cho bản báo cáo tiêu đề
         /// </summary>
         /// <param name="cbx"></param>
-        public static void AddOptionToReportTitle(ComboBox cbx)
+        public static void AddOptionToReportTitle(System.Windows.Forms.ComboBox cbx)
         {
             ConfigComboBox(cbx);
             List<dynamic> lst = new List<dynamic>();
@@ -247,6 +249,10 @@ namespace GUI
                 lst.Add(new DiskInfoRent { IdDisk = item.IdDisk, LateFee = (int)item.LateFee, Price = (int)item.Price, TimeRented = (int)item.TimeRented, Title = item.Title, TypeName = item.TypeName, DiskRentalStatus = item.DiskRentalStatus });
             return lst;
         }
+        /// <summary>
+        /// Trả về cái list có return db join từ 3 bảng và thông tin của khách hahgnf đó
+        /// </summary>
+        /// <returns></returns>
         public static List<DiskInfoReturn> DBDiskReturn()
         {
             List<DiskInfoReturn> lst = new List<DiskInfoReturn>();
@@ -264,6 +270,41 @@ namespace GUI
             }
             return lst;
         }
-        
+        // Regurlar expression
+
+        /// <summary>
+        /// Check số điện thoại nhập vào 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool CheckSDT(this TextEdit txt)
+        {
+            bool result= Regex.Match(txt.Text.ToString(), @"^0\d{9,11}$").Success;
+            if(result==false)
+                MessageBox.Show("Kiểm tra lại định dạng số điện thoại", "Định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return result;
+        }
+        /// <summary>
+        /// Check mã khách hàng
+        /// </summary>
+        /// <param name="makh"></param>
+        /// <returns></returns>
+        public static bool CheckMa(this TextEdit txt)
+        {
+            int temp;
+            bool result= Int32.TryParse(txt.Text.ToString(), out temp);
+            if (result == false)
+                MessageBox.Show("Vui lòng kiểm tra lại định dạng nhập vào", "Định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return result;
+        }
+        public static bool CheckSoLuong(this TextEdit txt)
+        {
+            int temp;
+            bool result = Int32.TryParse(txt.Text.ToString(), out temp);
+            if (result == false)
+                MessageBox.Show("Vui lòng kiểm tra lại định dạng số lượng nhập vào", "Định dạng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return result;
+        }
+
     }
 }

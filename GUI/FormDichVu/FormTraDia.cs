@@ -34,6 +34,8 @@ namespace GUI.FormDichVu
         {
             try
             {
+                if (txt_NhapMaDia.CheckMa() == false)
+                    return;
                 int dianhap = Int32.Parse(txt_NhapMaDia.Text.ToString());
                 DiskInfoReturn infoReturn = db.FirstOrDefault(x => x.IdDisk == dianhap);
                 if (infoReturn is null)

@@ -187,6 +187,28 @@
 	                    IF @count =0
 	                    update ListTitlePreOrders set StatusProcess='Completed' where IdListTitlePreOrder=@IdListTitlePreOrder
                     END");
+            Sql(@"CREATE TRIGGER [dbo].[update_disk] ON [dbo].[Disks]
+                FOR UPDATE
+                AS
+                BEGIN
+	                declare @count int
+	                declare @idTitle int
+	                declare @idListTitlePreOrder int
+	                declare @idCustomer int
+	                declare @idDisk int
+	                declare @StatusRented nvarchar(max)
+	                select top 1 @idTitle=i.IdTitle,@idDisk=i.IdDisk,@StatusRented=i.DiskRentalStatus from inserted i
+		                IF @StatusRented!='OnShelf'
+		                return
+	                select top 1 @idListTitlePreOrder=IdListTitlePreOrder,@idCustomer=IdCustomer from ListTitlePreOrders where IdTitle=@idTitle and NumberOfDisk>0 and StatusProcess='Incompleted'
+	                IF @idListTitlePreOrder is not null
+		                BEGIN
+		                insert into DetailPreOrders values(@idCustomer,@idDisk,0,@idListTitlePreOrder)
+		                update Disks set DiskRentalStatus='OnHold' where @idDisk=IdDisk
+		                select @count=COUNT(*) from Disks where @idTitle=IdTitle and DiskRentalStatus='OnShelf'
+		                update Titles set TotalDiskOnShelf=@count where IdTitle=@idTitle
+		                END
+                END");
         }
 
         public override void Down()

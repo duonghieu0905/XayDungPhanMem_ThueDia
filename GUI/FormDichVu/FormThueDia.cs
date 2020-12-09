@@ -56,7 +56,7 @@ namespace GUI.FormDichVu
         }
         private void AddColumnToList()
         {
-            lsvOnHold.Columns.Add("Mã Đĩa",this.Width/7);
+            lsvOnHold.Columns.Add("Mã Đĩa", this.Width / 7);
             lsvOnHold.Columns.Add("Tiêu Đề", this.Width / 7);
             lsvOnHold.Columns.Add("Loại Đĩa", this.Width / 7);
             lsvOnHold.Columns.Add("Thời Gian Thuê", this.Width / 7);
@@ -68,8 +68,8 @@ namespace GUI.FormDichVu
         {
             binding.DataSource = new List<DiskInfoRent>();
             ExpressionMethod.LoadGridControl(grdc_DSThueDia, grv_ThueDia, binding);
-            
-            
+
+
         }
         private void AddInfoListView()
         {
@@ -77,10 +77,10 @@ namespace GUI.FormDichVu
             lsvOnHold.Items.Clear();
             int IdCustomer = Int32.Parse(txtMaKH.Text.ToString());
             var dbOnHold = db
-                .Join(new DetailPreOrderBUL().GetDetailPreOrders().Where(x => x.Accepted == true&&x.IdCustomer==IdCustomer), x => x.IdDisk, pre => pre.IdDisk, (x, pre) => new { x, pre });
-                //.Join(new ListTitlePreOrderBUL().GetListTitlePreOrders().Where(x => x.IdCustomer == IdCustomer),xpre=>xpre.pre.id)
-                
-            
+                .Join(new DetailPreOrderBUL().GetDetailPreOrders().Where(x => x.Accepted == true && x.IdCustomer == IdCustomer), x => x.IdDisk, pre => pre.IdDisk, (x, pre) => new { x, pre });
+            //.Join(new ListTitlePreOrderBUL().GetListTitlePreOrders().Where(x => x.IdCustomer == IdCustomer),xpre=>xpre.pre.id)
+
+
             foreach (var item in dbOnHold)
             {
                 ListViewItem listViewItem = new ListViewItem(new string[] { item.x.IdDisk.ToString(), item.x.Title, item.x.TypeName, item.x.TimeRented.ToString(), item.x.LateFee.ToString(), item.x.Price.ToString(), item.x.DiskRentalStatus });
@@ -97,29 +97,38 @@ namespace GUI.FormDichVu
         }
         private void btn_TimKiemKhachHang_Click(object sender, EventArgs e)
         {
-            int customerId = Int32.Parse(txt_MaKHNhapVao.Text.ToString());
-            Customer customer = dbCus.GetCustomer(customerId);
-            if (customer == null)
+            try
             {
-                MessageBox.Show("Không tìm thấy khách hàng", "Thông tin khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-                LoadDataCustomerToText(customer);
-                AddInfoListView();
-            }
-            
-            var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
-            if (lstLate.Count > 0)
-            {
-                DialogResult result = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                if (txt_MaKHNhapVao.CheckMa() == false)
+                    return;
+                int customerId = Int32.Parse(txt_MaKHNhapVao.Text.ToString());
+                Customer customer = dbCus.GetCustomer(customerId);
+                if (customer == null)
                 {
-                    FormThanhToan frm = new FormThanhToan(customer, lstLate, this.auth);
-                    frm.ShowDialog();
+                    MessageBox.Show("Không tìm thấy khách hàng", "Thông tin khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                else
+                {
+                    LoadDataCustomerToText(customer);
+                    AddInfoListView();
+                }
+
+                var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
+                if (lstLate.Count > 0)
+                {
+                    DialogResult result = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        FormThanhToan frm = new FormThanhToan(customer, lstLate, this.auth);
+                        frm.ShowDialog();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -128,6 +137,8 @@ namespace GUI.FormDichVu
         {
             try
             {
+                if (txt_MaDiaNhapVao.CheckMa() == false)
+                    return;
                 int dianhap = Int32.Parse(txt_MaDiaNhapVao.Text.ToString());
                 DiskInfoRent disk = db.Find(x => x.IdDisk == dianhap);
                 if (disk == null)
@@ -165,7 +176,7 @@ namespace GUI.FormDichVu
             //Thêm vào danh sách
 
             binding.Add(disk);
-            
+
         }
 
         private void btnLoaiBoKhoiDS_Click(object sender, EventArgs e)
@@ -195,15 +206,17 @@ namespace GUI.FormDichVu
                 MessageBox.Show(ex.Message);
             }
         }
-       
+
         private void ThucHienThueDia()
         {
+            if (txtMaKH.CheckMa() == false)
+                return;
             ThucHienLayDiaDatTruoc();
             int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
             foreach (var item in binding.DataSource as List<DiskInfoRent>)
             {
                 ListRented rented = new ListRented { IdDisk = item.IdDisk, IdCustomer = idCustomer, LateFee = item.LateFee, RentalDate = DateTime.Today, ExpectedReturnDate = DateTime.Today.AddDays(item.TimeRented), ActualReturnDate = null, StatusOnBill = null };
-                if (dbRented.AddListRented(rented)==false)
+                if (dbRented.AddListRented(rented) == false)
                 {
                     MessageBox.Show("Thuê đĩa thất bại", "Thuê đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -216,6 +229,9 @@ namespace GUI.FormDichVu
         }
         private void ThucHienLayDiaDatTruoc()
         {
+
+            if (txtMaKH.CheckMa() == false)
+                return;
             DetailPreOrderBUL dbpre = new DetailPreOrderBUL();
             int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
             for (int i = 0; i < lsvOnHold.Items.Count; i++)
@@ -235,8 +251,15 @@ namespace GUI.FormDichVu
             int idCustomer = Int32.Parse(txtMaKH.Text.ToString());
             int timeRent = Int32.Parse(item.SubItems[3].Text.ToString());
             double lateFee = double.Parse(item.SubItems[4].Text.ToString());
-            ListRented rented = new ListRented {
-            ActualReturnDate=null,RentalDate=DateTime.Today,ExpectedReturnDate=DateTime.Today.AddDays(timeRent),IdCustomer=idCustomer,IdDisk=idDisk,LateFee=lateFee,StatusOnBill=null
+            ListRented rented = new ListRented
+            {
+                ActualReturnDate = null,
+                RentalDate = DateTime.Today,
+                ExpectedReturnDate = DateTime.Today.AddDays(timeRent),
+                IdCustomer = idCustomer,
+                IdDisk = idDisk,
+                LateFee = lateFee,
+                StatusOnBill = null
             };
             return rented;
         }

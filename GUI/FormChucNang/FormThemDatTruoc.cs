@@ -32,9 +32,17 @@ namespace GUI.FormChucNang
         {
             try
             {
+                if (txt_MaKhachHang.CheckMa() == false||txt_SoLuong.CheckSoLuong()==false)
+                    return;
                 DialogResult result = MessageBox.Show("Xác nhận đặt trước tiêu đề trên", "Đặt trước", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    if(new CustomerBUL().GetCustomer(Int32.Parse(txt_MaKhachHang.Text.ToString())) == null)
+                    {
+                        MessageBox.Show("Không tồn tại khách hàng với mã này", "Kiểm tra khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                        
                     ListTitlePreOrder listTitlePreOrder = new ListTitlePreOrder { IdCustomer = Int32.Parse(txt_MaKhachHang.Text.ToString()), IdTitle = this.idTitle, NumberOfDisk = Int32.Parse(txt_SoLuong.Text.ToString()) };
                     if (db.AddListTitlePreOrder(listTitlePreOrder))
                     {

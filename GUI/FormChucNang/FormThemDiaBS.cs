@@ -41,6 +41,8 @@ namespace GUI.FormChucNang
         {
             try
             {
+                if (txt_SoLuongDia.CheckSoLuong() == false)
+                    return;
                 DialogResult result = MessageBox.Show("Xác nhận thêm đĩa bản sao", "Thêm đĩa bản sao", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (result == DialogResult.Yes)
                 {
