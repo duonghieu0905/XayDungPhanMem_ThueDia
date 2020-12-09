@@ -77,6 +77,7 @@ namespace GUI.FormQuanLy
         }
         private void ReportTitle()
         {
+            
             var dbBSThueCuaTitle = (from d in dbDisk.GetDisks()
                                     group d by d.IdTitle into titleGroup
                                     select new

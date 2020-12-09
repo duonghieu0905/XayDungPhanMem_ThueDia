@@ -63,7 +63,6 @@ namespace DAL
             }
             catch (Exception)
             {
-
                 return false;
             }
         }

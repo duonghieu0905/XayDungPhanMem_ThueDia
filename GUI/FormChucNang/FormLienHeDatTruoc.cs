@@ -60,6 +60,7 @@ namespace GUI.FormChucNang
         }
         private void LoadNhungTieuDeDangChoAccept()
         {
+            //Load những cái tiêu đề nào có đĩa đang chờ được accept
             var db = dbDetail.GetDetailPreOrders().Where(x => x.Accepted == false)
                 .Join(dbDisk.GetDisks(), dt => dt.IdDisk, d => d.IdDisk, (dt, d) => new { dt, d })
                 .Join(dbTitle.GetTitles(), dtd => dtd.d.IdTitle, t => t.IdTitle, (dtd, t) => new { dtd, t }).ToList();
@@ -77,9 +78,12 @@ namespace GUI.FormChucNang
                .Join(dbTitle.GetTitles(), dtd => dtd.d.IdTitle, t => t.IdTitle, (dtd, t) => new { dtd, t }).ToList();
             if (bindingDSTilte[grvDSTieuDe.GetSelectedRows()[0]] is TitleOrder == false)
                 return;
+            //Kiểm tra tiêu đề đang được chọn
             int tieude = ((TitleOrder)bindingDSTilte[grvDSTieuDe.GetSelectedRows()[0]]).IdTitle;
+            //Danh sách đặt là gì
             int idDsDat = (int)db.Find(x => x.t.IdTitle == tieude).dtd.dt.IdListTitlePreOrder;
             var DsDat = dbListPreOrder.GetListTitlePreOrder(idDsDat);
+            //Lấy khách hàng 
             var customer = dbCustomer.GetCustomer((int)DsDat.IdCustomer);
             txt_DiaChi.Text = customer.Address;
             txt_SoDienThoai.Text = customer.PhoneNumber;

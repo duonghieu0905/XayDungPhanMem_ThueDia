@@ -115,7 +115,8 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 60F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 258.7998F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 60F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 60F)});
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 60F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
             this.tablePnl.Size = new System.Drawing.Size(1200, 658);
             this.tablePnl.TabIndex = 0;
             // 
@@ -260,7 +261,7 @@
             this.tablePnl.SetRow(this.tablePanel1, 6);
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1194, 0);
+            this.tablePanel1.Size = new System.Drawing.Size(1194, 63);
             this.tablePanel1.TabIndex = 8;
             // 
             // btnXacNhanThueDia
@@ -273,12 +274,12 @@
             this.tablePanel1.SetColumn(this.btnXacNhanThueDia, 0);
             this.btnXacNhanThueDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnXacNhanThueDia.ImageOptions.Image = global::GUI.Properties.Resources.icons8_inspection_322;
-            this.btnXacNhanThueDia.Location = new System.Drawing.Point(0, 0);
+            this.btnXacNhanThueDia.Location = new System.Drawing.Point(4, 5);
             this.btnXacNhanThueDia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXacNhanThueDia.Name = "btnXacNhanThueDia";
             this.btnXacNhanThueDia.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.tablePanel1.SetRow(this.btnXacNhanThueDia, 0);
-            this.btnXacNhanThueDia.Size = new System.Drawing.Size(0, 0);
+            this.btnXacNhanThueDia.Size = new System.Drawing.Size(171, 53);
             this.btnXacNhanThueDia.TabIndex = 8;
             this.btnXacNhanThueDia.Text = "Xác Nhận Thuê Đĩa";
             this.btnXacNhanThueDia.Click += new System.EventHandler(this.btnXacNhanThueDia_Click);

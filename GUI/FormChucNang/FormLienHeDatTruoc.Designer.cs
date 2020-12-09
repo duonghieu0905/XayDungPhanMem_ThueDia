@@ -130,15 +130,16 @@
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHuyMuc});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(206, 30);
+            this.contextMenu.Size = new System.Drawing.Size(215, 58);
             // 
             // btnHuyMuc
             // 
             this.btnHuyMuc.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyMuc.Image = global::GUI.Properties.Resources.icons8_multiply_16;
             this.btnHuyMuc.Name = "btnHuyMuc";
-            this.btnHuyMuc.Size = new System.Drawing.Size(205, 26);
+            this.btnHuyMuc.Size = new System.Drawing.Size(214, 26);
             this.btnHuyMuc.Text = "Loại Bỏ Mục Này";
+            this.btnHuyMuc.Click += new System.EventHandler(this.btnHuyMuc_Click);
             // 
             // grvDSGanDia
             // 
