@@ -32,15 +32,22 @@ namespace GUI.FormDichVu
 
         private void btn_XacNhanTraDia_Click(object sender, EventArgs e)
         {
-            int dianhap = Int32.Parse(txt_NhapMaDia.Text.ToString());
-            DiskInfoReturn infoReturn = db.FirstOrDefault(x => x.IdDisk == dianhap);
-            if (infoReturn is null)
+            try
             {
-                MessageBox.Show("Vui lòng kiểm tra lại thông tin\nKhông có đĩa thuê này", "Mã đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int dianhap = Int32.Parse(txt_NhapMaDia.Text.ToString());
+                DiskInfoReturn infoReturn = db.FirstOrDefault(x => x.IdDisk == dianhap);
+                if (infoReturn is null)
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin\nKhông có đĩa thuê này", "Mã đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    LoadData(infoReturn);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                LoadData(infoReturn);
+                MessageBox.Show(ex.Message);
             }
         }
         private void LoadData(DiskInfoReturn infoReturn)

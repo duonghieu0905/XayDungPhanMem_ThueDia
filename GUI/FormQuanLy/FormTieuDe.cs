@@ -23,7 +23,7 @@ namespace GUI.FormQuanLy
             InitializeComponent();
             this.auth = auth;
             db = new TitleBUL();
-            binding= new BindingSource();
+            binding = new BindingSource();
         }
 
         private void FormTieuDe_Load(object sender, EventArgs e)
@@ -38,41 +38,62 @@ namespace GUI.FormQuanLy
 
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
-            if (ExpressionMethod.CheckAuth(this.auth))
+            try
             {
-                FormThemDiaBS frm = new FormThemDiaBS(Int32.Parse(pictureBox1.Tag.ToString()));
-                frm.Show();
-                frm.FormClosing += Frm_FormClosing;
+                if (ExpressionMethod.CheckAuth(this.auth))
+                {
+                    FormThemDiaBS frm = new FormThemDiaBS(Int32.Parse(pictureBox1.Tag.ToString()));
+                    frm.Show();
+                    frm.FormClosing += Frm_FormClosing;
+                }
             }
-          
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void btn_ThemTieuDe_Click(object sender, EventArgs e)
         {
-            if (ExpressionMethod.CheckAuth(this.auth))
+            try
             {
-                FormThemTD frm = new FormThemTD();
-                frm.Show();
-                frm.FormClosing += Frm_FormClosing;
+                if (ExpressionMethod.CheckAuth(this.auth))
+                {
+                    FormThemTD frm = new FormThemTD();
+                    frm.Show();
+                    frm.FormClosing += Frm_FormClosing;
+                }
             }
-           
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
-        
+
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (ExpressionMethod.CheckAuth(this.auth))
+            try
             {
-                DialogResult result = MessageBox.Show("Xác nhận xóa tiêu đề", "Xóa tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
+                if (ExpressionMethod.CheckAuth(this.auth))
                 {
-                    if (db.DeleteTitle(Int32.Parse(pictureBox1.Tag.ToString())))
+                    DialogResult result = MessageBox.Show("Xác nhận xóa tiêu đề", "Xóa tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xóa tiêu đề thành công", "Xóa tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        binding.DataSource = db.GetTitles();
+                        if (db.DeleteTitle(Int32.Parse(pictureBox1.Tag.ToString())))
+                        {
+                            MessageBox.Show("Xóa tiêu đề thành công", "Xóa tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            binding.DataSource = db.GetTitles();
+                        }
+                        else
+                            MessageBox.Show("Xóa tiêu đề thất bại", "Xóa tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    else
-                        MessageBox.Show("Xóa tiêu đề thất bại", "Xóa tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -84,13 +105,27 @@ namespace GUI.FormQuanLy
         }
         private void LoadView()
         {
-            binding.DataSource = db.GetTitles();
-            ExpressionMethod.LoadGridControl(grd_TieuDe, grv_TieuDe, binding);
+            try
+            {
+                binding.DataSource = db.GetTitles();
+                ExpressionMethod.LoadGridControl(grd_TieuDe, grv_TieuDe, binding);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void grv_TieuDe_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LoadToTextBox(grv_TieuDe.GetSelectedRows()[0]);
+            try
+            {
+                LoadToTextBox(grv_TieuDe.GetSelectedRows()[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void LoadToTextBox(int indexSelected)
         {
@@ -103,8 +138,15 @@ namespace GUI.FormQuanLy
         }
         private void Frm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            db = new TitleBUL();
-            binding.DataSource = db.GetTitles();
+            try
+            {
+                db = new TitleBUL();
+                binding.DataSource = db.GetTitles();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

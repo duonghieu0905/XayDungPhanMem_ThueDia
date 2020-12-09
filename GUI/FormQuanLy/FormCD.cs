@@ -27,8 +27,15 @@ namespace GUI.FormQuanLy
 
         private void FormCD_Load(object sender, EventArgs e)
         {
-            AddInfoToSuccessForm();     
-            LoadView();
+            try
+            {
+                AddInfoToSuccessForm();
+                LoadView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
            
         }
         private void AddInfoToSuccessForm() {
@@ -62,7 +69,14 @@ namespace GUI.FormQuanLy
 
         private void grv_CD_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LoadToTextBox(grv_CD.GetSelectedRows()[0]);
+            try
+            {
+                LoadToTextBox(grv_CD.GetSelectedRows()[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void LoadToTextBox(int indexSelected)
         {

@@ -39,12 +39,26 @@ namespace GUI.FormQuanLy
         }
         private void FormBaoCao_Load(object sender, EventArgs e)
         {
-            AddInfoToSuccessForm();
-            LoadView();
+            try
+            {
+                AddInfoToSuccessForm();
+                LoadView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void tileBar_SelectedItemChanged(object sender, TileItemEventArgs e)
         {
-            navigationFrame.SelectedPageIndex = tileBarGroupTables.Items.IndexOf(e.Item);
+            try
+            {
+                navigationFrame.SelectedPageIndex = tileBarGroupTables.Items.IndexOf(e.Item);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void AddInfoToSuccessForm()
         {
@@ -120,16 +134,30 @@ namespace GUI.FormQuanLy
 
         private void cbx_ThongKeKH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadDataToGridView();
+            try
+            {
+                LoadDataToGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void grvKH_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (grvKH.GetSelectedRows().Count() > 0)
+            try
             {
-                int idCustomer = ((ReportCustomer)bindingCustomer[grvKH.GetSelectedRows()[0]]).idCustomer;
-                var dbAllRented = dbRented.GetListRenteds();
-                LoadDuDoanGridView(idCustomer);
+                if (grvKH.GetSelectedRows().Count() > 0)
+                {
+                    int idCustomer = ((ReportCustomer)bindingCustomer[grvKH.GetSelectedRows()[0]]).idCustomer;
+                    var dbAllRented = dbRented.GetListRenteds();
+                    LoadDuDoanGridView(idCustomer);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }

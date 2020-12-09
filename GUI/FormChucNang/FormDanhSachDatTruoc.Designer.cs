@@ -35,15 +35,12 @@
             this.contextMenuDS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnHuyDatTruoc = new System.Windows.Forms.ToolStripMenuItem();
             this.grvDSDatTruoc = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.contextMenuCT = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnHuyMucDatTruoc = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DanhSach)).BeginInit();
             this.contextMenuDS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvDSDatTruoc)).BeginInit();
-            this.contextMenuCT.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -91,14 +88,14 @@
             this.contextMenuDS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnHuyDatTruoc});
             this.contextMenuDS.Name = "contextMenuDS";
-            this.contextMenuDS.Size = new System.Drawing.Size(215, 58);
+            this.contextMenuDS.Size = new System.Drawing.Size(192, 30);
             // 
             // btnHuyDatTruoc
             // 
             this.btnHuyDatTruoc.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyDatTruoc.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
             this.btnHuyDatTruoc.Name = "btnHuyDatTruoc";
-            this.btnHuyDatTruoc.Size = new System.Drawing.Size(214, 26);
+            this.btnHuyDatTruoc.Size = new System.Drawing.Size(191, 26);
             this.btnHuyDatTruoc.Text = "Hủy Đặt Trước";
             this.btnHuyDatTruoc.Click += new System.EventHandler(this.btnHuyDatTruoc_Click);
             // 
@@ -107,22 +104,6 @@
             this.grvDSDatTruoc.GridControl = this.grdc_DanhSach;
             this.grvDSDatTruoc.Name = "grvDSDatTruoc";
             this.grvDSDatTruoc.OptionsView.ShowFooter = true;
-            // 
-            // contextMenuCT
-            // 
-            this.contextMenuCT.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuCT.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnHuyMucDatTruoc});
-            this.contextMenuCT.Name = "contextMenuCT";
-            this.contextMenuCT.Size = new System.Drawing.Size(180, 30);
-            // 
-            // btnHuyMucDatTruoc
-            // 
-            this.btnHuyMucDatTruoc.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyMucDatTruoc.Image = global::GUI.Properties.Resources.icons8_unavailable_16;
-            this.btnHuyMucDatTruoc.Name = "btnHuyMucDatTruoc";
-            this.btnHuyMucDatTruoc.Size = new System.Drawing.Size(179, 26);
-            this.btnHuyMucDatTruoc.Text = "Hủy Mục Này";
             // 
             // FormDanhSachDatTruoc
             // 
@@ -140,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdc_DanhSach)).EndInit();
             this.contextMenuDS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvDSDatTruoc)).EndInit();
-            this.contextMenuCT.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -150,8 +130,6 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private System.Windows.Forms.ContextMenuStrip contextMenuDS;
         private System.Windows.Forms.ToolStripMenuItem btnHuyDatTruoc;
-        private System.Windows.Forms.ContextMenuStrip contextMenuCT;
-        private System.Windows.Forms.ToolStripMenuItem btnHuyMucDatTruoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private DevExpress.XtraGrid.GridControl grdc_DanhSach;
         private DevExpress.XtraGrid.Views.Grid.GridView grvDSDatTruoc;

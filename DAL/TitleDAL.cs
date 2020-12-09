@@ -1,4 +1,5 @@
 ﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,22 +18,43 @@ namespace DAL
         }
         public bool AddTitle(Title title)
         {
-            context.Titles.Add(title);
-            context.SaveChanges();
-            return true;
+            try
+            {
+                context.Titles.Add(title);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public bool UpdateTitle(Title title)
         {
-            Title titleUpdate = context.Titles.Find(title.IdTitle);
-            context.SaveChanges();
-            return true;
+            try
+            {
+                Title titleUpdate = context.Titles.Find(title.IdTitle);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public bool DeleteTitle(int idTitle)
         {
-            Title titleDelete = context.Titles.Find(idTitle);
-            context.Titles.Remove(titleDelete);
-            context.SaveChanges();
-            return true;
+            try
+            {
+                Title titleDelete = context.Titles.Find(idTitle);
+                context.Titles.Remove(titleDelete);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

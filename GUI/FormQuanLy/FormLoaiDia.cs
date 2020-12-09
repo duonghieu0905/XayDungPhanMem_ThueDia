@@ -40,7 +40,14 @@ namespace GUI.FormQuanLy
 
         private void grv_LoaiDia_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LoadToTextBox(grv_LoaiDia.GetSelectedRows()[0]);
+            try
+            {
+                LoadToTextBox(grv_LoaiDia.GetSelectedRows()[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void LoadToTextBox(int indexSelected)
         {

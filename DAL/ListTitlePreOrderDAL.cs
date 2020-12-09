@@ -1,4 +1,5 @@
 ﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,26 +22,50 @@ namespace DAL
         }
         public bool AddListTitlePreOrder(ListTitlePreOrder listTitlePreOrder)
         {
-            context.ListTitlePreOrders.Add(listTitlePreOrder);
-            context.SaveChanges();
-            return true;
+            try
+            {
+                context.ListTitlePreOrders.Add(listTitlePreOrder);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public bool UpdateListTitlePreOrder(ListTitlePreOrder listTitlePreOrder)
         {
-            ListTitlePreOrder listTitlePreOrderUpdate = context.ListTitlePreOrders.Find(listTitlePreOrder.IdListTitlePreOrder);
-            listTitlePreOrderUpdate.NumberOfDisk = listTitlePreOrder.NumberOfDisk;
-            listTitlePreOrderUpdate.IdCustomer = listTitlePreOrder.IdCustomer;
-            listTitlePreOrderUpdate.IdTitle = listTitlePreOrder.IdTitle;
-            listTitlePreOrderUpdate.StatusProcess = listTitlePreOrder.StatusProcess;
-            context.SaveChanges();
-            return true;
+            try
+            {
+                ListTitlePreOrder listTitlePreOrderUpdate = context.ListTitlePreOrders.Find(listTitlePreOrder.IdListTitlePreOrder);
+                listTitlePreOrderUpdate.NumberOfDisk = listTitlePreOrder.NumberOfDisk;
+                listTitlePreOrderUpdate.IdCustomer = listTitlePreOrder.IdCustomer;
+                listTitlePreOrderUpdate.IdTitle = listTitlePreOrder.IdTitle;
+                listTitlePreOrderUpdate.StatusProcess = listTitlePreOrder.StatusProcess;
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public bool DeleteListTitlePreOrder(int idListTitlePreOrder)
         {
-            ListTitlePreOrder listTitlePreOrderDelete = context.ListTitlePreOrders.Find(idListTitlePreOrder);
-            context.ListTitlePreOrders.Remove(listTitlePreOrderDelete);
-            context.SaveChanges();
-            return true;
+            try
+            {
+                ListTitlePreOrder listTitlePreOrderDelete = context.ListTitlePreOrders.Find(idListTitlePreOrder);
+                context.ListTitlePreOrders.Remove(listTitlePreOrderDelete);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                ListTitlePreOrder listTitlePreOrderDelete = context.ListTitlePreOrders.Find(idListTitlePreOrder);
+                context.ListTitlePreOrders.Remove(listTitlePreOrderDelete);
+                context.SaveChanges();
+                return true;
+            }
         }
     }
 }

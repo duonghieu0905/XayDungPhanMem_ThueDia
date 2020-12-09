@@ -28,8 +28,15 @@ namespace GUI.FormQuanLy
 
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
-            ConfigToSuccessView();
-            LoadView();
+            try
+            {
+                ConfigToSuccessView();
+                LoadView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void ConfigToSuccessView()
         {
@@ -46,27 +53,41 @@ namespace GUI.FormQuanLy
 
         private void Frm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            binding.DataSource = db.GetCustomers();
+            try
+            {
+                binding.DataSource = db.GetCustomers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (ExpressionMethod.CheckAuth(this.auth))
+            try
             {
-                DialogResult result = MessageBox.Show("Xác nhận xóa khách hàng", "Xóa khách hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
+                if (ExpressionMethod.CheckAuth(this.auth))
                 {
-                    if (db.DeleteCustomer(Int32.Parse(pictureBox1.Tag.ToString())))
+                    DialogResult result = MessageBox.Show("Xác nhận xóa khách hàng", "Xóa khách hàng", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("Xóa thành công", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        binding.DataSource = db.GetCustomers();
+                        if (db.DeleteCustomer(Int32.Parse(pictureBox1.Tag.ToString())))
+                        {
+                            MessageBox.Show("Xóa thành công", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            binding.DataSource = db.GetCustomers();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa khách hàng thất bại", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
                     }
-                    else
-                    {
-                        MessageBox.Show("Xóa khách hàng thất bại", "Xóa khách hàng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                   
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -87,7 +108,14 @@ namespace GUI.FormQuanLy
 
         private void grv_KhachHang_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LoadToTextBox(grv_KhachHang.GetSelectedRows()[0]);
+            try
+            {
+                LoadToTextBox(grv_KhachHang.GetSelectedRows()[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

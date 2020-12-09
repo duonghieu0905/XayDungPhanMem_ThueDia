@@ -1,4 +1,5 @@
 ﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -22,27 +23,49 @@ namespace DAL
         }
         public bool AddDisk(Disk disk)
         {
-            context.Disks.Add(disk);
-            context.SaveChanges();
-            return true;
+            try
+            {
+                context.Disks.Add(disk);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public bool UpdateDisk(Disk disk)
         {
-            Disk diskUpdate = context.Disks.Find(disk.IdDisk);
-            diskUpdate.IdTitle = disk.IdTitle;
-            diskUpdate.DiskStatus = disk.DiskStatus;
-            diskUpdate.DiskRentalStatus = disk.DiskRentalStatus;
-            context.SaveChanges();
-            return true;
+            try
+            {
+                Disk diskUpdate = context.Disks.Find(disk.IdDisk);
+                diskUpdate.IdTitle = disk.IdTitle;
+                diskUpdate.DiskStatus = disk.DiskStatus;
+                diskUpdate.DiskRentalStatus = disk.DiskRentalStatus;
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public bool DeleteDisk(int idDisk)
         {
-            Disk diskDelete = context.Disks.Find(idDisk);
-            if (diskDelete.DiskRentalStatus.Equals("Rented") || diskDelete.DiskRentalStatus.Equals("OnHold"))
+            try
+            {
+                Disk diskDelete = context.Disks.Find(idDisk);
+                if (diskDelete.DiskRentalStatus.Equals("Rented") || diskDelete.DiskRentalStatus.Equals("OnHold"))
+                    return false;
+                context.Disks.Remove(diskDelete);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
                 return false;
-            context.Disks.Remove(diskDelete);
-            context.SaveChanges();
-            return true;
+            }
         }
     }
 }

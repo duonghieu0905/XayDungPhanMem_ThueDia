@@ -36,8 +36,15 @@ namespace GUI.FormDichVu
 
         private void FormThueDia_Load(object sender, EventArgs e)
         {
-            AddInfoToAccessForm();
-            LoadView();
+            try
+            {
+                AddInfoToAccessForm();
+                LoadView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AddInfoToAccessForm()
@@ -119,16 +126,23 @@ namespace GUI.FormDichVu
 
         private void btn_ThemDia_Click(object sender, EventArgs e)
         {
-            int dianhap = Int32.Parse(txt_MaDiaNhapVao.Text.ToString());
-            DiskInfoRent disk = db.Find(x=>x.IdDisk==dianhap);
-            if (disk == null)
+            try
             {
-                MessageBox.Show("Không tìm thấy đĩa", "Thông tin đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                int dianhap = Int32.Parse(txt_MaDiaNhapVao.Text.ToString());
+                DiskInfoRent disk = db.Find(x => x.IdDisk == dianhap);
+                if (disk == null)
+                {
+                    MessageBox.Show("Không tìm thấy đĩa", "Thông tin đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    AddDiskToListRent(disk);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                AddDiskToListRent(disk);
+                MessageBox.Show(ex.Message);
             }
         }
         private void AddDiskToListRent(DiskInfoRent disk)
@@ -156,16 +170,30 @@ namespace GUI.FormDichVu
 
         private void btnLoaiBoKhoiDS_Click(object sender, EventArgs e)
         {
-            binding.RemoveAt(grv_ThueDia.GetSelectedRows()[0]);
+            try
+            {
+                binding.RemoveAt(grv_ThueDia.GetSelectedRows()[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void grv_ThueDia_RowCountChanged(object sender, EventArgs e)
         {
-            this.totalRent = 0;
-            foreach (var item in binding.DataSource as List<DiskInfoRent>)
+            try
             {
-                this.totalRent += item.Price;
+                this.totalRent = 0;
+                foreach (var item in binding.DataSource as List<DiskInfoRent>)
+                {
+                    this.totalRent += item.Price;
+                }
+                txtTongTien.Text = (totalRent + totalOnHold).ToString();
             }
-            txtTongTien.Text = (totalRent+totalOnHold).ToString();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
        
         private void ThucHienThueDia()
@@ -214,37 +242,65 @@ namespace GUI.FormDichVu
         }
         private void btnXacNhanThueDia_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thuê đĩa", "Thuê đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
+            try
             {
-                ThucHienThueDia();
+                DialogResult result = MessageBox.Show("Xác nhận thuê đĩa", "Thuê đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    ThucHienThueDia();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void lsvOnHold_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            this.totalOnHold = 0;
-            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            try
             {
-                if (lsvOnHold.Items[i].Checked == true)
-                    this.totalOnHold += double.Parse(lsvOnHold.Items[i].SubItems[5].Text.ToString());
+                this.totalOnHold = 0;
+                for (int i = 0; i < lsvOnHold.Items.Count; i++)
+                {
+                    if (lsvOnHold.Items[i].Checked == true)
+                        this.totalOnHold += double.Parse(lsvOnHold.Items[i].SubItems[5].Text.ToString());
+                }
+                txtTongTien.Text = (totalRent + totalOnHold).ToString();
             }
-            txtTongTien.Text = (totalRent + totalOnHold).ToString();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCheckAll_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            try
             {
-                lsvOnHold.Items[i].Checked = true;
+                for (int i = 0; i < lsvOnHold.Items.Count; i++)
+                {
+                    lsvOnHold.Items[i].Checked = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnRemoveAllCheck_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < lsvOnHold.Items.Count; i++)
+            try
             {
-                lsvOnHold.Items[i].Checked = false;
+                for (int i = 0; i < lsvOnHold.Items.Count; i++)
+                {
+                    lsvOnHold.Items[i].Checked = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

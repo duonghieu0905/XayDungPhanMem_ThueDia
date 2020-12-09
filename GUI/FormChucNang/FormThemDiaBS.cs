@@ -39,21 +39,28 @@ namespace GUI.FormChucNang
 
         private void btn_ThemDiaBS_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thêm đĩa bản sao", "Thêm đĩa bản sao", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
+            try
             {
-                int count = Int32.Parse(txt_SoLuongDia.Text.ToString());
-                while (count > 0)
+                DialogResult result = MessageBox.Show("Xác nhận thêm đĩa bản sao", "Thêm đĩa bản sao", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
                 {
-                    Disk disk = new Disk { IdTitle = Int32.Parse(txt_TieuDe.Text.ToString()) };
-                    if (db.AddDisk(disk) == false)
+                    int count = Int32.Parse(txt_SoLuongDia.Text.ToString());
+                    while (count > 0)
                     {
-                        MessageBox.Show("Thêm thất bại", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                        Disk disk = new Disk { IdTitle = Int32.Parse(txt_TieuDe.Text.ToString()) };
+                        if (db.AddDisk(disk) == false)
+                        {
+                            MessageBox.Show("Thêm thất bại", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        count--;
                     }
-                    count--;
+                    MessageBox.Show("Thêm thành công", "Thêm đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                MessageBox.Show("Thêm thành công", "Thêm đĩa bản sao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
         }

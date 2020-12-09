@@ -37,29 +37,36 @@ namespace GUI.FormChucNang
 
         private void btn_ThemTT_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thêm tiêu đề", "Thêm tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (result == DialogResult.Yes)
+            try
             {
-                Title title = new Title { NameTitle = txt_TenTieuDe.Text.ToString(), IdDiskType = Int32.Parse(cbx_LoaiDia.SelectedValue.ToString()) };
-                if (db.AddTitle(title) == false)
+                DialogResult result = MessageBox.Show("Xác nhận thêm tiêu đề", "Thêm tiêu đề", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Thêm thất bại", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                DiskBUL lstDisk = new DiskBUL();
-                int count = Int32.Parse(txt_SoLuongDia.Text.ToString());
-                int idTitleLast = db.GetLastTitle();
-                while (count > 0)
-                {
-                    Disk disk = new Disk { IdTitle = idTitleLast };
-                    if (lstDisk.AddDisk(disk) == false)
+                    Title title = new Title { NameTitle = txt_TenTieuDe.Text.ToString(), IdDiskType = Int32.Parse(cbx_LoaiDia.SelectedValue.ToString()) };
+                    if (db.AddTitle(title) == false)
                     {
                         MessageBox.Show("Thêm thất bại", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    count--;
+                    DiskBUL lstDisk = new DiskBUL();
+                    int count = Int32.Parse(txt_SoLuongDia.Text.ToString());
+                    int idTitleLast = db.GetLastTitle();
+                    while (count > 0)
+                    {
+                        Disk disk = new Disk { IdTitle = idTitleLast };
+                        if (lstDisk.AddDisk(disk) == false)
+                        {
+                            MessageBox.Show("Thêm thất bại", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        count--;
+                    }
+                    MessageBox.Show("Thêm thành công", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                MessageBox.Show("Thêm thành công", "Thêm tiêu đề", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }

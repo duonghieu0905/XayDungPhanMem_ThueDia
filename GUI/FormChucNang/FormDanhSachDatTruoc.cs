@@ -47,19 +47,34 @@ namespace GUI.FormChucNang
         }
         private void LoadView()
         {
-            LoadDanhSachDatTruoc();
+            try
+            {
+                LoadDanhSachDatTruoc();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
         private void LoadDanhSachDatTruoc()
         {
             // Load những list nào đang imcomplete và những list nào complete nhưng id list vẫn còn ở dưới detail
+
             var data = dbListTitlePre.GetListTitlePreOrders().Where(x => x.StatusProcess.Equals(STATUS_INCOMPLETED) || dbDetailPre.GetDetailPreOrders().Find(d => d.IdListTitlePreOrder == x.IdListTitlePreOrder) != null)
-                .Join(dbTitle.GetTitles(), dt => dt.IdTitle, t => t.IdTitle, (dt, t) => new { dt, t })
-                .Join(dbCus.GetCustomers(), dtt => dtt.dt.IdCustomer, c => c.IdCustomer, (dtt, c) => new MyListTitlePreOrder { IdCustomer = c.IdCustomer, IdListPreOrder = dtt.dt.IdListTitlePreOrder, NameCustomer = c.CustomerName, NameTitle = dtt.t.NameTitle });
+            .Join(dbTitle.GetTitles(), dt => dt.IdTitle, t => t.IdTitle, (dt, t) => new { dt, t })
+            .Join(dbCus.GetCustomers(), dtt => dtt.dt.IdCustomer, c => c.IdCustomer, (dtt, c) => new MyListTitlePreOrder { IdCustomer = c.IdCustomer, IdListPreOrder = dtt.dt.IdListTitlePreOrder, NameCustomer = c.CustomerName, NameTitle = dtt.t.NameTitle });
             bindingDSDatTruoc.DataSource = data;
-            
+            dbListTitlePre = new ListTitlePreOrderBUL();
+            dbCus = new CustomerBUL();
+            dbTitle = new TitleBUL();
+            dbDetailPre = new DetailPreOrderBUL();
+
+
+
         }
         private void LoaiBoDatTruoc(int idListTitlePreOrder)
         {
+
             //Neu update truoc thi dia lien tuc duoc them vao gay ra loi
             List<Disk> lstUpdate = new List<Disk>();
             //Xóa detail và cập nhật trạng thái đĩa
@@ -79,17 +94,29 @@ namespace GUI.FormChucNang
                 dbDisk.UpdateDisk(item);
             }
             DialogResult result = MessageBox.Show("Hủy Mục Thành Công", "Hủy đặt trước", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dbDisk = new DiskBUL();
+            dbDetailPre = new DetailPreOrderBUL();
             LoadView();
+
         }
 
         private void btnHuyDatTruoc_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Chắc chắn muốn hủy mục này", "Hủy đặt trước", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                var lstPreOrder= bindingDSDatTruoc[grvDSDatTruoc.GetSelectedRows()[0]] as MyListTitlePreOrder;
-                LoaiBoDatTruoc(lstPreOrder.IdListPreOrder);
+                DialogResult result = MessageBox.Show("Chắc chắn muốn hủy mục này", "Hủy đặt trước", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    var lstPreOrder = bindingDSDatTruoc[grvDSDatTruoc.GetSelectedRows()[0]] as MyListTitlePreOrder;
+                    LoaiBoDatTruoc(lstPreOrder.IdListPreOrder);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
     }
 }

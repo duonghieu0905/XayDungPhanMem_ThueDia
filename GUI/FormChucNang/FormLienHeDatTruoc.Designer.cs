@@ -139,7 +139,6 @@
             this.btnHuyMuc.Name = "btnHuyMuc";
             this.btnHuyMuc.Size = new System.Drawing.Size(205, 26);
             this.btnHuyMuc.Text = "Loại Bỏ Mục Này";
-            this.btnHuyMuc.Click += new System.EventHandler(this.btnHuyMuc_Click);
             // 
             // grvDSGanDia
             // 

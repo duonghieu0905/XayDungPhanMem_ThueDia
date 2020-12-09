@@ -31,8 +31,15 @@ namespace GUI.FormChucNang
         }
         private void FormThanhToan_Load(object sender, EventArgs e)
         {
-            AddInfoToSuccessForm();
-            tablePnl.Rows[2].Height = this.Height - 150;
+            try
+            {
+                AddInfoToSuccessForm();
+                tablePnl.Rows[2].Height = this.Height - 150;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void AddInfoToSuccessForm()
         {
@@ -119,10 +126,17 @@ namespace GUI.FormChucNang
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thanh toán ", "Thanh Toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                ThucHienThanhToan();
+                DialogResult result = MessageBox.Show("Xác nhận thanh toán ", "Thanh Toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    ThucHienThanhToan();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void ThucHienThanhToan()

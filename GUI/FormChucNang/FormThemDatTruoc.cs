@@ -30,15 +30,22 @@ namespace GUI.FormChucNang
 
         private void btn_ThemDatTruoc_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận đặt trước tiêu đề trên", "Đặt trước", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                ListTitlePreOrder listTitlePreOrder = new ListTitlePreOrder { IdCustomer = Int32.Parse(txt_MaKhachHang.Text.ToString()), IdTitle = this.idTitle, NumberOfDisk = Int32.Parse(txt_SoLuong.Text.ToString()) };
-                if (db.AddListTitlePreOrder(listTitlePreOrder))
+                DialogResult result = MessageBox.Show("Xác nhận đặt trước tiêu đề trên", "Đặt trước", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Thêm đặt trước thành công", "Đặt trước", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ListTitlePreOrder listTitlePreOrder = new ListTitlePreOrder { IdCustomer = Int32.Parse(txt_MaKhachHang.Text.ToString()), IdTitle = this.idTitle, NumberOfDisk = Int32.Parse(txt_SoLuong.Text.ToString()) };
+                    if (db.AddListTitlePreOrder(listTitlePreOrder))
+                    {
+                        MessageBox.Show("Thêm đặt trước thành công", "Đặt trước", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else MessageBox.Show("Thêm đặt trước thất bại", "Đặt trước", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else MessageBox.Show("Thêm đặt trước thất bại", "Đặt trước", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void LoadView()

@@ -38,8 +38,15 @@ namespace GUI.FormChucNang
 
         private void FormLienHeDatTruoc_Load(object sender, EventArgs e)
         {
-            ConfigToSuccessForm();
-            LoadNhungTieuDeDangChoAccept();
+            try
+            {
+                ConfigToSuccessForm();
+                LoadNhungTieuDeDangChoAccept();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void ConfigToSuccessForm()
         {
@@ -59,6 +66,9 @@ namespace GUI.FormChucNang
             var lstTitle = dbTitle.GetTitles().Where(x => db.Find(k => k.t.IdTitle == x.IdTitle) != null).ToList()
                 .Join(dbDiskType.GetDiskTypes(), t => t.IdDiskType, dt => dt.IdDiskType, (t, dt) => new TitleOrder { IdTitle = t.IdTitle, NameTitle = t.NameTitle, TitleType = dt.TypeName });
             bindingDSTilte.DataSource = lstTitle;
+            dbDetail = new DetailPreOrderBUL();
+            dbDisk = new DiskBUL();
+            dbTitle = new TitleBUL();
         }
         private void ThucHienKiemTraNguoiDatDia()
         {
@@ -83,12 +93,28 @@ namespace GUI.FormChucNang
 
         private void grvDSTieuDe_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            ThucHienKiemTraNguoiDatDia();
+            try
+            {
+                ThucHienKiemTraNguoiDatDia();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnChapNhan_Click(object sender, EventArgs e)
         {
-            AcceptFromList();
+            try
+            {
+                AcceptFromList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                
+      
         }
         private void AcceptFromList()
         {
@@ -105,13 +131,19 @@ namespace GUI.FormChucNang
                 LoadNhungTieuDeDangChoAccept();
                 ThucHienKiemTraNguoiDatDia();
             }
-           
-            
         }
 
         private void btnTuChoi_Click(object sender, EventArgs e)
         {
-            DenyList();
+            try
+            {
+                DenyList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+               
         }
         private void DenyList()
         {
@@ -152,7 +184,15 @@ namespace GUI.FormChucNang
 
         private void btnHuyMuc_Click(object sender, EventArgs e)
         {
-            DenyAtLocation();
+            try
+            {
+                DenyAtLocation();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                
         }
     }
 }
