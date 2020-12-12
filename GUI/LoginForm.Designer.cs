@@ -87,20 +87,20 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F)});
             this.tablePanel4.Controls.Add(this.txt_MatKhau);
             this.tablePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel4.Location = new System.Drawing.Point(517, 729);
+            this.tablePanel4.Location = new System.Drawing.Point(517, 615);
             this.tablePanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel4.Name = "tablePanel4";
             this.tablePanel1.SetRow(this.tablePanel4, 4);
             this.tablePanel4.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel4.Size = new System.Drawing.Size(505, 66);
+            this.tablePanel4.Size = new System.Drawing.Size(505, 54);
             this.tablePanel4.TabIndex = 6;
             // 
             // txt_MatKhau
             // 
             this.tablePanel4.SetColumn(this.txt_MatKhau, 1);
-            this.txt_MatKhau.EditValue = "";
-            this.txt_MatKhau.Location = new System.Drawing.Point(29, 14);
+            this.txt_MatKhau.EditValue = "admin";
+            this.txt_MatKhau.Location = new System.Drawing.Point(29, 8);
             this.txt_MatKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_MatKhau.Name = "txt_MatKhau";
             this.txt_MatKhau.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,20 +120,20 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F)});
             this.tablePanel3.Controls.Add(this.txt_TenDangNhap);
             this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel3.Location = new System.Drawing.Point(517, 653);
+            this.tablePanel3.Location = new System.Drawing.Point(517, 551);
             this.tablePanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel3.Name = "tablePanel3";
             this.tablePanel1.SetRow(this.tablePanel3, 3);
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(505, 66);
+            this.tablePanel3.Size = new System.Drawing.Size(505, 54);
             this.tablePanel3.TabIndex = 5;
             // 
             // txt_TenDangNhap
             // 
             this.tablePanel3.SetColumn(this.txt_TenDangNhap, 1);
-            this.txt_TenDangNhap.EditValue = "";
-            this.txt_TenDangNhap.Location = new System.Drawing.Point(29, 14);
+            this.txt_TenDangNhap.EditValue = "admin";
+            this.txt_TenDangNhap.Location = new System.Drawing.Point(29, 8);
             this.txt_TenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_TenDangNhap.Name = "txt_TenDangNhap";
             this.txt_TenDangNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,7 +149,7 @@
             this.lbl_Login.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lbl_Login.Font = new System.Drawing.Font("Niagara Solid", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Login.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbl_Login.Location = new System.Drawing.Point(517, 25);
+            this.lbl_Login.Location = new System.Drawing.Point(517, 13);
             this.lbl_Login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Login.Name = "lbl_Login";
             this.tablePanel1.SetRow(this.lbl_Login, 0);
@@ -170,13 +170,13 @@
             this.tablePanel2.Controls.Add(this.btn_Close);
             this.tablePanel2.Controls.Add(this.btn_Login);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel2.Location = new System.Drawing.Point(517, 805);
+            this.tablePanel2.Location = new System.Drawing.Point(517, 679);
             this.tablePanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tablePanel2.Name = "tablePanel2";
             this.tablePanel1.SetRow(this.tablePanel2, 5);
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel2.Size = new System.Drawing.Size(505, 69);
+            this.tablePanel2.Size = new System.Drawing.Size(505, 56);
             this.tablePanel2.TabIndex = 3;
             // 
             // btn_Close
@@ -203,7 +203,7 @@
             this.btn_Close.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btn_Close.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tablePanel2.SetRow(this.btn_Close, 0);
-            this.btn_Close.Size = new System.Drawing.Size(194, 59);
+            this.btn_Close.Size = new System.Drawing.Size(194, 46);
             this.btn_Close.TabIndex = 1;
             this.btn_Close.Text = "Thoát";
             // 
@@ -231,7 +231,7 @@
             this.btn_Login.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btn_Login.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tablePanel2.SetRow(this.btn_Login, 0);
-            this.btn_Login.Size = new System.Drawing.Size(194, 59);
+            this.btn_Login.Size = new System.Drawing.Size(194, 46);
             this.btn_Login.TabIndex = 0;
             this.btn_Login.Text = "Đăng nhập";
             // 
@@ -240,11 +240,11 @@
             this.tablePanel1.SetColumn(this.pbx_Key, 1);
             this.pbx_Key.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbx_Key.Image = global::GUI.Properties.Resources.images_removebg_preview;
-            this.pbx_Key.Location = new System.Drawing.Point(517, 158);
+            this.pbx_Key.Location = new System.Drawing.Point(517, 134);
             this.pbx_Key.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbx_Key.Name = "pbx_Key";
             this.tablePanel1.SetRow(this.pbx_Key, 1);
-            this.pbx_Key.Size = new System.Drawing.Size(505, 429);
+            this.pbx_Key.Size = new System.Drawing.Size(505, 360);
             this.pbx_Key.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbx_Key.TabIndex = 0;
             this.pbx_Key.TabStop = false;

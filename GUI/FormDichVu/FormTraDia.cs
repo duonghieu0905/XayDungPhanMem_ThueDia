@@ -72,23 +72,30 @@ namespace GUI.FormDichVu
 
         private void btnThucHienTraDia_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận trả đĩa", "Trả đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                ThucHienTraDia();
-            }
-            var customer = new CustomerBUL().GetCustomer(Int32.Parse(txtMaKH.Text.ToString()));
-            var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
-            if (lstLate.Count > 0)
-            {
-                DialogResult result1 = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result1 == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("Xác nhận trả đĩa", "Trả đĩa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    FormThanhToan frm = new FormThanhToan(customer, lstLate, this.auth);
-                    frm.Show();
-                    frm.FormClosing += Frm_FormClosing;
+                    ThucHienTraDia();
                 }
+                var customer = new CustomerBUL().GetCustomer(Int32.Parse(txtMaKH.Text.ToString()));
+                var lstLate = new ListRentedBUL().ListLate(customer.IdCustomer);
+                if (lstLate.Count > 0)
+                {
+                    DialogResult result1 = MessageBox.Show("Khách hàng có khoản trễ hạn. Có muốn thực hiện thanh toán không?", "Phí trễ hạn", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result1 == DialogResult.Yes)
+                    {
+                        FormThanhToan frm = new FormThanhToan(customer, lstLate, this.auth);
+                        frm.Show();
+                        frm.FormClosing += Frm_FormClosing;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kiểm tra lại thông tin trả đĩa", "Trả đĩa", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
