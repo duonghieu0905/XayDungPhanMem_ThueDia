@@ -132,7 +132,7 @@ namespace GUI
 
         private void adceLoaiDia_Click(object sender, EventArgs e)
         {
-            FormLoaiDia frm = new FormLoaiDia();
+            FormLoaiDia frm = new FormLoaiDia(bar_TrangThai.Caption);
             ExpressionMethod.AddFormToFluent(fluent_label, frm);
         }
         private void btn_Warning_ItemClick(object sender, ItemClickEventArgs e)

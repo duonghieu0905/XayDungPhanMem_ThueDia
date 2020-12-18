@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Entities;
 using BUL;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
+using System.Diagnostics;
 
 namespace GUI.FormQuanLy
 {
@@ -24,6 +27,7 @@ namespace GUI.FormQuanLy
         private const string STATUS_ONHOLD = "OnHold";
         private const string STATUS_INCOMPLETE = "Incompleted";
         private const string STATUS_UNPAID = "Unpaid";
+        private const string FORMAT_DATE = "dd/MM/yyyy";
         private BindingSource bindingTitle;
         private BindingSource bindingCustomer;
         public FormBaoCao()
@@ -94,7 +98,7 @@ namespace GUI.FormQuanLy
                                    idTitle = preListGroup.Key,
                                    TongDatTruoc = preListGroup.Sum(x => x.NumberOfDisk)
                                };
-            var db = dbBSThueCuaTitle
+            var db = dbBSThueCuaTitle 
                 .GroupJoin(dbDSDatTruoc, bss => bss.idTitle, dt => dt.idTitle, (bss, dt) => new { bss, dt })
                 .SelectMany(temp => temp.dt.DefaultIfEmpty(), (bs, temp) => new { bs = bs, dt = temp });
             List<ReportTitle> lst = new List<ReportTitle>();
@@ -186,6 +190,46 @@ namespace GUI.FormQuanLy
         private void btn_ThongKeTieuDe_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_ThongKeKH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //string path = @"F:\Xay dung phan mem\XDPM_NHOM11\ThongKeKH.xlsx";
+                string path = Application.StartupPath + @"\Report\ThongKeKhachHang_" + DateTime.Now.ToString(FORMAT_DATE).Replace(@"/", "") + @".xlsx";
+
+                (grcKH.MainView as GridView).OptionsPrint.PrintHeader = true;
+                XlsxExportOptionsEx advOptions = new XlsxExportOptionsEx();
+                advOptions.AllowGrouping = DevExpress.Utils.DefaultBoolean.False;
+                advOptions.ShowTotalSummaries = DevExpress.Utils.DefaultBoolean.False;
+                advOptions.SheetName = "Thống Kê Khách Hàng";
+                grcKH.ExportToXlsx(path, advOptions);
+                Process.Start(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_ThongKeTieuDe_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string path = Application.StartupPath + @"\Report\ThongKeTieuDe_" + DateTime.Now.ToString(FORMAT_DATE).Replace(@"/", "") + @".xlsx";
+                (grcTieuDe.MainView as GridView).OptionsPrint.PrintHeader = true;
+                XlsxExportOptionsEx advOptions = new XlsxExportOptionsEx();
+                advOptions.AllowGrouping = DevExpress.Utils.DefaultBoolean.False;
+                advOptions.ShowTotalSummaries = DevExpress.Utils.DefaultBoolean.False;
+                advOptions.SheetName = "Thống Kê Tiêu Đề";
+                grcTieuDe.ExportToXlsx(path, advOptions);
+                Process.Start(path);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

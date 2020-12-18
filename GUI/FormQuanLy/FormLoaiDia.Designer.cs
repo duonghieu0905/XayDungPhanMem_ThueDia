@@ -253,6 +253,7 @@
             this.btn_CapNhat.Size = new System.Drawing.Size(207, 79);
             this.btn_CapNhat.TabIndex = 0;
             this.btn_CapNhat.Text = "Cập nhật";
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
             // 
             // btn_XacNhan
             // 
@@ -272,6 +273,7 @@
             this.btn_XacNhan.Size = new System.Drawing.Size(207, 79);
             this.btn_XacNhan.TabIndex = 0;
             this.btn_XacNhan.Text = "Xác nhận";
+            this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click_1);
             // 
             // tablePanel7
             // 

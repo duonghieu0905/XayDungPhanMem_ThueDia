@@ -59,6 +59,12 @@ namespace GUI
             cbx.DisplayMember = "TypeName";
             cbx.ValueMember = "IdDiskType";
         }
+
+        internal static bool CheckAuth(object auth)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Thêm vào combobox các trạng thái thuê: Trên giá đang chờ và đã thuê
         /// </summary>

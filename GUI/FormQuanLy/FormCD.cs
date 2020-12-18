@@ -21,6 +21,7 @@ namespace GUI.FormQuanLy
         {
             InitializeComponent();
             this.auth = auth;
+            btn_XacNhan.Enabled = false;
             db = new DiskBUL();
             binding = new BindingSource();
         }
@@ -92,7 +93,73 @@ namespace GUI.FormQuanLy
             {
                 case "OnShelf": cbx_TrangThaiThue.SelectedIndex = 0; break;
                 case "OnHold": cbx_TrangThaiThue.SelectedIndex = 1; break;
-                case "Rented":cbx_TrangThaiThue.SelectedIndex = 2; break;
+                case "Rented": cbx_TrangThaiThue.SelectedIndex = 2; break;
+            }
+            if (cbx_TrangThaiThue.SelectedIndex != 0)
+            {
+                btn_CapNhat.Enabled = false;
+            }
+            else
+            {
+                btn_CapNhat.Enabled = true;
+            }
+        }
+
+        private void btn_CapNhat_Click(object sender, EventArgs e)
+        {
+            if (ExpressionMethod.CheckAuth(auth)==true)
+            {
+                if (btn_CapNhat.Text == "Cập nhật")
+                {
+                    cbx_TrangThaiDia.Enabled = true;
+                    txt_TenTieuDe.ReadOnly = false;
+                    btn_CapNhat.Text = "Hủy";
+                    btn_XacNhan.Enabled = true;
+                }
+                else
+                {
+                    cbx_TrangThaiDia.Enabled = false;
+                    btn_XacNhan.Enabled = false;
+                    txt_TenTieuDe.ReadOnly = true;
+                    btn_CapNhat.Text = "Cập nhật";
+                }
+            }
+        }
+
+        private void btn_XacNhan_Click(object sender, EventArgs e)
+        {
+
+            Disk disk = new Disk();
+            disk.IdDisk = Convert.ToInt32(pictureBox1.Tag.ToString());
+            disk.IdTitle = Convert.ToInt32(txt_TenTieuDe.Text);
+            switch (cbx_TrangThaiDia.SelectedIndex)
+            {
+                case 0: disk.DiskStatus = "Good"; break;
+                case 1: disk.DiskStatus = "Damage"; break;
+            }
+            switch (cbx_TrangThaiThue.SelectedIndex)
+            {
+                case 0: disk.DiskRentalStatus = "OnShelf"; break;
+                case 1: disk.DiskRentalStatus = "OnHold"; break;
+                case 2: disk.DiskRentalStatus = "Rented"; break;
+            }
+            db.UpdateDisk(disk);
+            if (db.UpdateDisk(disk) == true)
+            {
+                string message = "Cập nhật thành công";
+                string title = "Thông báo";
+                MessageBox.Show(message, title);
+                cbx_TrangThaiDia.Enabled = false;
+                btn_XacNhan.Enabled = false;
+                txt_TenTieuDe.ReadOnly = true;
+                btn_CapNhat.Text = "Cập nhật";
+                LoadView();
+            }
+            else
+            {
+                string message = "Cập nhật thất bại";
+                string title = "Thông báo";
+                MessageBox.Show(message, title);
             }
         }
     }
